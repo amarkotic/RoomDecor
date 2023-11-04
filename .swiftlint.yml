@@ -1,0 +1,37 @@
+function_parameter_count: 8
+identifier_name:
+  min_length: 2
+  max_length: 50
+line_length: 
+  warning: 120
+  ignores_comments: true
+type_name:
+  max_length: 50
+function_parameter_count:
+  warning: 9
+  error: 12
+large_tuple: 4
+
+disabled_rules:
+  - file_length
+
+custom_rules:
+  file_length_view_controllers:
+    name: "File Length Violation: ViewControllers should contain 600 lines or less"
+    regex: '([^\n]*?\n){600,}'
+    severity: warning
+    included: ".*ViewController.swift"
+  file_length_custom:
+    name: "File Length Violation: Files should contain 400 lines or less"
+    regex: '([^\n]*?\n){400,}'
+    severity: warning
+    included: ".*.swift"
+    excluded: ".*ViewController.swift"
+  newline_after_definition_start:
+    name: "There should be an empty line after the definition opening braces"
+    regex: '(^[ a-zA-Z]*(?:protocol|extension|class|struct|enum)[ a-zA-Z:,<>\n_]*\{\n *\S+)'
+    severity: warning
+  newline_before_definition_end:
+    name: "There should be an empty line before the definition closing braces"
+    regex: '^[^\n]+\n\}\n'
+    severity: warning
