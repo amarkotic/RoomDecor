@@ -17,6 +17,15 @@
 		659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31D2AF6C92C00608313 /* Resolver-Static */; };
 		659DE3202AF6C94B00608313 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE31F2AF6C94B00608313 /* AppModule.swift */; };
 		659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE3212AF6C9A500608313 /* AppRouter.swift */; };
+		65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */; };
+		65BB04C42B49F2A30037D11F /* UIControlPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */; };
+		65BB04C52B49F2A30037D11F /* UIControlSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */; };
+		65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */; };
+		65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */; };
+		65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C02B49F2A30037D11F /* GestureSubscription.swift */; };
+		65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C12B49F2A30037D11F /* GestureType.swift */; };
+		65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C22B49F2A30037D11F /* GesturePublisher.swift */; };
+		65BB04CD2B49F2B30037D11F /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +38,15 @@
 		659DE2F82AF6C7B500608313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659DE31F2AF6C94B00608313 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		659DE3212AF6C9A500608313 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
+		65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlPublisher.swift; sourceTree = "<group>"; };
+		65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlSubscription.swift; sourceTree = "<group>"; };
+		65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarItemGestureSubscription.swift; sourceTree = "<group>"; };
+		65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarItemGesturePublisher.swift; sourceTree = "<group>"; };
+		65BB04C02B49F2A30037D11F /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
+		65BB04C12B49F2A30037D11F /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
+		65BB04C22B49F2A30037D11F /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
+		65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +111,68 @@
 		659DE2E92AF6C7B400608313 /* RoomDecor */ = {
 			isa = PBXGroup;
 			children = (
+				65BF20D62B49F194002D95D1 /* Core */,
 				65429B3A2AF97E14000062BB /* Views */,
 				65429B392AF97E08000062BB /* Coordinator */,
 				65429B382AF97DFA000062BB /* App */,
 			);
 			path = RoomDecor;
+			sourceTree = "<group>";
+		};
+		65BB04B62B49F28A0037D11F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		65BB04B72B49F2A30037D11F /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */,
+				65BB04B92B49F2A30037D11F /* UIControl */,
+				65BB04BC2B49F2A30037D11F /* Gesture */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		65BB04B92B49F2A30037D11F /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */,
+				65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
+		65BB04BC2B49F2A30037D11F /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BD2B49F2A30037D11F /* BarItem */,
+				65BB04C02B49F2A30037D11F /* GestureSubscription.swift */,
+				65BB04C12B49F2A30037D11F /* GestureType.swift */,
+				65BB04C22B49F2A30037D11F /* GesturePublisher.swift */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		65BB04BD2B49F2A30037D11F /* BarItem */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */,
+				65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */,
+			);
+			path = BarItem;
+			sourceTree = "<group>";
+		};
+		65BF20D62B49F194002D95D1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04B72B49F2A30037D11F /* Combine */,
+				65BB04B62B49F28A0037D11F /* Extensions */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +276,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */,
+				65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */,
+				65BB04C42B49F2A30037D11F /* UIControlPublisher.swift in Sources */,
+				65BB04C52B49F2A30037D11F /* UIControlSubscription.swift in Sources */,
+				65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
+				65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
+				65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */,
 				659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */,
+				65BB04CD2B49F2B30037D11F /* UIView+Combine.swift in Sources */,
 				65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */,
 				659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */,
+				65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */,
 				65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

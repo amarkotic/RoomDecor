@@ -15,6 +15,14 @@ public class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        bindViews()
+    }
+
+    private func bindViews() {
+        addVirtualObjectButton
+            .throttledTap()
+            .sink { _ in }
+            .store(in: &disposables)
     }
 
 }
