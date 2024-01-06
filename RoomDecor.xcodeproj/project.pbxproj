@@ -26,6 +26,10 @@
 		65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C12B49F2A30037D11F /* GestureType.swift */; };
 		65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C22B49F2A30037D11F /* GesturePublisher.swift */; };
 		65BB04CD2B49F2B30037D11F /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */; };
+		65BB04CF2B49F43B0037D11F /* Create3DModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */; };
+		65BB04D12B49F4460037D11F /* Create3DModelViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */; };
+		65BB04D32B49F4950037D11F /* Add3DObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */; };
+		65BB04D52B49F4A00037D11F /* Add3DObjectsViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		65BB04C12B49F2A30037D11F /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
 		65BB04C22B49F2A30037D11F /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
 		65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
+		65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create3DModelViewController.swift; sourceTree = "<group>"; };
+		65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create3DModelViewController+Design.swift"; sourceTree = "<group>"; };
+		65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add3DObjectsViewController.swift; sourceTree = "<group>"; };
+		65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add3DObjectsViewController+Design.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,10 @@
 			children = (
 				65429B362AF97DCB000062BB /* HomeViewController.swift */,
 				65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */,
+				65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */,
+				65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */,
+				65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */,
+				65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,11 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BB04D12B49F4460037D11F /* Create3DModelViewController+Design.swift in Sources */,
 				65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */,
 				65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */,
+				65BB04D52B49F4A00037D11F /* Add3DObjectsViewController+Design.swift in Sources */,
 				65BB04C42B49F2A30037D11F /* UIControlPublisher.swift in Sources */,
 				65BB04C52B49F2A30037D11F /* UIControlSubscription.swift in Sources */,
 				65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */,
+				65BB04CF2B49F43B0037D11F /* Create3DModelViewController.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
 				65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
@@ -290,6 +305,7 @@
 				65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */,
 				659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */,
 				65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */,
+				65BB04D32B49F4950037D11F /* Add3DObjectsViewController.swift in Sources */,
 				65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

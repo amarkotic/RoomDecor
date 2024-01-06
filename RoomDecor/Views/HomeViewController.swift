@@ -21,7 +21,16 @@ public class HomeViewController: UIViewController {
     private func bindViews() {
         addVirtualObjectButton
             .throttledTap()
-            .sink { _ in }
+            .sink { [weak self] _ in
+                self?.navigationController?.pushViewController(Create3DModelViewController(), animated: true)
+            }
+            .store(in: &disposables)
+
+        create3DModelButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                self?.navigationController?.pushViewController(Add3DObjectsViewController(), animated: true)
+            }
             .store(in: &disposables)
     }
 
