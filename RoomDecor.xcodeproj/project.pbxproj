@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65429B332AF97C40000062BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65429B322AF97C40000062BB /* SnapKit */; };
+		65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B362AF97DCB000062BB /* HomeViewController.swift */; };
+		65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */; };
 		659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EA2AF6C7B400608313 /* AppDelegate.swift */; };
 		659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */; };
-		659DE2EF2AF6C7B400608313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EE2AF6C7B400608313 /* ViewController.swift */; };
 		659DE2F42AF6C7B500608313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659DE2F32AF6C7B500608313 /* Assets.xcassets */; };
 		659DE31C2AF6C92C00608313 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31B2AF6C92C00608313 /* Resolver */; };
 		659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31D2AF6C92C00608313 /* Resolver-Static */; };
@@ -18,10 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65429B362AF97DCB000062BB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		659DE2EE2AF6C7B400608313 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		659DE2F32AF6C7B500608313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		659DE2F82AF6C7B500608313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659DE31F2AF6C94B00608313 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65429B332AF97C40000062BB /* SnapKit in Frameworks */,
 				659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */,
 				659DE31C2AF6C92C00608313 /* Resolver in Frameworks */,
 			);
@@ -41,6 +45,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65429B382AF97DFA000062BB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
+				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
+				659DE31F2AF6C94B00608313 /* AppModule.swift */,
+				659DE2F82AF6C7B500608313 /* Info.plist */,
+				659DE2F32AF6C7B500608313 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		65429B392AF97E08000062BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				659DE3212AF6C9A500608313 /* AppRouter.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		65429B3A2AF97E14000062BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65429B362AF97DCB000062BB /* HomeViewController.swift */,
+				65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		659DE2DE2AF6C7B400608313 = {
 			isa = PBXGroup;
 			children = (
@@ -60,13 +93,9 @@
 		659DE2E92AF6C7B400608313 /* RoomDecor */ = {
 			isa = PBXGroup;
 			children = (
-				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
-				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
-				659DE2EE2AF6C7B400608313 /* ViewController.swift */,
-				659DE2F32AF6C7B500608313 /* Assets.xcassets */,
-				659DE2F82AF6C7B500608313 /* Info.plist */,
-				659DE31F2AF6C94B00608313 /* AppModule.swift */,
-				659DE3212AF6C9A500608313 /* AppRouter.swift */,
+				65429B3A2AF97E14000062BB /* Views */,
+				65429B392AF97E08000062BB /* Coordinator */,
+				65429B382AF97DFA000062BB /* App */,
 			);
 			path = RoomDecor;
 			sourceTree = "<group>";
@@ -91,6 +120,7 @@
 			packageProductDependencies = (
 				659DE31B2AF6C92C00608313 /* Resolver */,
 				659DE31D2AF6C92C00608313 /* Resolver-Static */,
+				65429B322AF97C40000062BB /* SnapKit */,
 			);
 			productName = RoomDecor;
 			productReference = 659DE2E72AF6C7B400608313 /* RoomDecor.app */;
@@ -122,6 +152,7 @@
 			mainGroup = 659DE2DE2AF6C7B400608313;
 			packageReferences = (
 				659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */,
+				65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 659DE2E82AF6C7B400608313 /* Products */;
 			projectDirPath = "";
@@ -170,11 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659DE2EF2AF6C7B400608313 /* ViewController.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
 				659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */,
+				65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */,
 				659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */,
+				65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,10 +339,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4729CGQSC7;
+				DEVELOPMENT_TEAM = C7L62PRT2R;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoomDecor/Info.plist;
+				INFOPLIST_FILE = RoomDecor/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -336,10 +368,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4729CGQSC7;
+				DEVELOPMENT_TEAM = C7L62PRT2R;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoomDecor/Info.plist;
+				INFOPLIST_FILE = RoomDecor/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -382,6 +414,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -393,6 +433,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		65429B322AF97C40000062BB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		659DE31B2AF6C92C00608313 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */;

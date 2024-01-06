@@ -11,7 +11,7 @@ class AppRouter {
     }
 
     func setStartScreen(in window: UIWindow?) {
-        navigationController.setViewControllers([ViewController()], animated: false)
+        navigationController.setViewControllers([HomeViewController()], animated: false)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
