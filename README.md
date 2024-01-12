@@ -1,5 +1,11 @@
-RoomDecor app for iPhone/iPad devices
+# Project built for FER University
 
+AR app which helps you with designing your perfect room interior built for iPhone/iPad devices.
+
+## Achievements
+Learned and implemented foundations of AR in iOS development. Used CLEAN architecture and animations to improve the app
+
+## Videos of usage
 
 • Add a virtual object to the room
 
