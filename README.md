@@ -1,4 +1,4 @@
-# Project built for FER University
+# Project built for FER University - built in 2024
 
 AR app which helps you with designing your perfect room interior built for iPhone/iPad devices.
 
