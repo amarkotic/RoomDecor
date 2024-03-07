@@ -17,6 +17,7 @@ class AppModule {
 
     func registerAllServices(in container: Resolver) {
         registerAppRouter(in: container)
+        registerHomeViewController(in: container)
     }
 
     private func registerAppRouter(in container: Resolver) {
@@ -25,7 +26,7 @@ class AppModule {
             .scope(.application)
     }
 
-    private func homeViewController(in container: Resolver) {
+    private func registerHomeViewController(in container: Resolver) {
         container
             .register { HomeViewController() }
             .scope(.unique)
