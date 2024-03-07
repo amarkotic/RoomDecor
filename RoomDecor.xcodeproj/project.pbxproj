@@ -7,25 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65429B332AF97C40000062BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65429B322AF97C40000062BB /* SnapKit */; };
+		65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B362AF97DCB000062BB /* HomeViewController.swift */; };
+		65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */; };
+		659062C02B4B1371002C0CA7 /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */; };
 		659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EA2AF6C7B400608313 /* AppDelegate.swift */; };
 		659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */; };
-		659DE2EF2AF6C7B400608313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EE2AF6C7B400608313 /* ViewController.swift */; };
 		659DE2F42AF6C7B500608313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659DE2F32AF6C7B500608313 /* Assets.xcassets */; };
 		659DE31C2AF6C92C00608313 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31B2AF6C92C00608313 /* Resolver */; };
 		659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31D2AF6C92C00608313 /* Resolver-Static */; };
 		659DE3202AF6C94B00608313 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE31F2AF6C94B00608313 /* AppModule.swift */; };
 		659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE3212AF6C9A500608313 /* AppRouter.swift */; };
+		65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */; };
+		65BB04C42B49F2A30037D11F /* UIControlPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */; };
+		65BB04C52B49F2A30037D11F /* UIControlSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */; };
+		65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */; };
+		65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */; };
+		65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C02B49F2A30037D11F /* GestureSubscription.swift */; };
+		65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C12B49F2A30037D11F /* GestureType.swift */; };
+		65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04C22B49F2A30037D11F /* GesturePublisher.swift */; };
+		65BB04CD2B49F2B30037D11F /* UIView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */; };
+		65BB04CF2B49F43B0037D11F /* Create3DModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */; };
+		65BB04D12B49F4460037D11F /* Create3DModelViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */; };
+		65BB04D32B49F4950037D11F /* Add3DObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */; };
+		65BB04D52B49F4A00037D11F /* Add3DObjectsViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */; };
+		65BB04DA2B4AD3F30037D11F /* Create3DModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D92B4AD3F30037D11F /* Create3DModelViewModel.swift */; };
+		65BB04E02B4AFB850037D11F /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB04DF2B4AFB850037D11F /* Models.scnassets */; };
+		65BB04E22B4B0C990037D11F /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65429B362AF97DCB000062BB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
+		659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		659DE2EE2AF6C7B400608313 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		659DE2F32AF6C7B500608313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		659DE2F82AF6C7B500608313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659DE31F2AF6C94B00608313 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		659DE3212AF6C9A500608313 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
+		65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlPublisher.swift; sourceTree = "<group>"; };
+		65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlSubscription.swift; sourceTree = "<group>"; };
+		65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarItemGestureSubscription.swift; sourceTree = "<group>"; };
+		65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarItemGesturePublisher.swift; sourceTree = "<group>"; };
+		65BB04C02B49F2A30037D11F /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
+		65BB04C12B49F2A30037D11F /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
+		65BB04C22B49F2A30037D11F /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
+		65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Combine.swift"; sourceTree = "<group>"; };
+		65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create3DModelViewController.swift; sourceTree = "<group>"; };
+		65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create3DModelViewController+Design.swift"; sourceTree = "<group>"; };
+		65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add3DObjectsViewController.swift; sourceTree = "<group>"; };
+		65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add3DObjectsViewController+Design.swift"; sourceTree = "<group>"; };
+		65BB04D92B4AD3F30037D11F /* Create3DModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create3DModelViewModel.swift; sourceTree = "<group>"; };
+		65BB04DF2B4AFB850037D11F /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65429B332AF97C40000062BB /* SnapKit in Frameworks */,
 				659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */,
 				659DE31C2AF6C92C00608313 /* Resolver in Frameworks */,
 			);
@@ -41,6 +79,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65429B382AF97DFA000062BB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
+				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
+				659DE31F2AF6C94B00608313 /* AppModule.swift */,
+				659DE2F82AF6C7B500608313 /* Info.plist */,
+				659DE2F32AF6C7B500608313 /* Assets.xcassets */,
+				65BB04DF2B4AFB850037D11F /* Models.scnassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		65429B392AF97E08000062BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				659DE3212AF6C9A500608313 /* AppRouter.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		65429B3A2AF97E14000062BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04D82B4AD39C0037D11F /* Add3DObjects */,
+				65BB04D72B4AD38F0037D11F /* Create3DModel */,
+				65BB04D62B4AD3870037D11F /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		659DE2DE2AF6C7B400608313 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +129,98 @@
 		659DE2E92AF6C7B400608313 /* RoomDecor */ = {
 			isa = PBXGroup;
 			children = (
-				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
-				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
-				659DE2EE2AF6C7B400608313 /* ViewController.swift */,
-				659DE2F32AF6C7B500608313 /* Assets.xcassets */,
-				659DE2F82AF6C7B500608313 /* Info.plist */,
-				659DE31F2AF6C94B00608313 /* AppModule.swift */,
-				659DE3212AF6C9A500608313 /* AppRouter.swift */,
+				65BF20D62B49F194002D95D1 /* Core */,
+				65429B3A2AF97E14000062BB /* Views */,
+				65429B392AF97E08000062BB /* Coordinator */,
+				65429B382AF97DFA000062BB /* App */,
 			);
 			path = RoomDecor;
+			sourceTree = "<group>";
+		};
+		65BB04B62B49F28A0037D11F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */,
+				65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */,
+				659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		65BB04B72B49F2A30037D11F /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04B82B49F2A30037D11F /* Publisher+Extensions.swift */,
+				65BB04B92B49F2A30037D11F /* UIControl */,
+				65BB04BC2B49F2A30037D11F /* Gesture */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		65BB04B92B49F2A30037D11F /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BA2B49F2A30037D11F /* UIControlPublisher.swift */,
+				65BB04BB2B49F2A30037D11F /* UIControlSubscription.swift */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
+		65BB04BC2B49F2A30037D11F /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BD2B49F2A30037D11F /* BarItem */,
+				65BB04C02B49F2A30037D11F /* GestureSubscription.swift */,
+				65BB04C12B49F2A30037D11F /* GestureType.swift */,
+				65BB04C22B49F2A30037D11F /* GesturePublisher.swift */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		65BB04BD2B49F2A30037D11F /* BarItem */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04BE2B49F2A30037D11F /* BarItemGestureSubscription.swift */,
+				65BB04BF2B49F2A30037D11F /* BarItemGesturePublisher.swift */,
+			);
+			path = BarItem;
+			sourceTree = "<group>";
+		};
+		65BB04D62B4AD3870037D11F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				65429B362AF97DCB000062BB /* HomeViewController.swift */,
+				65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		65BB04D72B4AD38F0037D11F /* Create3DModel */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04CE2B49F43B0037D11F /* Create3DModelViewController.swift */,
+				65BB04D02B49F4460037D11F /* Create3DModelViewController+Design.swift */,
+				65BB04D92B4AD3F30037D11F /* Create3DModelViewModel.swift */,
+			);
+			path = Create3DModel;
+			sourceTree = "<group>";
+		};
+		65BB04D82B4AD39C0037D11F /* Add3DObjects */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04D22B49F4950037D11F /* Add3DObjectsViewController.swift */,
+				65BB04D42B49F4A00037D11F /* Add3DObjectsViewController+Design.swift */,
+			);
+			path = Add3DObjects;
+			sourceTree = "<group>";
+		};
+		65BF20D62B49F194002D95D1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				65BB04B72B49F2A30037D11F /* Combine */,
+				65BB04B62B49F28A0037D11F /* Extensions */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +230,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 659DE3112AF6C7B500608313 /* Build configuration list for PBXNativeTarget "RoomDecor" */;
 			buildPhases = (
+				659DE3272AF6D0B500608313 /* SwiftLint Check */,
 				659DE2E32AF6C7B400608313 /* Sources */,
 				659DE2E42AF6C7B400608313 /* Frameworks */,
 				659DE2E52AF6C7B400608313 /* Resources */,
@@ -90,6 +243,7 @@
 			packageProductDependencies = (
 				659DE31B2AF6C92C00608313 /* Resolver */,
 				659DE31D2AF6C92C00608313 /* Resolver-Static */,
+				65429B322AF97C40000062BB /* SnapKit */,
 			);
 			productName = RoomDecor;
 			productReference = 659DE2E72AF6C7B400608313 /* RoomDecor.app */;
@@ -121,6 +275,7 @@
 			mainGroup = 659DE2DE2AF6C7B400608313;
 			packageReferences = (
 				659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */,
+				65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 659DE2E82AF6C7B400608313 /* Products */;
 			projectDirPath = "";
@@ -137,21 +292,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				659DE2F42AF6C7B500608313 /* Assets.xcassets in Resources */,
+				65BB04E02B4AFB850037D11F /* Models.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		659DE3272AF6D0B500608313 /* SwiftLint Check */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Check";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		659DE2E32AF6C7B400608313 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659DE2EF2AF6C7B400608313 /* ViewController.swift in Sources */,
+				65BB04D12B49F4460037D11F /* Create3DModelViewController+Design.swift in Sources */,
+				65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */,
+				65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */,
+				65BB04D52B49F4A00037D11F /* Add3DObjectsViewController+Design.swift in Sources */,
+				65BB04E22B4B0C990037D11F /* CGRect+Extensions.swift in Sources */,
+				65BB04C42B49F2A30037D11F /* UIControlPublisher.swift in Sources */,
+				65BB04C52B49F2A30037D11F /* UIControlSubscription.swift in Sources */,
+				65BB04CA2B49F2A30037D11F /* GesturePublisher.swift in Sources */,
+				65BB04DA2B4AD3F30037D11F /* Create3DModelViewModel.swift in Sources */,
+				65BB04CF2B49F43B0037D11F /* Create3DModelViewController.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
+				65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
+				65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */,
 				659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */,
+				659062C02B4B1371002C0CA7 /* ARSCNView+Extensions.swift in Sources */,
+				65BB04CD2B49F2B30037D11F /* UIView+Combine.swift in Sources */,
+				65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */,
 				659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */,
+				65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */,
+				65BB04D32B49F4950037D11F /* Add3DObjectsViewController.swift in Sources */,
+				65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,9 +479,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4729CGQSC7;
+				DEVELOPMENT_TEAM = C7L62PRT2R;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoomDecor/Info.plist;
+				INFOPLIST_FILE = RoomDecor/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -312,9 +508,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4729CGQSC7;
+				DEVELOPMENT_TEAM = C7L62PRT2R;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoomDecor/Info.plist;
+				INFOPLIST_FILE = RoomDecor/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -357,6 +554,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 		659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -368,6 +573,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		65429B322AF97C40000062BB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		659DE31B2AF6C92C00608313 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 659DE31A2AF6C92C00608313 /* XCRemoteSwiftPackageReference "Resolver" */;
