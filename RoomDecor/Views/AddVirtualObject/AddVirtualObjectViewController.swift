@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import Combine
 
-class Add3DObjectsViewController: UIViewController {
+class AddVirtualObjectViewController: UIViewController {
 
     let session = ARSession()
     let buttonSize = CGSize(width: 200, height: 50)

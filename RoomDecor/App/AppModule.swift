@@ -25,4 +25,10 @@ class AppModule {
             .scope(.application)
     }
 
+    private func homeViewController(in container: Resolver) {
+        container
+            .register { HomeViewController() }
+            .scope(.unique)
+    }
+
 }

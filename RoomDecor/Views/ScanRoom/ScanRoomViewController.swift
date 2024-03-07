@@ -2,18 +2,18 @@ import Combine
 import RoomPlan
 import UIKit
 
-public class Create3DModelViewController: UIViewController {
+public class ScanRoomViewController: UIViewController {
 
     let shareButtonSize = CGSize(width: 80, height: 60)
 
     var roomCaptureView: RoomCaptureView!
     var shareButton: UIButton!
-    var viewModel: Create3DModelViewModel
+    var viewModel: ScanRoomViewModel
 
     private var disposables = Set<AnyCancellable>()
     private var capturedRoom: CapturedRoom?
 
-    init(viewModel: Create3DModelViewModel) {
+    init(viewModel: ScanRoomViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -90,7 +90,7 @@ public class Create3DModelViewController: UIViewController {
 }
 
 // MARK: - RoomCaptureSessionDelegate
-extension Create3DModelViewController: RoomCaptureSessionDelegate {
+extension ScanRoomViewController: RoomCaptureSessionDelegate {
 
     public func captureSession(_ session: RoomCaptureSession, didUpdate room: CapturedRoom) {
         capturedRoom = room

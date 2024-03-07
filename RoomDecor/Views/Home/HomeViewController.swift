@@ -22,7 +22,7 @@ public class HomeViewController: UIViewController {
         addVirtualObjectButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.navigationController?.pushViewController(Add3DObjectsViewController(), animated: true)
+                self?.navigationController?.pushViewController(AddVirtualObjectViewController(), animated: true)
             }
             .store(in: &disposables)
 
@@ -30,7 +30,7 @@ public class HomeViewController: UIViewController {
             .throttledTap()
             .sink { [weak self] _ in
                 self?.navigationController?.pushViewController(
-                    Create3DModelViewController(viewModel: Create3DModelViewModel()),
+                    ScanRoomViewController(viewModel: ScanRoomViewModel()),
                     animated: true)
 
             }

@@ -2,7 +2,7 @@ import ARKit
 import UIKit
 import SnapKit
 
-extension Add3DObjectsViewController {
+extension AddVirtualObjectViewController {
 
     func buildViews() {
         createViews()
