@@ -18,6 +18,8 @@ class AppModule {
     func registerAllServices(in container: Resolver) {
         registerAppRouter(in: container)
         registerHomeViewController(in: container)
+        registerAddVirtualObjectViewController(in: container)
+        registerScanRoomViewController(in: container)
     }
 
     private func registerAppRouter(in container: Resolver) {
@@ -28,7 +30,27 @@ class AppModule {
 
     private func registerHomeViewController(in container: Resolver) {
         container
-            .register { HomeViewController() }
+            .register { HomeViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { HomePresenter(appRouter: container.resolve()) }
+            .scope(.unique)
+    }
+
+    private func registerAddVirtualObjectViewController(in container: Resolver) {
+        container
+            .register { AddVirtualObjectViewController() }
+            .scope(.unique)
+    }
+
+    private func registerScanRoomViewController(in container: Resolver) {
+        container
+            .register { ScanRoomViewController(viewModel: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { ScanRoomViewModel() }
             .scope(.unique)
     }
 

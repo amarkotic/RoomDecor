@@ -22,4 +22,14 @@ class AppRouter {
         window?.makeKeyAndVisible()
     }
 
+    func presentAddVirtualObjectViewController() {
+        let addVirtualObjectViewController: AddVirtualObjectViewController = container.resolve()
+        navigationController.pushViewController(addVirtualObjectViewController, animated: true)
+    }
+
+    func presentScanRoomViewController() {
+        let scanRoomViewController: ScanRoomViewController = container.resolve()
+        navigationController.pushViewController(scanRoomViewController, animated: true)
+    }
+
 }

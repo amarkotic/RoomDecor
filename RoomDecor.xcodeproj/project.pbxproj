@@ -10,6 +10,7 @@
 		65429B332AF97C40000062BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65429B322AF97C40000062BB /* SnapKit */; };
 		65429B372AF97DCB000062BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B362AF97DCB000062BB /* HomeViewController.swift */; };
 		65429B3C2AF97E40000062BB /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */; };
+		6543F97A2B9A3F2E00CFD43A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543F9792B9A3F2E00CFD43A /* HomePresenter.swift */; };
 		659062C02B4B1371002C0CA7 /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */; };
 		659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EA2AF6C7B400608313 /* AppDelegate.swift */; };
 		659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		65429B362AF97DCB000062BB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
+		6543F9792B9A3F2E00CFD43A /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				65429B362AF97DCB000062BB /* HomeViewController.swift */,
 				65429B3B2AF97E40000062BB /* HomeViewController+Design.swift */,
+				6543F9792B9A3F2E00CFD43A /* HomePresenter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				65BB04D12B49F4460037D11F /* ScanRoomViewController+Design.swift in Sources */,
 				65BB04C82B49F2A30037D11F /* GestureSubscription.swift in Sources */,
+				6543F97A2B9A3F2E00CFD43A /* HomePresenter.swift in Sources */,
 				65BB04C72B49F2A30037D11F /* BarItemGesturePublisher.swift in Sources */,
 				65BB04D52B49F4A00037D11F /* AddVirtualObjectViewController+Design.swift in Sources */,
 				65BB04E22B4B0C990037D11F /* CGRect+Extensions.swift in Sources */,
@@ -479,7 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7L62PRT2R;
+				DEVELOPMENT_TEAM = 4729CGQSC7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomDecor/App/Info.plist;
@@ -508,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7L62PRT2R;
+				DEVELOPMENT_TEAM = 4729CGQSC7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoomDecor/App/Info.plist;
