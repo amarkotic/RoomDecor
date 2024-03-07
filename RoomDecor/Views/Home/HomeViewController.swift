@@ -9,7 +9,14 @@ public class HomeViewController: UIViewController {
     var addVirtualObjectButton: UIButton!
     var create3DModelButton: UIButton!
 
+    private var presenter: HomePresenter!
     private var disposables = Set<AnyCancellable>()
+
+    convenience init(presenter: HomePresenter) {
+        self.init()
+
+        self.presenter = presenter
+    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +29,14 @@ public class HomeViewController: UIViewController {
         addVirtualObjectButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.navigationController?.pushViewController(Add3DObjectsViewController(), animated: true)
+                self?.presenter.presentAddVirtualObjectViewController()
             }
             .store(in: &disposables)
 
         create3DModelButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.navigationController?.pushViewController(
-                    Create3DModelViewController(viewModel: Create3DModelViewModel()),
-                    animated: true)
-
+                self?.presenter.presentScanRoomViewController()
             }
             .store(in: &disposables)
     }

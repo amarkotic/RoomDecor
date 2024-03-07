@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-class Create3DModelViewModel: ObservableObject {
+class ScanRoomViewModel: ObservableObject {
 
     enum Action {
 

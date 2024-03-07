@@ -2,7 +2,7 @@ import UIKit
 import RoomPlan
 import SnapKit
 
-extension Create3DModelViewController {
+extension ScanRoomViewController {
 
     func buildViews() {
         createViews()
