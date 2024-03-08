@@ -63,6 +63,7 @@ class AddVirtualObjectViewController: UIViewController {
             let hitTestResult = sceneView.hitTest(centerPoint, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane]).first,
             let chairNode = loadChairModel()
         else {
+            let text = LocalizableStrings.addVirtualObject.localized
             print("Hit test failed")
             return
         }
