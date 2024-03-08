@@ -8,13 +8,17 @@ public class ScanRoomViewController: UIViewController {
 
     var roomCaptureView: RoomCaptureView!
     var shareButton: UIButton!
+    var switchButton: UIButton!
+
     var viewModel: ScanRoomViewModel
 
+    private var presenter: ScanRoomPresenter!
     private var disposables = Set<AnyCancellable>()
     private var capturedRoom: CapturedRoom?
 
-    init(viewModel: ScanRoomViewModel) {
+    init(viewModel: ScanRoomViewModel, presenter: ScanRoomPresenter) {
         self.viewModel = viewModel
+        self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,6 +66,13 @@ public class ScanRoomViewController: UIViewController {
             .throttledTap()
             .sink { [weak self] _ in
                 self?.presentShareSheet()
+            }
+            .store(in: &disposables)
+
+        switchButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                self?.presenter.switchButtonTapped()
             }
             .store(in: &disposables)
     }
