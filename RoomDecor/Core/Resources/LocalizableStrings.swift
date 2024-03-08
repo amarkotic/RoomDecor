@@ -1,6 +1,6 @@
 import SwiftUI
 
-public enum LocalizableStrings: String {
+public enum LocalizableStrings: String, Localizable {
 
     case addVirtualObject
     case scanTheRoom

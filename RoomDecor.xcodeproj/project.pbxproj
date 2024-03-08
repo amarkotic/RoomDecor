@@ -15,6 +15,7 @@
 		6543F9842B9A4D5F00CFD43A /* Localizable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543F9832B9A4D5F00CFD43A /* Localizable+String.swift */; };
 		6543F9862B9A4E2600CFD43A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6543F9852B9A4E2600CFD43A /* Localizable.xcstrings */; };
 		6543F9882B9B2E2300CFD43A /* Localizable+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543F9872B9B2E2300CFD43A /* Localizable+Strings.swift */; };
+		6543F98A2B9B766800CFD43A /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543F9892B9B766800CFD43A /* String+Localizable.swift */; };
 		659062C02B4B1371002C0CA7 /* ARSCNView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */; };
 		659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EA2AF6C7B400608313 /* AppDelegate.swift */; };
 		659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		6543F9832B9A4D5F00CFD43A /* Localizable+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+String.swift"; sourceTree = "<group>"; };
 		6543F9852B9A4E2600CFD43A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6543F9872B9B2E2300CFD43A /* Localizable+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Strings.swift"; sourceTree = "<group>"; };
+		6543F9892B9B766800CFD43A /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Extensions.swift"; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				65BB04CC2B49F2B30037D11F /* UIView+Combine.swift */,
 				65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */,
 				659062BF2B4B1371002C0CA7 /* ARSCNView+Extensions.swift */,
+				6543F9892B9B766800CFD43A /* String+Localizable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				en,
 				Base,
 				hr,
+				de,
 			);
 			mainGroup = 659DE2DE2AF6C7B400608313;
 			packageReferences = (
@@ -374,6 +378,7 @@
 				65BB04CF2B49F43B0037D11F /* ScanRoomViewController.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
 				65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */,
+				6543F98A2B9B766800CFD43A /* String+Localizable.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
 				65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */,
 				659DE3222AF6C9A500608313 /* AppRouter.swift in Sources */,
