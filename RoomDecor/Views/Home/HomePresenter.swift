@@ -10,11 +10,11 @@ class HomePresenter {
     }
 
     func presentAddVirtualObjectViewController() {
-        appRouter.presentAddVirtualObjectViewController()
+        appRouter.presentAddVirtualObjectViewController(from: .home)
     }
 
     func presentScanRoomViewController() {
-        appRouter.presentScanRoomViewController()
+        appRouter.presentScanRoomViewController(from: .home)
     }
 
 }

@@ -10,10 +10,18 @@ class AddVirtualObjectViewController: UIViewController {
 
     var sceneView: ARSCNView!
     var addVirtualObjectButton: UIButton!
+    var switchButton: UIButton!
 
     private var screenCenter: CGPoint?
+    private var presenter: AddVirtualObjectPresenter!
     private var disposables = Set<AnyCancellable>()
     private var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
+
+    convenience init(presenter: AddVirtualObjectPresenter) {
+        self.init()
+
+        self.presenter = presenter
+    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,15 +63,23 @@ class AddVirtualObjectViewController: UIViewController {
                 self?.addVirtualObject()
             }
             .store(in: &disposables)
+
+        switchButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                self?.presenter.switchButtonTapped()
+            }
+            .store(in: &disposables)
     }
 
     private func addVirtualObject() {
         guard
             let centerPoint = screenCenter,
-            let hitTestResult = sceneView.hitTest(centerPoint, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane]).first,
+            let hitTestResult = sceneView.hitTest(
+                centerPoint,
+                types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane]).first,
             let chairNode = loadChairModel()
         else {
-            let text = LocalizableStrings.addVirtualObject.localized
             print("Hit test failed")
             return
         }
