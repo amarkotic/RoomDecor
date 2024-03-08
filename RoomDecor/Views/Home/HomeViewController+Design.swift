@@ -26,10 +26,10 @@ extension HomeViewController {
         containerView.axis = .vertical
         containerView.spacing = 80
 
-        addVirtualObjectButton.setTitle("Add virtual object", for: .normal)
+        addVirtualObjectButton.setTitle(LocalizableStrings.addVirtualObject.localized, for: .normal)
         addVirtualObjectButton.backgroundColor = .lightGray
 
-        create3DModelButton.setTitle("Create 3D model", for: .normal)
+        create3DModelButton.setTitle(LocalizableStrings.scanTheRoom.localized, for: .normal)
         create3DModelButton.backgroundColor = .lightGray
     }
 

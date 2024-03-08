@@ -20,7 +20,7 @@ extension ScanRoomViewController {
     }
 
     public func styleViews() {
-        shareButton.setTitle("Share", for: .normal)
+        shareButton.setTitle(LocalizableStrings.share.localized, for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.backgroundColor = .black
         shareButton.layer.cornerRadius = 4

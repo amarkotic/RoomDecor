@@ -20,7 +20,7 @@ extension AddVirtualObjectViewController {
     }
 
     public func styleViews() {
-        addVirtualObjectButton.setTitle("Add Virtual Object", for: .normal)
+        addVirtualObjectButton.setTitle(LocalizableStrings.addVirtualObject.localized, for: .normal)
         addVirtualObjectButton.backgroundColor = .systemBlue
     }
 
