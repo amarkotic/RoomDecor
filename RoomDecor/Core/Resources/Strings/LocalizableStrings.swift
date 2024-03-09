@@ -6,6 +6,7 @@ public enum LocalizableStrings: String, Localizable {
     case scanTheRoom
     case share
     case moduleSwitchSlideToConfirm
+    case start
 
     public var localized: String {
         rawValue.localize

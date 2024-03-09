@@ -20,6 +20,8 @@ extension ScanRoomViewController {
     }
 
     public func styleViews() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         shareButton.setTitle(LocalizableStrings.share.localized, for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.backgroundColor = .black

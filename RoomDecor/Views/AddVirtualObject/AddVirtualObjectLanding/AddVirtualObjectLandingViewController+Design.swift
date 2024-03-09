@@ -26,7 +26,7 @@ extension AddVirtualObjectLandingViewController {
         navBarView.set(title: LocalizableStrings.addVirtualObject.localized)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        startButton.setTitle(LocalizableStrings.share.localized, for: .normal)
+        startButton.setTitle(LocalizableStrings.start.localized, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.backgroundColor = .black
         startButton.layer.cornerRadius = 4
