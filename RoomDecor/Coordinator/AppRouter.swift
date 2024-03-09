@@ -26,23 +26,42 @@ class AppRouter: NSObject {
         window?.makeKeyAndVisible()
     }
 
-    func presentAddVirtualObjectViewController(from source: SourceViewController) {
+    func showAddVirtualObjectViewController(from source: SourceViewController) {
         let addVirtualObjectViewController: AddVirtualObjectViewController = container.resolve()
-        if source == .home {
+
+        switch source {
+        case .home:
             navigationController.pushViewController(addVirtualObjectViewController, animated: true)
-        } else {
+        case .scanRoom:
             replaceLastViewController(with: addVirtualObjectViewController)
+        default:
+            return
         }
     }
 
-    func presentScanRoomViewController(from source: SourceViewController) {
+    func showScanRoomViewController(from source: SourceViewController) {
         let scanRoomViewController: ScanRoomViewController = container.resolve()
-        if source == .home {
+
+        switch source {
+        case .home:
             navigationController.pushViewController(scanRoomViewController, animated: true)
-        } else {
+        case .addVirtualObject:
             replaceLastViewController(with: scanRoomViewController)
+        default:
+            return
         }
     }
+
+    func presentSwitchModuleSheet() {
+        let switchModuleViewController: SwitchModuleViewController = container.resolve()
+        let modalViewController = ModalViewController(childViewController: switchModuleViewController)
+        navigationController.present(modalViewController, animated: true)
+    }
+
+}
+
+// MARK: - Helpers functions
+extension AppRouter {
 
     func replaceLastViewController(with viewController: UIViewController, animated: Bool = true) {
         var viewControllers = navigationController.viewControllers
@@ -58,6 +77,7 @@ class AppRouter: NSObject {
 
 }
 
+// MARK: - Custom navigation transition
 extension AppRouter: UINavigationControllerDelegate {
 
     func navigationController(

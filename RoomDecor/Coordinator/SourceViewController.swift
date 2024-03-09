@@ -1,6 +1,7 @@
 enum SourceViewController {
 
     case home
-    case other
+    case addVirtualObject
+    case scanRoom
 
 }
