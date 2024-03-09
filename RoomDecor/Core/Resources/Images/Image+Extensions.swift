@@ -6,4 +6,8 @@ extension UIImage {
         self.init(named: image.rawValue)!
     }
 
+    convenience init(with systemImage: SystemImage) {
+        self.init(systemName: systemImage.rawValue)!
+    }
+
 }

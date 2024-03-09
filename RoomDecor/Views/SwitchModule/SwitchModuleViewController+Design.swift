@@ -22,13 +22,14 @@ extension SwitchModuleViewController {
 
     func styleViews() {
         view.backgroundColor = .white
+
         stackView.spacing = defaultSpacing
         stackView.axis = .vertical
     }
 
     func defineLayoutForViews() {
         view.snp.makeConstraints {
-            $0.height.equalTo(124)
+            $0.height.equalTo(116)
         }
 
         stackView.snp.makeConstraints {
@@ -36,7 +37,7 @@ extension SwitchModuleViewController {
         }
 
         sliderView.snp.makeConstraints {
-            $0.height.equalTo(80)
+            $0.height.equalTo(56)
         }
     }
 

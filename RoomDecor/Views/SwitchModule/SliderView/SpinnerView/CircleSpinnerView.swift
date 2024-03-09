@@ -36,7 +36,7 @@ class CircleSpinnerView: UIView {
         animation.delegate = self
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 2.0
+        animation.duration = 0.5
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         progressBar.add(animation, forKey: "animation")

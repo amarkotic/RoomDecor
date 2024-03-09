@@ -31,12 +31,6 @@ class SliderView: UIView {
         addGestureRecognizer()
     }
 
-//    func set(switchExperienceInfo: SwitchExperience) {
-//        contentView.backgroundColor = switchExperienceInfo.type.color
-//        textView.set(title: switchExperienceInfo.title)
-//        checkmarkSpinnerView.set(backgroundColor: switchExperienceInfo.type.color)
-//    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -106,7 +100,7 @@ extension SliderView {
         textView.isHidden = true
         sliderImageView.isHidden = true
         finalSliderImageView.isHidden = false
-        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
             self.finalSliderImageView.alpha = 0
             self.contentLeadingConstraint.deactivate()
             self.contentTrailingConstraint.deactivate()
@@ -144,9 +138,9 @@ extension SliderView {
     }
 
     func styleViews() {
-        backgroundColor = .gray
-
+        contentView.clipsToBounds = true
         contentView.layer.cornerRadius = cornerRadius
+        contentView.backgroundColor = .gray
 
         sliderImageView.image = UIImage(with: .slider)
         sliderImageView.isUserInteractionEnabled = true

@@ -4,3 +4,9 @@ enum Image: String {
     case slider
 
 }
+
+enum SystemImage: String {
+
+    case avatar = "person.crop.circle.fill"
+
+}

@@ -20,11 +20,6 @@ class AuthorInfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(image: String?, name: String, imageViewBorderColor: UIColor) {
-//        imageView.setImage(with: image, errorImage: UIImage(with: .avatar))
-        titleLabel.text = name
-    }
-
 }
 
 extension AuthorInfoView {
@@ -49,11 +44,14 @@ extension AuthorInfoView {
     func styleViews() {
         stackView.spacing = defaultSpacing
 
+        imageView.image = UIImage(with: .avatar)
+        imageView.tintColor = .black
         imageView.layer.cornerRadius = cornerRadius
         imageView.layer.borderWidth = 3
         imageView.clipsToBounds = true
 
-        titleLabel.textColor = .white
+        titleLabel.textColor = .black
+        titleLabel.text = "Author"
     }
 
     func defineLayoutForViews() {
