@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6508B2262B9B87CE00311B0C /* AddVirtualObjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6508B2252B9B87CE00311B0C /* AddVirtualObjectPresenter.swift */; };
-		6508B2282B9B87F500311B0C /* ScanRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6508B2272B9B87F500311B0C /* ScanRoomPresenter.swift */; };
 		6508B22D2B9BA99F00311B0C /* SwitchModuleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6508B22C2B9BA99F00311B0C /* SwitchModuleIcon.swift */; };
 		6508B22F2B9BAA4800311B0C /* SwitchModuleInteractionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6508B22E2B9BAA4800311B0C /* SwitchModuleInteractionType.swift */; };
 		6508B2342B9BAFB900311B0C /* SwitchModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6508B2332B9BAFB900311B0C /* SwitchModuleViewController.swift */; };
@@ -63,8 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6508B2252B9B87CE00311B0C /* AddVirtualObjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVirtualObjectPresenter.swift; sourceTree = "<group>"; };
-		6508B2272B9B87F500311B0C /* ScanRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRoomPresenter.swift; sourceTree = "<group>"; };
 		6508B22C2B9BA99F00311B0C /* SwitchModuleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchModuleIcon.swift; sourceTree = "<group>"; };
 		6508B22E2B9BAA4800311B0C /* SwitchModuleInteractionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchModuleInteractionType.swift; sourceTree = "<group>"; };
 		6508B2332B9BAFB900311B0C /* SwitchModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchModuleViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +294,6 @@
 				65BB04CE2B49F43B0037D11F /* ScanRoomViewController.swift */,
 				65BB04D02B49F4460037D11F /* ScanRoomViewController+Design.swift */,
 				65BB04D92B4AD3F30037D11F /* ScanRoomViewModel.swift */,
-				6508B2272B9B87F500311B0C /* ScanRoomPresenter.swift */,
 			);
 			path = ScanRoomMain;
 			sourceTree = "<group>";
@@ -308,7 +303,6 @@
 			children = (
 				65BB04D22B49F4950037D11F /* AddVirtualObjectViewController.swift */,
 				65BB04D42B49F4A00037D11F /* AddVirtualObjectViewController+Design.swift */,
-				6508B2252B9B87CE00311B0C /* AddVirtualObjectPresenter.swift */,
 			);
 			path = AddVirtualObjectMain;
 			sourceTree = "<group>";
@@ -558,7 +552,6 @@
 				6508B2422B9BB4AE00311B0C /* CheckmarkSpinnerView.swift in Sources */,
 				65BB04CF2B49F43B0037D11F /* ScanRoomViewController.swift in Sources */,
 				659DE3202AF6C94B00608313 /* AppModule.swift in Sources */,
-				6508B2282B9B87F500311B0C /* ScanRoomPresenter.swift in Sources */,
 				6508B23A2B9BB44500311B0C /* AuthorInfoView.swift in Sources */,
 				6508B23F2B9BB48200311B0C /* SliderTextView.swift in Sources */,
 				65BB04C92B49F2A30037D11F /* GestureType.swift in Sources */,
@@ -576,7 +569,6 @@
 				6508B2442B9BB4D400311B0C /* CircleSpinnerView.swift in Sources */,
 				6544478D2B9C928A0021584B /* ModalViewController.swift in Sources */,
 				6508B2512B9C8EDB00311B0C /* Image+Extensions.swift in Sources */,
-				6508B2262B9B87CE00311B0C /* AddVirtualObjectPresenter.swift in Sources */,
 				659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */,
 				65BB04C62B49F2A30037D11F /* BarItemGestureSubscription.swift in Sources */,
 				6583EE8A2B9CB343009328C9 /* ScanRoomLandingViewController+Design.swift in Sources */,

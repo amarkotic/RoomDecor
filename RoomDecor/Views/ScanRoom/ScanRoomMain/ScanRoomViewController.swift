@@ -11,13 +11,11 @@ public class ScanRoomViewController: UIViewController {
 
     var viewModel: ScanRoomViewModel
 
-    private var presenter: ScanRoomPresenter!
     private var disposables = Set<AnyCancellable>()
     private var capturedRoom: CapturedRoom?
 
-    init(viewModel: ScanRoomViewModel, presenter: ScanRoomPresenter) {
+    init(viewModel: ScanRoomViewModel) {
         self.viewModel = viewModel
-        self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }

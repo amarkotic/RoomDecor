@@ -32,25 +32,17 @@ class AppModule {
 
     private func registerAddVirtualObjectViewController(in container: Resolver) {
         container
-            .register { AddVirtualObjectViewController(presenter: container.resolve()) }
-            .scope(.unique)
-
-        container
-            .register { AddVirtualObjectPresenter(appRouter: container.resolve()) }
+            .register { AddVirtualObjectViewController() }
             .scope(.unique)
     }
 
     private func registerScanRoomViewController(in container: Resolver) {
         container
-            .register { ScanRoomViewController(viewModel: container.resolve(), presenter: container.resolve()) }
+            .register { ScanRoomViewController(viewModel: container.resolve()) }
             .scope(.unique)
 
         container
             .register { ScanRoomViewModel() }
-            .scope(.unique)
-
-        container
-            .register { ScanRoomPresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 

@@ -12,15 +12,8 @@ class AddVirtualObjectViewController: UIViewController {
     var addVirtualObjectButton: UIButton!
 
     private var screenCenter: CGPoint?
-    private var presenter: AddVirtualObjectPresenter!
     private var disposables = Set<AnyCancellable>()
     private var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
-
-    convenience init(presenter: AddVirtualObjectPresenter) {
-        self.init()
-
-        self.presenter = presenter
-    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
