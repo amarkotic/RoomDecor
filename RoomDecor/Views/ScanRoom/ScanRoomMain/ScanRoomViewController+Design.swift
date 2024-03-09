@@ -17,9 +17,6 @@ extension ScanRoomViewController {
 
         shareButton = UIButton()
         view.addSubview(shareButton)
-
-        switchModuleIcon = SwitchModuleIcon()
-        view.addSubview(switchModuleIcon)
     }
 
     public func styleViews() {
@@ -37,11 +34,6 @@ extension ScanRoomViewController {
         shareButton.snp.makeConstraints {
             $0.bottom.leading.equalToSuperview().inset(30)
             $0.size.equalTo(shareButtonSize)
-        }
-
-        switchModuleIcon.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(70)
-            $0.trailing.equalToSuperview().inset(30)
         }
     }
 

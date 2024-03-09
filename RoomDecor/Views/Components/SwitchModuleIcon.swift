@@ -40,6 +40,8 @@ class SwitchModuleIcon: UIView {
     }
 
     @objc private func longPressed(gestureReconizer: UILongPressGestureRecognizer) {
+        guard gestureReconizer.state == .began else { return }
+
         iconInteractionSubject.send(.longPress)
     }
 

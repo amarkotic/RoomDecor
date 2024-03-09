@@ -8,7 +8,6 @@ public class ScanRoomViewController: UIViewController {
 
     var roomCaptureView: RoomCaptureView!
     var shareButton: UIButton!
-    var switchModuleIcon: SwitchModuleIcon!
 
     var viewModel: ScanRoomViewModel
 
@@ -66,13 +65,6 @@ public class ScanRoomViewController: UIViewController {
             .throttledTap()
             .sink { [weak self] _ in
                 self?.presentShareSheet()
-            }
-            .store(in: &disposables)
-
-        switchModuleIcon
-            .iconInteraction
-            .sink { [weak self] interaction in
-                self?.presenter.switchButtonInteracted(with: interaction)
             }
             .store(in: &disposables)
     }

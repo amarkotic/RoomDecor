@@ -17,9 +17,6 @@ extension AddVirtualObjectViewController {
 
         addVirtualObjectButton = UIButton()
         view.addSubview(addVirtualObjectButton)
-
-        switchModuleIcon = SwitchModuleIcon()
-        view.addSubview(switchModuleIcon)
     }
 
     public func styleViews() {
@@ -36,11 +33,6 @@ extension AddVirtualObjectViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
             $0.centerX.equalToSuperview()
             $0.size.equalTo(buttonSize)
-        }
-
-        switchModuleIcon.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(70)
-            $0.trailing.equalToSuperview().inset(30)
         }
     }
 

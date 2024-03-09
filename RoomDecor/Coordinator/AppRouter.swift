@@ -6,9 +6,9 @@ class AppRouter: NSObject {
     private let navigationController = UINavigationController()
     private let container: Resolver
 
-    private lazy var homeViewController: UIViewController = {
-        let homeViewController: HomeViewController = container.resolve()
-        return homeViewController
+    private lazy var initialViewController: UIViewController = {
+        let initialViewController: ScanRoomLandingViewController = container.resolve()
+        return initialViewController
     }()
 
     init(container: Resolver) {
@@ -20,42 +20,44 @@ class AppRouter: NSObject {
     }
 
     func setStartScreen(in window: UIWindow?) {
-        navigationController.setViewControllers([homeViewController], animated: false)
+        navigationController.setViewControllers([initialViewController], animated: false)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
-    func showAddVirtualObjectViewController(from source: SourceViewController) {
-        let addVirtualObjectViewController: AddVirtualObjectViewController = container.resolve()
-
-        switch source {
-        case .home:
-            navigationController.pushViewController(addVirtualObjectViewController, animated: true)
-        case .scanRoom:
-            replaceLastViewController(with: addVirtualObjectViewController)
-        default:
-            return
-        }
+    func showAddVirtualObjectLandingViewController() {
+        let addVirtualObjectLandingViewController: AddVirtualObjectLandingViewController = container.resolve()
+        replaceLastViewController(with: addVirtualObjectLandingViewController)
     }
 
-    func showScanRoomViewController(from source: SourceViewController) {
-        let scanRoomViewController: ScanRoomViewController = container.resolve()
+    func showAddVirtualObjectViewController() {
+        let addVirtualObjectViewController: AddVirtualObjectViewController = container.resolve()
+        navigationController.pushViewController(addVirtualObjectViewController, animated: true)
+    }
 
-        switch source {
-        case .home:
-            navigationController.pushViewController(scanRoomViewController, animated: true)
-        case .addVirtualObject:
-            replaceLastViewController(with: scanRoomViewController)
-        default:
-            return
-        }
+    func showScanRoomLandingViewController() {
+        let scanRoomLandingViewController: ScanRoomLandingViewController = container.resolve()
+        replaceLastViewController(with: scanRoomLandingViewController)
+    }
+
+    func showScanRoomViewController() {
+        let scanRoomViewController: ScanRoomViewController = container.resolve()
+        navigationController.pushViewController(scanRoomViewController, animated: true)
     }
 
     func presentSwitchModuleSheet() {
         let switchModuleViewController: SwitchModuleViewController = container.resolve()
         let modalViewController = ModalViewController(childViewController: switchModuleViewController)
         navigationController.present(modalViewController, animated: true)
+    }
+
+    func switchModule() {
+        if navigationController.viewControllers.last is ScanRoomLandingViewController {
+            showAddVirtualObjectLandingViewController()
+        } else if navigationController.viewControllers.last is AddVirtualObjectLandingViewController {
+            showScanRoomLandingViewController()
+        }
     }
 
 }
@@ -87,8 +89,8 @@ extension AppRouter: UINavigationControllerDelegate {
         to toVC: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
         guard
-            fromVC is AddVirtualObjectViewController && toVC is ScanRoomViewController ||
-            fromVC is ScanRoomViewController && toVC is AddVirtualObjectViewController
+            fromVC is AddVirtualObjectLandingViewController && toVC is ScanRoomLandingViewController ||
+            fromVC is ScanRoomLandingViewController && toVC is AddVirtualObjectLandingViewController
         else { return nil }
 
         return TransitionManager(duration: 1.5)

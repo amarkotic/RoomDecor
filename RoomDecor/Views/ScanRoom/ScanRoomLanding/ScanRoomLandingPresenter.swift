@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class ScanRoomPresenter {
+class ScanRoomLandingPresenter {
 
     private let appRouter: AppRouter
 
@@ -14,8 +14,12 @@ class ScanRoomPresenter {
         case .tap:
             appRouter.presentSwitchModuleSheet()
         case .longPress:
-            appRouter.showAddVirtualObjectViewController(from: .scanRoom)
+            appRouter.switchModule()
         }
+    }
+
+    func startRoomScanTapped() {
+        appRouter.showScanRoomViewController()
     }
 
 }

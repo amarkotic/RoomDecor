@@ -10,7 +10,6 @@ class AddVirtualObjectViewController: UIViewController {
 
     var sceneView: ARSCNView!
     var addVirtualObjectButton: UIButton!
-    var switchModuleIcon: SwitchModuleIcon!
 
     private var screenCenter: CGPoint?
     private var presenter: AddVirtualObjectPresenter!
@@ -61,13 +60,6 @@ class AddVirtualObjectViewController: UIViewController {
             .throttledTap()
             .sink { [weak self] _ in
                 self?.addVirtualObject()
-            }
-            .store(in: &disposables)
-
-        switchModuleIcon
-            .iconInteraction
-            .sink { [weak self] interaction in
-                self?.presenter.switchButtonInteracted(with: interaction)
             }
             .store(in: &disposables)
     }
