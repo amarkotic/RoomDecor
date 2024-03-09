@@ -3,9 +3,9 @@ import Combine
 
 class AddVirtualObjectLandingViewController: UIViewController {
 
-    let startButtonSize = CGSize(width: 80, height: 60)
+    let startButtonHeight: CGFloat = 60
 
-    var switchModuleIcon: SwitchModuleIcon!
+    var navBarView: NavBarView!
     var startButton: UIButton!
 
     private var disposables = Set<AnyCancellable>()
@@ -29,7 +29,8 @@ class AddVirtualObjectLandingViewController: UIViewController {
     }
 
     private func bindViews() {
-        switchModuleIcon
+        navBarView
+            .switchIcon
             .iconInteraction
             .sink { [weak self] interaction in
                 self?.presenter.switchButtonInteracted(with: interaction)

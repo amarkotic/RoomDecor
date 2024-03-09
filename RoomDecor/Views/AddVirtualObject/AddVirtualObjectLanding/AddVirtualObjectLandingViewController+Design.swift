@@ -11,15 +11,20 @@ extension AddVirtualObjectLandingViewController {
     }
 
     public func createViews() {
-        switchModuleIcon = SwitchModuleIcon()
-        view.addSubview(switchModuleIcon)
+        navBarView = NavBarView()
+        view.addSubview(navBarView)
 
         startButton = UIButton()
         view.addSubview(startButton)
+
+        view.bringSubviewToFront(navBarView)
     }
 
     public func styleViews() {
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+
+        navBarView.set(title: LocalizableStrings.addVirtualObject.localized)
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
         startButton.setTitle(LocalizableStrings.share.localized, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
@@ -28,14 +33,15 @@ extension AddVirtualObjectLandingViewController {
     }
 
     public func defineLayoutForViews() {
-        switchModuleIcon.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(70)
-            $0.trailing.equalToSuperview().inset(30)
+        navBarView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(60)
         }
 
         startButton.snp.makeConstraints {
-            $0.bottom.leading.equalToSuperview().inset(30)
-            $0.size.equalTo(startButtonSize)
+            $0.bottom.leading.trailing.equalToSuperview().inset(30)
+            $0.height.equalTo(startButtonHeight)
         }
     }
 

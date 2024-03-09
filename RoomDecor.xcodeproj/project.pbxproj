@@ -58,6 +58,7 @@
 		65BB04DA2B4AD3F30037D11F /* ScanRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04D92B4AD3F30037D11F /* ScanRoomViewModel.swift */; };
 		65BB04E02B4AFB850037D11F /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB04DF2B4AFB850037D11F /* Models.scnassets */; };
 		65BB04E22B4B0C990037D11F /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */; };
+		65DDCB3C2B9CC60E004D96F1 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DDCB3B2B9CC60E004D96F1 /* NavBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		65BB04D92B4AD3F30037D11F /* ScanRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRoomViewModel.swift; sourceTree = "<group>"; };
 		65BB04DF2B4AFB850037D11F /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		65BB04E12B4B0C990037D11F /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		65DDCB3B2B9CC60E004D96F1 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 		6544478A2B9C92760021584B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				65DDCB3A2B9CC5FC004D96F1 /* NavBarView */,
 				6544478B2B9C927C0021584B /* ModalViewController */,
 			);
 			path = Components;
@@ -423,6 +426,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		65DDCB3A2B9CC5FC004D96F1 /* NavBarView */ = {
+			isa = PBXGroup;
+			children = (
+				65DDCB3B2B9CC60E004D96F1 /* NavBarView.swift */,
+			);
+			path = NavBarView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -558,6 +569,7 @@
 				6543F98A2B9B766800CFD43A /* String+Localizable.swift in Sources */,
 				6508B2482B9C88A800311B0C /* SheetDissmisType.swift in Sources */,
 				6583EE8C2B9CB34C009328C9 /* ScanRoomLandingPresenter.swift in Sources */,
+				65DDCB3C2B9CC60E004D96F1 /* NavBarView.swift in Sources */,
 				6508B24A2B9C893600311B0C /* SwitchModulePresenter.swift in Sources */,
 				659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */,
 				65BB04C32B49F2A30037D11F /* Publisher+Extensions.swift in Sources */,

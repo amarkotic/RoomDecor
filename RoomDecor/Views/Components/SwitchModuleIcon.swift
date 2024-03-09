@@ -71,7 +71,6 @@ extension SwitchModuleIcon {
 
     func defineLayoutForViews() {
         imageView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(defaultPadding)
             $0.size.equalTo(imageViewSize)
         }
     }
