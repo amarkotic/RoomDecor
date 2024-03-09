@@ -3,4 +3,133 @@
    uuid = "2D676E05-CD36-45DC-ACEC-8B84D1C8E7F3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28EFCF01-CBEE-4095-9CD8-B6B82616612F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoomDecor/Coordinator/AppRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "switchModule()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0E3CEAB-24A2-481F-8FD0-7EF6C9375067"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoomDecor/Coordinator/AppRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "switchModule()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C11D2446-9156-4B06-92EE-F3614472DD64"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoomDecor/Views/ScanRoom/ScanRoomLanding/ScanRoomLandingPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "switchButtonInteracted(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7384D128-D164-498A-8076-F82F1D01B466"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoomDecor/Views/AddVirtualObject/AddVirtualObjectLanding/AddVirtualObjectLandingPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "switchButtonInteracted(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED48E952-02F3-4773-96C1-3F26902E9D0B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoomDecor/Views/ScanRoom/ScanRoomLanding/ScanRoomLandingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "bindViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ED48E952-02F3-4773-96C1-3F26902E9D0B - 639ef048520060d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RoomDecor.ScanRoomLandingViewController.bindViews() -&gt; ()"
+                  moduleName = "RoomDecor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antoniomarkotic/Documents/Five/RoomDecor/RoomDecor/Views/ScanRoom/ScanRoomLanding/ScanRoomLandingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "ED48E952-02F3-4773-96C1-3F26902E9D0B - b60d06c4fcff4852"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RoomDecor.SwitchModuleInteractionType) -&gt; () in RoomDecor.ScanRoomLandingViewController.bindViews() -&gt; ()"
+                  moduleName = "RoomDecor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antoniomarkotic/Documents/Five/RoomDecor/RoomDecor/Views/ScanRoom/ScanRoomLanding/ScanRoomLandingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "ED48E952-02F3-4773-96C1-3F26902E9D0B - b60d06c4fcff4852"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RoomDecor.SwitchModuleInteractionType) -&gt; () in RoomDecor.ScanRoomLandingViewController.bindViews() -&gt; ()"
+                  moduleName = "RoomDecor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antoniomarkotic/Documents/Five/RoomDecor/RoomDecor/Views/ScanRoom/ScanRoomLanding/ScanRoomLandingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

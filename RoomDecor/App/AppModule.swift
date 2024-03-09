@@ -17,10 +17,11 @@ class AppModule {
 
     func registerAllServices(in container: Resolver) {
         registerAppRouter(in: container)
-        registerHomeViewController(in: container)
         registerAddVirtualObjectViewController(in: container)
         registerScanRoomViewController(in: container)
         registerSwitchModuleViewController(in: container)
+        registerScanRoomLandingViewController(in: container)
+        registerAddVirtualObjectLandingViewController(in: container)
     }
 
     private func registerAppRouter(in container: Resolver) {
@@ -29,37 +30,19 @@ class AppModule {
             .scope(.application)
     }
 
-    private func registerHomeViewController(in container: Resolver) {
-        container
-            .register { HomeViewController(presenter: container.resolve()) }
-            .scope(.unique)
-
-        container
-            .register { HomePresenter(appRouter: container.resolve()) }
-            .scope(.unique)
-    }
-
     private func registerAddVirtualObjectViewController(in container: Resolver) {
         container
-            .register { AddVirtualObjectViewController(presenter: container.resolve()) }
-            .scope(.unique)
-
-        container
-            .register { AddVirtualObjectPresenter(appRouter: container.resolve()) }
+            .register { AddVirtualObjectViewController() }
             .scope(.unique)
     }
 
     private func registerScanRoomViewController(in container: Resolver) {
         container
-            .register { ScanRoomViewController(viewModel: container.resolve(), presenter: container.resolve()) }
+            .register { ScanRoomViewController(viewModel: container.resolve()) }
             .scope(.unique)
 
         container
             .register { ScanRoomViewModel() }
-            .scope(.unique)
-
-        container
-            .register { ScanRoomPresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 
@@ -70,6 +53,26 @@ class AppModule {
 
         container
             .register { SwitchModulePresenter(appRouter: container.resolve()) }
+            .scope(.unique)
+    }
+
+    private func registerScanRoomLandingViewController(in container: Resolver) {
+        container
+            .register { ScanRoomLandingViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { ScanRoomLandingPresenter(appRouter: container.resolve()) }
+            .scope(.unique)
+    }
+
+    private func registerAddVirtualObjectLandingViewController(in container: Resolver) {
+        container
+            .register { AddVirtualObjectLandingViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { AddVirtualObjectLandingPresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 

@@ -10,18 +10,10 @@ class AddVirtualObjectViewController: UIViewController {
 
     var sceneView: ARSCNView!
     var addVirtualObjectButton: UIButton!
-    var switchModuleIcon: SwitchModuleIcon!
 
     private var screenCenter: CGPoint?
-    private var presenter: AddVirtualObjectPresenter!
     private var disposables = Set<AnyCancellable>()
     private var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
-
-    convenience init(presenter: AddVirtualObjectPresenter) {
-        self.init()
-
-        self.presenter = presenter
-    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,13 +53,6 @@ class AddVirtualObjectViewController: UIViewController {
             .throttledTap()
             .sink { [weak self] _ in
                 self?.addVirtualObject()
-            }
-            .store(in: &disposables)
-
-        switchModuleIcon
-            .iconInteraction
-            .sink { [weak self] interaction in
-                self?.presenter.switchButtonInteracted(with: interaction)
             }
             .store(in: &disposables)
     }
