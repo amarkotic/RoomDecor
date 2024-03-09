@@ -20,6 +20,7 @@ class AppModule {
         registerHomeViewController(in: container)
         registerAddVirtualObjectViewController(in: container)
         registerScanRoomViewController(in: container)
+        registerSwitchModuleViewController(in: container)
     }
 
     private func registerAppRouter(in container: Resolver) {
@@ -59,6 +60,16 @@ class AppModule {
 
         container
             .register { ScanRoomPresenter(appRouter: container.resolve()) }
+            .scope(.unique)
+    }
+
+    private func registerSwitchModuleViewController(in container: Resolver) {
+        container
+            .register { SwitchModuleViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { SwitchModulePresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 

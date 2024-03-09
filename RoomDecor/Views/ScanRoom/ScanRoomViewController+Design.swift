@@ -18,8 +18,8 @@ extension ScanRoomViewController {
         shareButton = UIButton()
         view.addSubview(shareButton)
 
-        switchButton = UIButton()
-        view.addSubview(switchButton)
+        switchModuleIcon = SwitchModuleIcon()
+        view.addSubview(switchModuleIcon)
     }
 
     public func styleViews() {
@@ -27,9 +27,6 @@ extension ScanRoomViewController {
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.backgroundColor = .black
         shareButton.layer.cornerRadius = 4
-
-        switchButton.backgroundColor = .lightGray
-        switchButton.layer.cornerRadius = 12
     }
 
     public func defineLayoutForViews() {
@@ -42,10 +39,9 @@ extension ScanRoomViewController {
             $0.size.equalTo(shareButtonSize)
         }
 
-        switchButton.snp.makeConstraints {
+        switchModuleIcon.snp.makeConstraints {
             $0.top.equalToSuperview().inset(70)
             $0.trailing.equalToSuperview().inset(30)
-            $0.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
 

@@ -24,6 +24,29 @@
         }
       }
     },
+    "moduleSwitchSlideToConfirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Bestätigen wischen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slide to confirm"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Povuci za potvrdu"
+          }
+        }
+      }
+    },
     "scanTheRoom" : {
       "extractionState" : "manual",
       "localizations" : {

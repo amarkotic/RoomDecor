@@ -18,16 +18,13 @@ extension AddVirtualObjectViewController {
         addVirtualObjectButton = UIButton()
         view.addSubview(addVirtualObjectButton)
 
-        switchButton = UIButton()
-        view.addSubview(switchButton)
+        switchModuleIcon = SwitchModuleIcon()
+        view.addSubview(switchModuleIcon)
     }
 
     public func styleViews() {
         addVirtualObjectButton.setTitle(LocalizableStrings.addVirtualObject.localized, for: .normal)
         addVirtualObjectButton.backgroundColor = .systemBlue
-
-        switchButton.backgroundColor = .lightGray
-        switchButton.layer.cornerRadius = 12
     }
 
     public func defineLayoutForViews() {
@@ -41,10 +38,9 @@ extension AddVirtualObjectViewController {
             $0.size.equalTo(buttonSize)
         }
 
-        switchButton.snp.makeConstraints {
+        switchModuleIcon.snp.makeConstraints {
             $0.top.equalToSuperview().inset(70)
             $0.trailing.equalToSuperview().inset(30)
-            $0.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
 

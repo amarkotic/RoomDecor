@@ -9,8 +9,13 @@ class AddVirtualObjectPresenter {
         self.appRouter = appRouter
     }
 
-    func switchButtonTapped() {
-        appRouter.presentScanRoomViewController(from: .other)
+    func switchButtonInteracted(with interaction: SwitchModuleInteractionType) {
+        switch interaction {
+        case .tap:
+            appRouter.presentSwitchModuleSheet()
+        case .longPress:
+            appRouter.showScanRoomViewController(from: .addVirtualObject)
+        }
     }
 
 }
