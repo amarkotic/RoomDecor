@@ -20,6 +20,8 @@ extension AddVirtualObjectViewController {
     }
 
     public func styleViews() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+
         addVirtualObjectButton.setTitle(LocalizableStrings.addVirtualObject.localized, for: .normal)
         addVirtualObjectButton.backgroundColor = .systemBlue
     }
