@@ -1,0 +1,29 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "scanTheRoom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scannen Sie den Raum"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan the room"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeniraj sobu"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

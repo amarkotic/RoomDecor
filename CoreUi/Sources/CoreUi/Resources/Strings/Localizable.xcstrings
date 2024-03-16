@@ -1,0 +1,75 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "moduleSwitchSlideToConfirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Bestätigen wischen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slide to confirm"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Povuci za potvrdu"
+          }
+        }
+      }
+    },
+    "share" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teilen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podijeli"
+          }
+        }
+      }
+    },
+    "start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Započni"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
