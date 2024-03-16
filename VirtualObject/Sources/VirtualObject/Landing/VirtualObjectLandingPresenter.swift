@@ -19,8 +19,8 @@ public class VirtualObjectLandingPresenter {
         }
     }
 
-    func startVirtualObject() {
-        appRouter.showVirtualObjectViewController()
+    func startVirtualObject(for type: VirtualObjectType) {
+        appRouter.showVirtualObjectViewController(for: type)
     }
 
 }
