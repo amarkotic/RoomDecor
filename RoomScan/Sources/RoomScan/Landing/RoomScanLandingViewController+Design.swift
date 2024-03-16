@@ -27,7 +27,7 @@ extension RoomScanLandingViewController {
         navBarView.set(title: LocalizableStrings.scanTheRoom.localized)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        startRoomScanButton.setTitle(LocalizableStrings.start.localized, for: .normal)
+        startRoomScanButton.setTitle(CoreUi.LocalizableStrings.start.localized, for: .normal)
         startRoomScanButton.setTitleColor(.white, for: .normal)
         startRoomScanButton.backgroundColor = .black
         startRoomScanButton.layer.cornerRadius = 4

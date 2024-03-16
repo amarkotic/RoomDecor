@@ -23,7 +23,7 @@ extension RoomScanViewController {
     public func styleViews() {
         navigationController?.setNavigationBarHidden(false, animated: false)
 
-        shareButton.setTitle(LocalizableStrings.share.localized, for: .normal)
+        shareButton.setTitle(CoreUi.LocalizableStrings.share.localized, for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.backgroundColor = .black
         shareButton.layer.cornerRadius = 4
