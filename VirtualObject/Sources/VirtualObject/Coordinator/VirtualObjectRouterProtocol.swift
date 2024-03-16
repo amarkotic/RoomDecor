@@ -1,6 +1,6 @@
 public protocol VirtualObjectRouterProtocol {
 
-    func showVirtualObjectViewController()
+    func showVirtualObjectViewController(for type: VirtualObjectType)
 
     func presentSwitchModuleSheet()
 

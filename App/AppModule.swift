@@ -37,9 +37,11 @@ class AppModule {
     }
 
     private func registerVirtualObjectViewController(in container: Resolver) {
-        container
-            .register { VirtualObjectViewController() }
-            .scope(.unique)
+        container.register { (_, args) -> VirtualObjectViewController in
+            let type: VirtualObjectType = args()
+            return VirtualObjectViewController(type: type)
+        }
+        .scope(.unique)
     }
 
     private func registerRoomScanViewController(in container: Resolver) {

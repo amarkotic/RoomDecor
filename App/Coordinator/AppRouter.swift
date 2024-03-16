@@ -10,7 +10,7 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: RoomScanLandingViewController = container.resolve()
+        let initialViewController: VirtualObjectLandingViewController = container.resolve()
         return initialViewController
     }()
 
@@ -34,8 +34,8 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
         replaceLastViewController(with: virtualObjectLandingViewController)
     }
 
-    func showVirtualObjectViewController() {
-        let virtualObjectViewController: VirtualObjectViewController = container.resolve()
+    func showVirtualObjectViewController(for type: VirtualObjectType) {
+        let virtualObjectViewController: VirtualObjectViewController = container.resolve(args: type)
         navigationController.pushViewController(virtualObjectViewController, animated: true)
     }
 

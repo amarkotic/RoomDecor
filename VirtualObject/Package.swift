@@ -21,6 +21,9 @@ let package = Package(
             dependencies: [
                 "CoreUi",
                 .product(name: "SnapKit", package: "SnapKit")
+            ],
+            resources: [
+                .process("Resources/3DModels")
             ]),
         .testTarget(
             name: "VirtualObjectTests",
