@@ -3,7 +3,7 @@ import UIKit
 
 public class SwitchModuleViewController: UIViewController {
 
-    let defaultMargin: CGFloat = 16
+    let defaultPadding: CGFloat = 16
     let defaultSpacing: CGFloat = 22
 
     var stackView: UIStackView!

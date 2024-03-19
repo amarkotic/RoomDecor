@@ -10,7 +10,7 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: VirtualObjectLandingViewController = container.resolve()
+        let initialViewController: RoomScanLandingViewController = container.resolve()
         return initialViewController
     }()
 
@@ -20,6 +20,10 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
         super.init()
 
         navigationController.delegate = self
+    }
+
+    private var currentViewController: UIViewController? {
+        navigationController.viewControllers.last
     }
 
     func setStartScreen(in window: UIWindow?) {
@@ -65,6 +69,12 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
         } else if navigationController.viewControllers.last is VirtualObjectLandingViewController {
             showRoomScanLandingViewController()
         }
+    }
+
+    func presentShareSheet(for items: [URL]) {
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = currentViewController?.view
+        currentViewController?.present(activityViewController, animated: true, completion: nil)
     }
 
 }

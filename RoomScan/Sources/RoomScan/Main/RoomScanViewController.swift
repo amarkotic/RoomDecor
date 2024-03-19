@@ -4,18 +4,18 @@ import UIKit
 
 public class RoomScanViewController: UIViewController {
 
+    let defaultPadding: CGFloat = 16
     let shareButtonSize = CGSize(width: 80, height: 60)
 
     var roomCaptureView: RoomCaptureView!
     var shareButton: UIButton!
 
-    var viewModel: RoomScanViewModel
-
     private var disposables = Set<AnyCancellable>()
+    private let presenter: RoomScanPresenter!
     private var capturedRoom: CapturedRoom?
 
-    public init(viewModel: RoomScanViewModel) {
-        self.viewModel = viewModel
+    public init(presenter: RoomScanPresenter) {
+        self.presenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,28 +31,20 @@ public class RoomScanViewController: UIViewController {
         bindViews()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.isHidden = false
+    }
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        viewModel.actions.send(.startSession)
+        startSession()
     }
 
     private func bindViews() {
-        viewModel
-            .actions
-            .sink { [weak self] action in
-                switch action {
-                case .startSession:
-                    self?.startSession()
-                case .export:
-                    self?.export()
-                default:
-                    return
-                }
-            }
-            .store(in: &disposables)
-
-        viewModel
+        presenter
             .$canExport
             .sink { [weak self] canExport in
                 self?.shareButton.isHidden = !canExport
@@ -62,7 +54,7 @@ public class RoomScanViewController: UIViewController {
         shareButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.presentShareSheet()
+                self?.exportRoomModel()
             }
             .store(in: &disposables)
     }
@@ -72,20 +64,14 @@ public class RoomScanViewController: UIViewController {
         roomCaptureView?.captureSession.run(configuration: sessionConfig)
     }
 
-    private func export() {
+    private func exportRoomModel() {
         do {
-            try capturedRoom?.export(to: viewModel.exportUrl)
-            viewModel.showShareSheet = true
+            try capturedRoom?.export(to: presenter.exportUrl)
+            presenter.presentShareSheet(for: [])
         } catch {
             print(error.localizedDescription)
         }
-    }
 
-    private func presentShareSheet() {
-        let items = [viewModel.exportUrl]
-        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
     }
 
 }
@@ -96,7 +82,7 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
     public func captureSession(_ session: RoomCaptureSession, didUpdate room: CapturedRoom) {
         capturedRoom = room
         DispatchQueue.main.async {
-            self.viewModel.canExport = true
+            self.presenter.canExport = true
         }
     }
 

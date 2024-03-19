@@ -33,7 +33,7 @@ extension SwitchModuleViewController {
         }
 
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(16)
+            $0.edges.equalToSuperview().inset(defaultPadding)
         }
 
         sliderView.snp.makeConstraints {

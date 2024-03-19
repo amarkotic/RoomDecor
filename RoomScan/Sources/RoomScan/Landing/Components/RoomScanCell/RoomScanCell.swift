@@ -1,10 +1,11 @@
 import UIKit
 
-class VirtualObjectCell: UICollectionViewCell {
+class RoomScanCell: UICollectionViewCell {
 
-    static let reuseIdentifier = String(describing: VirtualObjectCell.self)
+    static let reuseIdentifier = String(describing: RoomScanCell.self)
+    static let height: CGFloat = 120
 
-    var cardView: VirtualObjectCardView!
+    var cardView: RoomScanCardView!
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,13 +17,13 @@ class VirtualObjectCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(type: VirtualObjectType) {
-        cardView.set(type: type)
+    func set(model: RoomScanModel) {
+        cardView.set(model: model)
     }
 
 }
 
-extension VirtualObjectCell {
+extension RoomScanCell {
 
     public func buildViews() {
         createViews()
@@ -31,7 +32,7 @@ extension VirtualObjectCell {
     }
 
     public func createViews() {
-        cardView = VirtualObjectCardView()
+        cardView = RoomScanCardView()
         addSubview(cardView)
     }
 

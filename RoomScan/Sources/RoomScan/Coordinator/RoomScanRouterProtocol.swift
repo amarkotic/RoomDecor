@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol RoomScanRouterProtocol {
 
     func showRoomScanViewController()
@@ -5,5 +7,7 @@ public protocol RoomScanRouterProtocol {
     func presentSwitchModuleSheet()
 
     func switchModule()
+
+    func presentShareSheet(for items: [URL])
 
 }

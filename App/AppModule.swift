@@ -46,11 +46,11 @@ class AppModule {
 
     private func registerRoomScanViewController(in container: Resolver) {
         container
-            .register { RoomScanViewController(viewModel: container.resolve()) }
+            .register { RoomScanViewController(presenter: container.resolve()) }
             .scope(.unique)
 
         container
-            .register { RoomScanViewModel() }
+            .register { RoomScanPresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 
