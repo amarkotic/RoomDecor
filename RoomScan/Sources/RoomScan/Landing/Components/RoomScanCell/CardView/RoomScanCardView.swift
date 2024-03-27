@@ -18,8 +18,8 @@ class RoomScanCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(model: RoomScanModel) {
-        titleLabel.text = model.date
+    func set(model: RoomScanViewModel) {
+        titleLabel.text = model.url.absoluteString
     }
 
 }

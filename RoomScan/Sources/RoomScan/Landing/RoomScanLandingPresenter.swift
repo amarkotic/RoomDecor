@@ -5,13 +5,13 @@ import CoreUi
 
 public class RoomScanLandingPresenter {
 
-    var roomScanModels: [RoomScanModel] = []
+    var roomScanModels: [RoomScanViewModel] = []
 
     private let appRouter: RoomScanRouterProtocol
 
     public init(appRouter: RoomScanRouterProtocol) {
         self.appRouter = appRouter
-        self.roomScanModels = savedFilesUrls.map { RoomScanModel(date: "date", url: $0) }
+        self.roomScanModels = savedFilesUrls.map { RoomScanViewModel(url: $0) }
     }
 
     func switchButtonInteracted(with interaction: SwitchModuleInteractionType) {

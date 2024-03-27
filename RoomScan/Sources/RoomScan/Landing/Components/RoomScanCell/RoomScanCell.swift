@@ -17,7 +17,7 @@ class RoomScanCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(model: RoomScanModel) {
+    func set(model: RoomScanViewModel) {
         cardView.set(model: model)
     }
 

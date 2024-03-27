@@ -5,8 +5,8 @@ import CoreUi
 
 public class RoomScanLandingViewController: UIViewController {
 
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, RoomScanModel>
-    private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, RoomScanModel>
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, RoomScanViewModel>
+    private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, RoomScanViewModel>
 
     let defaultPadding: CGFloat = 8
     let navBarHeight: CGFloat = 60
@@ -20,7 +20,7 @@ public class RoomScanLandingViewController: UIViewController {
     private var disposables = Set<AnyCancellable>()
     private var dataSource: DataSource!
 
-    private var onItemSelectedSubject = PassthroughSubject<RoomScanModel, Never>()
+    private var onItemSelectedSubject = PassthroughSubject<RoomScanViewModel, Never>()
 
     public init(presenter: RoomScanLandingPresenter) {
         self.presenter = presenter
@@ -70,11 +70,11 @@ public class RoomScanLandingViewController: UIViewController {
             .store(in: &disposables)
     }
 
-    private func set(items: [RoomScanModel]) {
+    private func set(items: [RoomScanViewModel]) {
         updateSnapshot(items: items)
     }
 
-    private func updateSnapshot(items: [RoomScanModel]) {
+    private func updateSnapshot(items: [RoomScanViewModel]) {
         var snapshot = DataSourceSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(items)
