@@ -1,4 +1,6 @@
+import Combine
 import UIKit
+import CoreUi
 
 class RoomScanCell: UICollectionViewCell {
 
@@ -6,6 +8,13 @@ class RoomScanCell: UICollectionViewCell {
     static let height: CGFloat = 120
 
     var cardView: RoomScanCardView!
+
+    var disposables = Set<AnyCancellable>()
+    var shareTapped: AnyPublisher<GesturePublisher.Output, Never> {
+        cardView
+            .shareButton
+            .throttledTap()
+    }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,6 +24,12 @@ class RoomScanCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+
+        disposables.removeAll()
     }
 
     func set(model: RoomScanViewModel) {

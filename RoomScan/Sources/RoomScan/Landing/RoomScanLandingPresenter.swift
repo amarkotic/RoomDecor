@@ -11,7 +11,9 @@ public class RoomScanLandingPresenter {
 
     public init(appRouter: RoomScanRouterProtocol) {
         self.appRouter = appRouter
-        self.roomScanModels = savedFilesUrls.map { RoomScanViewModel(url: $0) }
+        self.roomScanModels = savedFilesUrls
+            .map { RoomScanViewModel(url: $0) }
+            .sorted { ($0.extractedDateTime ?? Date.distantPast) > ($1.extractedDateTime ?? Date.distantPast) }
     }
 
     func switchButtonInteracted(with interaction: SwitchModuleInteractionType) {

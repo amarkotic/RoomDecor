@@ -91,6 +91,13 @@ public class RoomScanLandingViewController: UIViewController {
                         for: indexPath) as? RoomScanCell
                 else { return nil }
 
+                cell
+                    .shareTapped
+                    .sink { [weak self] _ in
+                        self?.onItemSelectedSubject.send(item)
+                    }
+                    .store(in: &cell.disposables)
+
                 cell.set(model: item)
 
                 return cell
@@ -110,12 +117,6 @@ extension RoomScanLandingViewController: UICollectionViewDelegateFlowLayout, UIC
         let width = collectionView.bounds.width - insets.left - insets.right
         let height = RoomScanCell.height
         return CGSize(width: width, height: height)
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-
-        onItemSelectedSubject.send(item)
     }
 
 }

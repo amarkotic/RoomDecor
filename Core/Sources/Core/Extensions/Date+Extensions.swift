@@ -2,34 +2,22 @@ import Foundation
 
 public extension Date {
 
-    private static var currentDateTime: Date {
-        Date()
-    }
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
 
-    static func formattedDate(from date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateTimeFormat.defaultDate.rawValue
+    // Function to format a Date object
+    static func format(_ date: Date, using format: DateTimeFormat) -> String {
+        dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: date)
     }
 
-    static func formattedTime(from date: Date) -> String {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = DateTimeFormat.defaultTime.rawValue
-        return timeFormatter.string(from: date)
-    }
-
-    static var timestamp: String {
-        let currentDate = formattedDate(from: currentDateTime)
-        let currentTime = formattedTime(from: currentDateTime)
-        return "\(currentDate)_\(currentTime)"
-    }
-
-    // Decode a date string in the format "yyyy-MM-dd_HH-mm-ss"
-    static func decodeFromString(_ dateString: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+    // Function to decode a string to a Date object
+    static func decode(from dateString: String, using format: DateTimeFormat) -> Date? {
+        dateFormatter.dateFormat = format.rawValue
         return dateFormatter.date(from: dateString)
     }
 

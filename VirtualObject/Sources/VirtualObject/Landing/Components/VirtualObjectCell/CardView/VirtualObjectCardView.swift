@@ -20,7 +20,9 @@ class VirtualObjectCardView: UIView {
 
     func set(type: VirtualObjectType) {
         titleLabel.text = type.title
-        load3DModelThumbnail(fileName: type.rawValue)
+        guard let url = Bundle.module.url(forResource: type.rawValue, withExtension: "usdz") else { return }
+
+        imageView.load3DModelThumbnail(from: url)
     }
 
 }
@@ -64,41 +66,6 @@ extension VirtualObjectCardView {
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(16)
         }
-    }
-
-}
-
-// Create a thumbnail from usdz items
-extension VirtualObjectCardView {
-
-    private func load3DModelThumbnail(fileName: String) {
-        guard let url = Bundle.module.url(forResource: fileName, withExtension: "usdz") else {
-            print("Failed to find URL for model")
-            return
-        }
-
-        guard let scene = try? SCNScene(url: url) else {
-            print("Failed to load model")
-            return
-        }
-
-        let sceneView = SCNView(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024))
-        sceneView.scene = scene
-
-        // Configure the camera
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
-        scene.rootNode.addChildNode(cameraNode)
-
-        // Configure the sceneView
-        sceneView.backgroundColor = .clear
-        sceneView.antialiasingMode = .multisampling4X
-        sceneView.autoenablesDefaultLighting = true
-
-        // Attach the snapshot from sceneView to card's imageView
-        let image = sceneView.snapshot()
-        imageView.image = image
     }
 
 }
