@@ -1,1 +1,16 @@
+.DS_Store
+
+# User settings
+xcuserdata/
+
+# Build output
+**/build
+.build/
+DerivedData/
+
+# Swift Package Manager
+.swiftpm/
+!/.swiftpm/xcode/package.xcworkspace
+
+# Xcode specific
 *.xcuserstate
