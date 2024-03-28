@@ -35,7 +35,7 @@ extension RoomScanViewController {
         }
 
         shareButton.snp.makeConstraints {
-            $0.bottom.leading.equalToSuperview().inset(30)
+            $0.bottom.leading.equalToSuperview().inset(defaultPadding * 2)
             $0.size.equalTo(shareButtonSize)
         }
     }

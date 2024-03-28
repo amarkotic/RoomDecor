@@ -12,6 +12,7 @@ let package = Package(
             targets: ["VirtualObject"])
     ],
     dependencies: [
+        .package(name: "Core", path: "Core"),
         .package(name: "CoreUi", path: "CoreUi"),
         .package(url: "https://github.com/SnapKit/SnapKit", exact: "5.7.1")
     ],
@@ -19,6 +20,7 @@ let package = Package(
         .target(
             name: "VirtualObject",
             dependencies: [
+                "Core",
                 "CoreUi",
                 .product(name: "SnapKit", package: "SnapKit")
             ],

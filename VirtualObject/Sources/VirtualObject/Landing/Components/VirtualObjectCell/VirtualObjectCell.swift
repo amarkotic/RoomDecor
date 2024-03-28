@@ -2,8 +2,7 @@ import UIKit
 
 class VirtualObjectCell: UICollectionViewCell {
 
-    static let height: CGFloat = 170
-    static let reuseIdentifier = String(describing: VirtualObjectCardView.self)
+    static let reuseIdentifier = String(describing: VirtualObjectCell.self)
 
     var cardView: VirtualObjectCardView!
 

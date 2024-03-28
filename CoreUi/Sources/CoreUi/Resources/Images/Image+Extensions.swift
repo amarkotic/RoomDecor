@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 
     convenience init(with image: BundleImage) {
         self.init(named: image.rawValue, in: .module, with: .none)!
