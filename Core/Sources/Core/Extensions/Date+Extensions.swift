@@ -9,13 +9,13 @@ public extension Date {
         return formatter
     }()
 
-    // Function to format a Date object
+    // Create a String from Date object
     static func format(_ date: Date, using format: DateTimeFormat) -> String {
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: date)
     }
 
-    // Function to decode a string to a Date object
+    // Create a Date object from a String
     static func decode(from dateString: String, using format: DateTimeFormat) -> Date? {
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.date(from: dateString)

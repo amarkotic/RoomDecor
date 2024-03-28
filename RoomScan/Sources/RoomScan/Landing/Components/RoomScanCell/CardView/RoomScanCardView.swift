@@ -8,8 +8,9 @@ class RoomScanCardView: UIView {
 
     let defaultPadding: CGFloat = 8
 
-    var previewImage: UIImageView!
     var stackView: UIStackView!
+    var previewImage: UIImageView!
+    var timeStackView: UIStackView!
     var dateLabel: UILabel!
     var timeLabel: UILabel!
     var shareButton: UIButton!
@@ -41,20 +42,23 @@ extension RoomScanCardView {
     }
 
     func createViews() {
-        previewImage = UIImageView()
-        addSubview(previewImage)
-
         stackView = UIStackView()
         addSubview(stackView)
 
+        previewImage = UIImageView()
+        stackView.addArrangedSubview(previewImage)
+
+        timeStackView = UIStackView()
+        stackView.addArrangedSubview(timeStackView)
+
         dateLabel = UILabel()
-        stackView.addArrangedSubview(dateLabel)
+        timeStackView.addArrangedSubview(dateLabel)
 
         timeLabel = UILabel()
-        stackView.addArrangedSubview(timeLabel)
+        timeStackView.addArrangedSubview(timeLabel)
 
         shareButton = UIButton()
-        addSubview(shareButton)
+        stackView.addArrangedSubview(shareButton)
     }
 
     func styleViews() {
@@ -65,12 +69,16 @@ extension RoomScanCardView {
         layer.borderWidth = 2
         layer.borderColor = UIColor.black.cgColor
 
+        stackView.spacing = defaultPadding * 2
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
+
         previewImage.layer.cornerRadius = 4
         previewImage.layer.borderColor = UIColor.black.cgColor
         previewImage.layer.borderWidth = 1
 
-        stackView.axis = .vertical
-        stackView.spacing = 8
+        timeStackView.axis = .vertical
+        timeStackView.spacing = 8
 
         dateLabel.textColor = .black
         dateLabel.font = UIFont(name: "Futura", size: 18)
@@ -84,21 +92,15 @@ extension RoomScanCardView {
     }
 
     func defineLayoutForViews() {
+        stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(defaultPadding * 2)
+        }
+
         previewImage.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(defaultPadding * 3)
             $0.size.equalTo(CGSize(width: 60, height: 60))
         }
 
-        stackView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.leading.equalTo(previewImage.snp.trailing).offset(defaultPadding * 2)
-        }
-
         shareButton.snp.makeConstraints {
-            $0.leading.greaterThanOrEqualTo(stackView.snp.trailing).offset(defaultPadding * 2)
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(defaultPadding * 3)
             $0.size.equalTo(CGSize(width: 48, height: 48))
         }
     }
