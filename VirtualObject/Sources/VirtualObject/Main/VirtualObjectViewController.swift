@@ -2,7 +2,7 @@ import ARKit
 import UIKit
 import SnapKit
 import Combine
-import Core
+import CoreUi
 
 public class VirtualObjectViewController: UIViewController {
 
