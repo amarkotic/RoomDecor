@@ -81,10 +81,10 @@ extension RoomScanCardView {
         timeStackView.spacing = 8
 
         dateLabel.textColor = .black
-        titleLabel.font = UIFont(with: .futura, size: 18)
+        dateLabel.font = UIFont(with: .futura, size: 18)
 
         timeLabel.textColor = .darkGray
-        titleLabel.font = UIFont(with: .futura, size: 14)
+        timeLabel.font = UIFont(with: .futura, size: 14)
 
         let image = UIImage(systemImage: .share)
         shareButton.setImage(image, for: .normal)
