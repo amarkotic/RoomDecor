@@ -46,9 +46,8 @@ extension AuthorInfoView {
 
         imageView.image = UIImage(systemImage: .avatar)
         imageView.tintColor = .black
-        imageView.layer.cornerRadius = cornerRadius
-        imageView.layer.borderWidth = 3
-        imageView.clipsToBounds = true
+        imageView.roundAllCorners(withRadius: cornerRadius)
+        imageView.addBorder(width: 3, color: .gray)
 
         titleLabel.textColor = .black
         titleLabel.text = "Author"

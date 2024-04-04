@@ -63,10 +63,8 @@ extension SwitchModuleIcon {
     func styleViews() {
         imageView.image = UIImage(systemImage: .avatar)
         imageView.tintColor = .black
-        imageView.layer.cornerRadius = cornerRadius
-        imageView.layer.borderColor = UIColor.gray.cgColor
-        imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 3
+        imageView.roundAllCorners(withRadius: cornerRadius)
+        imageView.addBorder(width: 3, color: .gray)
     }
 
     func defineLayoutForViews() {

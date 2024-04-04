@@ -4,9 +4,11 @@ import SnapKit
 
 public class NavBarView: UIView {
 
+    let defaultPadding: CGFloat = 16
+    let imageViewSize = CGSize(width: 40, height: 40)
+
     var titleLabel: UILabel!
     var switchIcon: SwitchModuleIcon!
-    let imageViewSize: CGSize = CGSize(width: 40, height: 40)
 
     public var iconInteraction: AnyPublisher<SwitchModuleInteractionType, Never> {
         switchIcon
@@ -57,12 +59,12 @@ extension NavBarView {
 
     public func defineLayoutForViews() {
         titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(defaultPadding)
             $0.centerY.equalToSuperview()
         }
 
         switchIcon.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(16)
+            $0.trailing.equalToSuperview().inset(defaultPadding)
             $0.centerY.equalToSuperview()
             $0.size.equalTo(imageViewSize)
         }

@@ -9,6 +9,7 @@ public class RoomScanLandingViewController: UIViewController {
     private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, RoomScanViewModel>
 
     let defaultPadding: CGFloat = 8
+    let cornerRadius: CGFloat = 4
     let navBarHeight: CGFloat = 60
     let startButtonHeight: CGFloat = 60
 

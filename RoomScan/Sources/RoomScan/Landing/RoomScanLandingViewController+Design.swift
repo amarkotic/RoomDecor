@@ -41,7 +41,7 @@ extension RoomScanLandingViewController {
         startRoomScanButton.setTitle(CoreUi.LocalizableStrings.start.localized, for: .normal)
         startRoomScanButton.setTitleColor(.white, for: .normal)
         startRoomScanButton.backgroundColor = .black
-        startRoomScanButton.layer.cornerRadius = 4
+        startRoomScanButton.roundAllCorners(withRadius: cornerRadius)
     }
 
     public func defineLayoutForViews() {
@@ -66,7 +66,7 @@ extension RoomScanLandingViewController {
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = .init(top: 24, left: 16, bottom: 24, right: 16)
+        layout.sectionInset = .insets(vertical: 24, horizontal: 16)
         layout.minimumLineSpacing = 16
         return layout
     }

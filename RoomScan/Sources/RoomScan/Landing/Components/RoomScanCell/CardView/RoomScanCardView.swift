@@ -7,6 +7,9 @@ import CoreUi
 class RoomScanCardView: UIView {
 
     let defaultPadding: CGFloat = 8
+    let cornerRadius: CGFloat = .doublePadding
+    let previewImageSize = CGSize(width: 60, height: 60)
+    let shareButtonSize = CGSize(width: 48, height: 48)
 
     var stackView: UIStackView!
     var previewImage: UIImageView!
@@ -63,19 +66,16 @@ extension RoomScanCardView {
 
     func styleViews() {
         backgroundColor = .white
-        clipsToBounds = true
 
-        layer.cornerRadius = 16
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
+        roundAllCorners(withRadius: cornerRadius)
+        addBorder(width: 2, color: .black)
 
         stackView.spacing = defaultPadding * 2
         stackView.distribution = .fillProportionally
         stackView.alignment = .center
 
-        previewImage.layer.cornerRadius = 4
-        previewImage.layer.borderColor = UIColor.black.cgColor
-        previewImage.layer.borderWidth = 1
+        previewImage.roundAllCorners(withRadius: 4)
+        previewImage.addBorder(width: 1, color: .black)
 
         timeStackView.axis = .vertical
         timeStackView.spacing = 8
@@ -97,11 +97,11 @@ extension RoomScanCardView {
         }
 
         previewImage.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 60, height: 60))
+            $0.size.equalTo(previewImageSize)
         }
 
         shareButton.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 48, height: 48))
+            $0.size.equalTo(shareButtonSize)
         }
     }
 

@@ -139,7 +139,7 @@ extension SliderView {
 
     func styleViews() {
         contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = cornerRadius
+        contentView.roundAllCorners(withRadius: cornerRadius)
         contentView.backgroundColor = .gray
 
         sliderImageView.image = UIImage(with: .slider)

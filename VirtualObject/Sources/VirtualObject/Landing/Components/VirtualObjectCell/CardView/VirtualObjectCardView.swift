@@ -4,6 +4,9 @@ import SnapKit
 
 class VirtualObjectCardView: UIView {
 
+    let defaultPadding: CGFloat = 16
+    let cornerRadius: CGFloat = 16
+
     var stackView: UIStackView!
     var imageView: UIImageView!
     var titleLabel: UILabel!
@@ -48,10 +51,8 @@ extension VirtualObjectCardView {
 
     func styleViews() {
         backgroundColor = .white
-        layer.cornerRadius = 16
-        clipsToBounds = true
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
+        roundAllCorners(withRadius: cornerRadius)
+        addBorder(width: 2, color: .black)
 
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -64,7 +65,7 @@ extension VirtualObjectCardView {
 
     func defineLayoutForViews() {
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(16)
+            $0.edges.equalToSuperview().inset(defaultPadding)
         }
     }
 

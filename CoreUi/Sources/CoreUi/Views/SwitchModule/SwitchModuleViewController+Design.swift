@@ -29,7 +29,7 @@ extension SwitchModuleViewController {
 
     func defineLayoutForViews() {
         view.snp.makeConstraints {
-            $0.height.equalTo(116)
+            $0.height.equalTo(height)
         }
 
         stackView.snp.makeConstraints {
@@ -37,7 +37,7 @@ extension SwitchModuleViewController {
         }
 
         sliderView.snp.makeConstraints {
-            $0.height.equalTo(56)
+            $0.height.equalTo(sliderHeight)
         }
     }
 

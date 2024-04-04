@@ -8,6 +8,9 @@ public class VirtualObjectLandingViewController: UIViewController {
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, VirtualObjectType>
     private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, VirtualObjectType>
 
+    let defaultPadding: CGFloat = 8
+    let navBarHeight: CGFloat = 60
+
     var navBarView: NavBarView!
     var collectionView: UICollectionView!
 
