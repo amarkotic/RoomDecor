@@ -1,4 +1,5 @@
 import Foundation
+import Core
 
 public enum VirtualObjectType: String, CaseIterable {
 
@@ -30,7 +31,7 @@ public enum VirtualObjectType: String, CaseIterable {
     }
 
     var usdzFileName: String {
-        rawValue + ".usdz"
+        rawValue + FileType.usdz.fileExtension
     }
 
 }
