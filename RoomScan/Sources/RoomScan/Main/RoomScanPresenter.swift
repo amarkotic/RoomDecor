@@ -22,7 +22,11 @@ extension RoomScanPresenter {
 
     var exportUrl: URL {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileName = "scan_\(Date()).usdz"
+        let dateString = Date.format(Date(), using: .fullDateTime)
+        let fileName = "scan_"
+            .appending(dateString)
+            .appending(FileType.usdz.fileExtension)
+
         return documentsDirectory.appendingPathComponent(fileName)
     }
 

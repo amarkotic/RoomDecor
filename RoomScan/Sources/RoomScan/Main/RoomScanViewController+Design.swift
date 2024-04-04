@@ -26,7 +26,7 @@ extension RoomScanViewController {
         shareButton.setTitle(CoreUi.LocalizableStrings.share.localized, for: .normal)
         shareButton.setTitleColor(.white, for: .normal)
         shareButton.backgroundColor = .black
-        shareButton.layer.cornerRadius = 4
+        shareButton.roundAllCorners(withRadius: cornerRadius)
     }
 
     public func defineLayoutForViews() {

@@ -5,6 +5,8 @@ public class SwitchModuleViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
     let defaultSpacing: CGFloat = 22
+    let height: CGFloat = 116
+    let sliderHeight: CGFloat = 56
 
     var stackView: UIStackView!
     var authorInfoView: AuthorInfoView!

@@ -5,6 +5,7 @@ import UIKit
 public class RoomScanViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
+    let cornerRadius: CGFloat = 4
     let shareButtonSize = CGSize(width: 80, height: 60)
 
     var roomCaptureView: RoomCaptureView!
