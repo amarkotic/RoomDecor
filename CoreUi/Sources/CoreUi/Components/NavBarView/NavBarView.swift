@@ -1,6 +1,7 @@
 import UIKit
 import Combine
 import SnapKit
+import Core
 
 public class NavBarView: UIView {
 
@@ -53,7 +54,7 @@ extension NavBarView {
     public func styleViews() {
         backgroundColor = .white
 
-        titleLabel.font = UIFont(name: "Futura", size: 30)
+        titleLabel.font = UIFont(with: .futura, size: 30)
         titleLabel.textColor = .black
     }
 

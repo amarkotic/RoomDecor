@@ -60,7 +60,7 @@ extension VirtualObjectCardView {
         imageView.contentMode = .scaleAspectFit
 
         titleLabel.textColor = .black
-        titleLabel.font = UIFont(name: "Futura", size: 18)
+        titleLabel.font = UIFont(with: .futura, size: 18)
     }
 
     func defineLayoutForViews() {
