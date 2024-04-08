@@ -23,7 +23,8 @@ extension RoomScanLandingViewController {
         startRoomScanButton = UIButton()
         view.addSubview(startRoomScanButton)
 
-        view.bringSubviewToFront(navBarView)
+        loadingIndicator = UIActivityIndicatorView(style: .large)
+        startRoomScanButton.addSubview(loadingIndicator)
     }
 
     public func styleViews() {
@@ -42,6 +43,8 @@ extension RoomScanLandingViewController {
         startRoomScanButton.setTitleColor(.white, for: .normal)
         startRoomScanButton.backgroundColor = .black
         startRoomScanButton.roundAllCorners(withRadius: cornerRadius)
+
+        loadingIndicator.isHidden = true
     }
 
     public func defineLayoutForViews() {
@@ -60,6 +63,10 @@ extension RoomScanLandingViewController {
             $0.top.equalTo(collectionView.snp.bottom).offset(defaultPadding)
             $0.bottom.leading.trailing.equalToSuperview().inset(defaultPadding * 4)
             $0.height.equalTo(startButtonHeight)
+        }
+
+        loadingIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 

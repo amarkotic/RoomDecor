@@ -16,6 +16,7 @@ public class RoomScanLandingViewController: UIViewController {
     var navBarView: NavBarView!
     var collectionView: UICollectionView!
     var startRoomScanButton: UIButton!
+    var loadingIndicator: UIActivityIndicatorView!
 
     private let presenter: RoomScanLandingPresenter!
     private var disposables = Set<AnyCancellable>()
@@ -49,6 +50,12 @@ public class RoomScanLandingViewController: UIViewController {
         set(items: presenter.roomScanModels)
     }
 
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        hideLoader()
+    }
+
     private func bindViews() {
         navBarView
             .iconInteraction
@@ -66,7 +73,13 @@ public class RoomScanLandingViewController: UIViewController {
         startRoomScanButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.presenter.startRoomScanTapped()
+                guard let self else { return }
+
+                self.showLoader()
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.presenter.startRoomScanTapped()
+                }
             }
             .store(in: &disposables)
     }
@@ -103,6 +116,18 @@ public class RoomScanLandingViewController: UIViewController {
 
                 return cell
             })
+    }
+
+    private func showLoader() {
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        startRoomScanButton.titleLabel?.isHidden = true
+    }
+
+    private func hideLoader() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
+        startRoomScanButton.titleLabel?.isHidden = false
     }
 
 }

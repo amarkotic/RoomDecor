@@ -20,6 +20,12 @@ extension VirtualObjectLandingViewController {
         collectionView.delegate = self
         view.addSubview(collectionView)
 
+        loadingView = UIView()
+        view.addSubview(loadingView)
+
+        loadingIndicator = UIActivityIndicatorView(style: .large)
+        loadingView.addSubview(loadingIndicator)
+
         view.bringSubviewToFront(navBarView)
     }
 
@@ -35,6 +41,10 @@ extension VirtualObjectLandingViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isHidden = false
+
+        loadingView.isHidden = true
+        loadingView.backgroundColor = .darkGray
+        loadingView.layer.opacity = 0.85
     }
 
     public func defineLayoutForViews() {
@@ -47,6 +57,14 @@ extension VirtualObjectLandingViewController {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(navBarView.snp.bottom).offset(defaultPadding * 3)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+
+        loadingView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        loadingIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 

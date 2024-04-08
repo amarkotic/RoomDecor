@@ -13,6 +13,8 @@ public class VirtualObjectLandingViewController: UIViewController {
 
     var navBarView: NavBarView!
     var collectionView: UICollectionView!
+    var loadingView: UIView!
+    var loadingIndicator: UIActivityIndicatorView!
 
     private let virtualObjects = VirtualObjectType.allCases
     private let presenter: VirtualObjectLandingPresenter!
@@ -46,6 +48,12 @@ public class VirtualObjectLandingViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        hideLoader()
+    }
+
     private func bindViews() {
         navBarView
             .iconInteraction
@@ -56,7 +64,13 @@ public class VirtualObjectLandingViewController: UIViewController {
 
         onItemSelectedSubject
             .sink { [weak self] item in
-                self?.presenter.startVirtualObject(for: item)
+                guard let self else { return }
+
+                self.showLoader()
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.presenter.startVirtualObject(for: item)
+                }
             }
             .store(in: &disposables)
     }
@@ -82,6 +96,16 @@ public class VirtualObjectLandingViewController: UIViewController {
 
                 return cell
             })
+    }
+
+    private func showLoader() {
+        loadingView.isHidden = false
+        loadingIndicator.startAnimating()
+    }
+
+    private func hideLoader() {
+        loadingView.isHidden = true
+        loadingIndicator.stopAnimating()
     }
 
 }
