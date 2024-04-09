@@ -25,6 +25,9 @@ extension RoomScanLandingViewController {
 
         loadingIndicator = UIActivityIndicatorView(style: .large)
         startRoomScanButton.addSubview(loadingIndicator)
+
+        splashView = SplashView()
+        view.addSubview(splashView)
     }
 
     public func styleViews() {
@@ -45,6 +48,8 @@ extension RoomScanLandingViewController {
         startRoomScanButton.roundAllCorners(withRadius: cornerRadius)
 
         loadingIndicator.isHidden = true
+
+        splashView.isHidden = true
     }
 
     public func defineLayoutForViews() {
@@ -67,6 +72,10 @@ extension RoomScanLandingViewController {
 
         loadingIndicator.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+
+        splashView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 
