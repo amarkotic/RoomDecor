@@ -17,6 +17,7 @@ public class RoomScanLandingViewController: UIViewController {
     var collectionView: UICollectionView!
     var startRoomScanButton: UIButton!
     var loadingIndicator: UIActivityIndicatorView!
+    var splashView: SplashView!
 
     private let presenter: RoomScanLandingPresenter!
     private var disposables = Set<AnyCancellable>()
@@ -41,6 +42,17 @@ public class RoomScanLandingViewController: UIViewController {
         makeDataSource()
         set(items: presenter.roomScanModels)
         bindViews()
+    }
+
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        guard UserDefaults.isFirstLaunch() else { return }
+
+        splashView.isHidden = false
+        splashView.animate { [weak self] in
+            self?.splashView.isHidden = true
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {

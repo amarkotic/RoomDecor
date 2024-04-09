@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="o1v-su-uWh">
+                                <rect key="frame" x="76.666666666666686" y="311" width="240" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="AVB-ht-q2J"/>
+                                    <constraint firstAttribute="height" constant="230" id="yhm-rk-pgo"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sofa" translatesAutoresizingMaskIntoConstraints="NO" id="Gd3-Ty-uZl">
+                                <rect key="frame" x="126.66666666666669" y="376" width="140" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BZc-9J-2JS"/>
+                                    <constraint firstAttribute="width" constant="140" id="Uhj-nE-L8U"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoomDecor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF3-wY-q71">
+                                <rect key="frame" x="76.666666666666686" y="571" width="240" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="XqG-5I-mzm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="37.5"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.98431372640000003" green="0.89803922179999995" blue="0.8156862855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rF3-wY-q71" firstAttribute="top" secondItem="o1v-su-uWh" secondAttribute="bottom" constant="30" id="1eU-Or-0om"/>
+                            <constraint firstItem="rF3-wY-q71" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="O6q-zh-yf8"/>
+                            <constraint firstItem="Gd3-Ty-uZl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="R2y-L0-u43"/>
+                            <constraint firstItem="o1v-su-uWh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bRu-L2-jIb"/>
+                            <constraint firstItem="Gd3-Ty-uZl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="elt-iY-bE3"/>
+                            <constraint firstItem="o1v-su-uWh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hzd-Sp-9Qt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="frame" width="800" height="800"/>
+        <image name="sofa" width="800" height="800"/>
+    </resources>
+</document>
