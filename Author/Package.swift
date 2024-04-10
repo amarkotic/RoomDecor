@@ -12,12 +12,14 @@ let package = Package(
             targets: ["Author"])
     ],
     dependencies: [
+        .package(name: "CoreUi", path: "CoreUi"),
         .package(url: "https://github.com/SnapKit/SnapKit", exact: "5.7.1")
     ],
     targets: [
         .target(
             name: "Author",
             dependencies: [
+                "CoreUi",
                 .product(name: "SnapKit", package: "SnapKit")
             ]),
         .testTarget(

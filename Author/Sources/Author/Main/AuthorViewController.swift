@@ -1,9 +1,16 @@
 import Combine
 import UIKit
+import CoreUi
 
 public class AuthorViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
+
+    var scrollView: UIScrollView!
+    var contentView: UIView!
+    var stackView: UIStackView!
+    var headerView: HeaderView!
+    var dividerView: DividerView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: AuthorPresenter!

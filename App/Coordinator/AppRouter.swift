@@ -16,7 +16,7 @@ class AppRouter:
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
+        let initialViewController: AuthorViewController = container.resolve(args: false)
         return initialViewController
     }()
 

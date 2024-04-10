@@ -3,8 +3,10 @@ import UIKit
 public class DividerView: UIView {
 
     public enum DividerAxis {
+
         case vertical
         case horizontal
+
     }
 
     let axis: DividerAxis
@@ -24,9 +26,9 @@ public class DividerView: UIView {
 
         buildViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
