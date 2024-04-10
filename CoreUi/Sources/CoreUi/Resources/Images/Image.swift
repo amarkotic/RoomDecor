@@ -10,6 +10,7 @@ public enum BundleImage: String {
 public enum BundleSystemImage: String {
 
     case avatar = "person.crop.circle.fill"
+    case switchIcon = "arrow.left.arrow.right.circle"
     case share = "square.and.arrow.up"
 
 }

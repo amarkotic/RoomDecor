@@ -7,19 +7,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zum Bestätigen wischen"
+            "value" : "Schieben um das Modul zu wechseln"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Slide to confirm"
+            "value" : "Slide to switch module"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Povuci za potvrdu"
+            "value" : "Povuci za promjenu modula"
           }
         }
       }

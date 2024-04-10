@@ -56,6 +56,10 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     func presentSwitchModuleSheet() {
         let switchModuleViewController: SwitchModuleViewController = container.resolve()
         let modalViewController = ModalViewController(childViewController: switchModuleViewController)
+
+        switchModuleViewController.onDismiss = {
+            modalViewController.dismiss(animated: true)
+        }
         navigationController.present(modalViewController, animated: true)
     }
 
