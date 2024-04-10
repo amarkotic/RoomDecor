@@ -11,6 +11,7 @@ public class AuthorViewController: UIViewController {
     var stackView: UIStackView!
     var headerView: HeaderView!
     var dividerView: DividerView!
+    var projectsList: ProjectsListView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: AuthorPresenter!
