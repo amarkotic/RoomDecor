@@ -10,7 +10,7 @@ public class SwitchModulePresenter: SwitchModuleRouterProtocol {
     }
 
     public func authorViewTap() {
-        // TODO: - Implement author screen
+        appRouter.authorViewTap()
     }
 
     public func switchModule() {

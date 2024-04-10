@@ -1,5 +1,6 @@
 import UIKit
 import Resolver
+import Author
 import CoreUi
 import RoomScan
 import VirtualObject
@@ -25,6 +26,7 @@ class AppModule {
         registerSwitchModuleViewController(in: container)
         registerRoomScanLandingViewController(in: container)
         registerVirtualObjectLandingViewController(in: container)
+        registerAuthorViewController(in: container)
     }
 
     private func registerAppRouter(in container: Resolver) {
@@ -33,6 +35,7 @@ class AppModule {
             .implements(VirtualObjectRouterProtocol.self)
             .implements(RoomScanRouterProtocol.self)
             .implements(SwitchModuleRouterProtocol.self)
+            .implements(AuthorRouterProtocol.self)
             .scope(.application)
     }
 
@@ -83,6 +86,16 @@ class AppModule {
 
         container
             .register { VirtualObjectLandingPresenter(appRouter: container.resolve()) }
+            .scope(.unique)
+    }
+
+    private func registerAuthorViewController(in container: Resolver) {
+        container
+            .register { AuthorViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { AuthorPresenter(appRouter: container.resolve()) }
             .scope(.unique)
     }
 
