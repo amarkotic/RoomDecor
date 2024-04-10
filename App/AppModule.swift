@@ -66,8 +66,10 @@ class AppModule {
 
     private func registerRoomScanLandingViewController(in container: Resolver) {
         container
-            .register { RoomScanLandingViewController(presenter: container.resolve()) }
-            .scope(.unique)
+            .register { (_, args) -> RoomScanLandingViewController in
+                let isModuleSwitch: Bool = args()
+                return RoomScanLandingViewController(presenter: container.resolve(), isModuleSwitch: isModuleSwitch)
+            }
 
         container
             .register { RoomScanLandingPresenter(appRouter: container.resolve()) }

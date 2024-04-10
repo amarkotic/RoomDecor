@@ -15,10 +15,16 @@ extension RoomScanLandingViewController {
         navBarView = NavBarView()
         view.addSubview(navBarView)
 
+        topDivider = DividerView()
+        view.addSubview(topDivider)
+
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
         collectionView.register(RoomScanCell.self, forCellWithReuseIdentifier: RoomScanCell.reuseIdentifier)
         collectionView.delegate = self
         view.addSubview(collectionView)
+
+        bottomDivider = DividerView()
+        view.addSubview(bottomDivider)
 
         startRoomScanButton = UIButton()
         view.addSubview(startRoomScanButton)
@@ -36,7 +42,7 @@ extension RoomScanLandingViewController {
         navBarView.set(title: LocalizableStrings.scanTheRoom.localized)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .white
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -59,13 +65,23 @@ extension RoomScanLandingViewController {
             $0.height.equalTo(navBarHeight)
         }
 
+        topDivider.snp.makeConstraints {
+            $0.top.equalTo(navBarView.snp.bottom).offset(defaultPadding)
+            $0.leading.trailing.equalToSuperview()
+        }
+
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(navBarView.snp.bottom).offset(defaultPadding * 2)
+            $0.top.equalTo(topDivider.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+        }
+
+        bottomDivider.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
 
         startRoomScanButton.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.bottom).offset(defaultPadding)
+            $0.top.equalTo(bottomDivider.snp.bottom).offset(defaultPadding * 2)
             $0.bottom.leading.trailing.equalToSuperview().inset(defaultPadding * 4)
             $0.height.equalTo(startButtonHeight)
         }

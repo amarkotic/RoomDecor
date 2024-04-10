@@ -31,7 +31,7 @@ extension RoomScanCardView {
     }
 
     func styleViews() {
-        backgroundColor = .white
+        backgroundColor = .beige
 
         roundAllCorners(withRadius: cornerRadius)
         addBorder(width: 2, color: .black)
@@ -42,6 +42,7 @@ extension RoomScanCardView {
 
         previewImage.roundAllCorners(withRadius: 4)
         previewImage.addBorder(width: 1, color: .black)
+        previewImage.backgroundColor = .white
 
         timeStackView.axis = .vertical
         timeStackView.spacing = 8

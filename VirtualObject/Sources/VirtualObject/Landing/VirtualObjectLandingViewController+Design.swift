@@ -15,6 +15,9 @@ extension VirtualObjectLandingViewController {
         navBarView = NavBarView()
         view.addSubview(navBarView)
 
+        dividerView = DividerView()
+        view.addSubview(dividerView)
+
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
         collectionView.register(VirtualObjectCell.self, forCellWithReuseIdentifier: VirtualObjectCell.reuseIdentifier)
         collectionView.delegate = self
@@ -36,7 +39,7 @@ extension VirtualObjectLandingViewController {
         navBarView.backgroundColor = .clear
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .white
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -54,8 +57,13 @@ extension VirtualObjectLandingViewController {
             $0.height.equalTo(navBarHeight)
         }
 
+        dividerView.snp.makeConstraints {
+            $0.top.equalTo(navBarView.snp.bottom).offset(defaultPadding)
+            $0.leading.trailing.equalToSuperview()
+        }
+
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(navBarView.snp.bottom).offset(defaultPadding * 3)
+            $0.top.equalTo(dividerView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
 

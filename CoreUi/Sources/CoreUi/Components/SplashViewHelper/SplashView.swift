@@ -19,17 +19,21 @@ public class SplashView: UIView {
     }
 
     public func animate(completionHandler: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.3) {
-            self.frameImageView.transform = .identity.scaledBy(x: 1.1, y: 1.1)
+        UIView.animate(withDuration: 0.5) {
+            self.frameImageView.transform = .identity.scaledBy(x: 1.2, y: 1.2)
         } completion: { _ in
-            UIView.animate(withDuration: 0.3) {
-                self.frameImageView.transform = .identity.scaledBy(x: 0.9, y: 0.9)
+            UIView.animate(withDuration: 0.5) {
+                self.frameImageView.transform = .identity
             } completion: { _ in
-                UIView.animate(withDuration: 0.3, delay: 0.2) {
+                UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseOut]) {
                     self.sofaImageView.alpha = 0
                     self.frameImageView.alpha = 0
                 } completion: { _ in
-                    completionHandler()
+                    UIView.animate(withDuration: 0.5) {
+                        self.alpha = 0
+                    } completion: { _ in
+                        completionHandler()
+                    }
                 }
             }
         }

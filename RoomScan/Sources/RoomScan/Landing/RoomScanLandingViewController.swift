@@ -14,19 +14,23 @@ public class RoomScanLandingViewController: UIViewController {
     let startButtonHeight: CGFloat = 60
 
     var navBarView: NavBarView!
+    var topDivider: DividerView!
     var collectionView: UICollectionView!
+    var bottomDivider: DividerView!
     var startRoomScanButton: UIButton!
     var loadingIndicator: UIActivityIndicatorView!
     var splashView: SplashView!
 
     private let presenter: RoomScanLandingPresenter!
+    private let isModuleSwitch: Bool!
     private var disposables = Set<AnyCancellable>()
     private var dataSource: DataSource!
 
     private var onItemSelectedSubject = PassthroughSubject<RoomScanViewModel, Never>()
 
-    public init(presenter: RoomScanLandingPresenter) {
+    public init(presenter: RoomScanLandingPresenter, isModuleSwitch: Bool) {
         self.presenter = presenter
+        self.isModuleSwitch = isModuleSwitch
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,12 +46,8 @@ public class RoomScanLandingViewController: UIViewController {
         makeDataSource()
         set(items: presenter.roomScanModels)
         bindViews()
-    }
 
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-
-        guard UserDefaults.isFirstLaunch() else { return }
+        guard !isModuleSwitch else { return }
 
         splashView.isHidden = false
         splashView.animate { [weak self] in
