@@ -10,7 +10,7 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: RoomScanLandingViewController = container.resolve()
+        let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
         return initialViewController
     }()
 
@@ -44,7 +44,7 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     }
 
     func showRoomScanLandingViewController() {
-        let roomScanLandingViewController: RoomScanLandingViewController = container.resolve()
+        let roomScanLandingViewController: RoomScanLandingViewController = container.resolve(args: true)
         replaceLastViewController(with: roomScanLandingViewController)
     }
 
@@ -56,6 +56,10 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
     func presentSwitchModuleSheet() {
         let switchModuleViewController: SwitchModuleViewController = container.resolve()
         let modalViewController = ModalViewController(childViewController: switchModuleViewController)
+
+        switchModuleViewController.onDismiss = {
+            modalViewController.dismiss(animated: true)
+        }
         navigationController.present(modalViewController, animated: true)
     }
 

@@ -32,7 +32,7 @@ extension TransitionManager: UIViewControllerAnimatedTransitioning {
         finishView.clipsToBounds = true
         finishView.isHidden = true
 
-        transitionContext.containerView.backgroundColor = .gray
+        transitionContext.containerView.backgroundColor = .lightGray
         transitionContext.containerView.addSubview(startView)
         transitionContext.containerView.addSubview(finishView)
 

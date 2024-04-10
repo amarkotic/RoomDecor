@@ -22,7 +22,7 @@ extension VirtualObjectCardView {
     }
 
     func styleViews() {
-        backgroundColor = .white
+        backgroundColor = .beige
         roundAllCorners(withRadius: cornerRadius)
         addBorder(width: 2, color: .black)
 

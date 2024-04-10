@@ -5,14 +5,14 @@ public class SwitchModuleViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
     let defaultSpacing: CGFloat = 22
-    let height: CGFloat = 116
+    let height: CGFloat = 250
     let sliderHeight: CGFloat = 56
 
     var stackView: UIStackView!
     var authorInfoView: AuthorInfoView!
     var sliderView: SliderView!
 
-    var onDismiss: ((SheetDissmisType) -> Void)?
+    public var onDismiss: (() -> Void)?
 
     private var disposables = Set<AnyCancellable>()
     private var presenter: SwitchModulePresenter!
@@ -32,7 +32,7 @@ public class SwitchModuleViewController: UIViewController {
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        onDismiss?(.normal)
+        onDismiss?()
     }
 
     public override func viewDidLoad() {
@@ -50,16 +50,19 @@ public class SwitchModuleViewController: UIViewController {
         authorInfoView
             .throttledTap()
             .sink { [weak self] _ in
-                guard let self = self else { return }
+                guard let self else { return }
 
-                self.onDismiss?(.normal)
+                self.onDismiss?()
                 self.presenter.authorViewTap()
             }
             .store(in: &disposables)
 
         stateChanged
             .sink { [weak self] _ in
-                self?.onDismiss?(.withAnimationAfter)
+                guard let self else { return }
+
+                self.onDismiss?()
+                self.presenter.switchModule()
             }
             .store(in: &disposables)
     }

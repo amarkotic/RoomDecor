@@ -12,6 +12,7 @@ public class VirtualObjectLandingViewController: UIViewController {
     let navBarHeight: CGFloat = 60
 
     var navBarView: NavBarView!
+    var dividerView: DividerView!
     var collectionView: UICollectionView!
     var loadingView: UIView!
     var loadingIndicator: UIActivityIndicatorView!
