@@ -5,6 +5,7 @@ class ProjectCardView: UIView {
 
     let defaultPadding: CGFloat = 8
     let cornerRadius: CGFloat = 16
+    let imageSize = CGSize(width: 80, height: 80)
 
     var imageView: UIImageView!
     var stackView: UIStackView!

@@ -33,21 +33,22 @@ extension ProjectCardView {
 
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.backgroundColor = .black.withAlphaComponent(0.8)
-        stackView.roundAllCorners(withRadius: 4)
+        stackView.backgroundColor = .gray.withAlphaComponent(0.1)
+        stackView.roundAllCorners(withRadius: 8)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = .insets(vertical: 4, horizontal: 4)
 
-        titleLabel.textColor = .white
+        titleLabel.textColor = .black
         titleLabel.font = UIFont(with: .futura, size: 12)
 
-        descriptionLabel.textColor = .white
+        descriptionLabel.textColor = .black
         descriptionLabel.font = UIFont(with: .futura, size: 12)
     }
 
     func defineLayoutForViews() {
         imageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.center.equalToSuperview()
+            $0.size.equalTo(imageSize)
         }
 
         stackView.snp.makeConstraints {
