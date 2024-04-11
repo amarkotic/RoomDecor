@@ -89,8 +89,10 @@ class AppRouter:
         currentViewController?.present(activityViewController, animated: true, completion: nil)
     }
 
-    func showWebView() {
-        // TODO
+    func showWebView(url: URL?) {
+        guard let url else { return }
+
+        UIApplication.shared.open(url)
     }
 
 }

@@ -59,6 +59,13 @@ class ProjectsListView: UIView {
 
                 cell.set(viewModel: item)
 
+                cell
+                    .throttledTap()
+                    .sink { [weak self] _ in
+                        self?.selectedItemSubject.send(item)
+                    }
+                    .store(in: &cell.disposables)
+
                 return cell
             })
     }

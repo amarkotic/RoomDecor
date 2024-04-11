@@ -32,34 +32,21 @@ public class AuthorViewController: UIViewController {
 
         buildViews()
         bindViews()
-        mockData()
+        populateCells()
     }
 
-    private func bindViews() {}
+    private func bindViews() {
+        publishedProjectsList
+            .itemSelected
+            .sink { [weak self] model in
+                self?.presenter.showWebView(url: model.url)
+            }
+            .store(in: &disposables)
+    }
 
-    private func mockData() {
-        guard let mockImage = UIImage(named: BundleImage.phoenix.rawValue, in: Bundle.module, with: nil) else { return }
-        guard let stylist = UIImage(named: BundleImage.stylist.rawValue, in: Bundle.module, with: nil) else { return }
-        guard let roomdecor = UIImage(named: BundleImage.roomDecor.rawValue, in: Bundle.module, with: nil) else { return }
-        publishedProjectsList.set(
-            viewModel:
-                ProjectListModel(
-                    title: "Published projects",
-                    description: "Some of the apps I've collaborated on, which got published to App Store",
-                    items: [
-                        ProjectModel(title: "Role: iOS lead", description: "App Store Rating: 4.8/5", image: mockImage),
-                        ProjectModel(title: "Role: iOS engineer", description: "App Store Rating: 5.0/5", image: stylist),
-                        ProjectModel(title: "Role: Owner", description: "App Store Rating: 5.0/5", image: roomdecor)]))
-
-        notableProjectsList.set(
-            viewModel:
-                ProjectListModel(
-                    title: "Notable projects",
-                    description: "Side projects used to learn a new skill",
-                    items: [
-                        ProjectModel(title: "antonio", description: "iOS developer", image: mockImage),
-                        ProjectModel(title: "antonio2", description: "iOS developer", image: mockImage),
-                        ProjectModel(title: "antonio3", description: "iOS developer", image: mockImage)]))
+    private func populateCells() {
+        publishedProjectsList.set(viewModel: ProjectListModel.publishedProjectsModel)
+        notableProjectsList.set(viewModel: ProjectListModel.notableProjectsModel)
     }
 
 }
