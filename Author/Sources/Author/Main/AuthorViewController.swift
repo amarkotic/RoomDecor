@@ -11,7 +11,8 @@ public class AuthorViewController: UIViewController {
     var stackView: UIStackView!
     var headerView: HeaderView!
     var dividerView: DividerView!
-    var projectsList: ProjectsListView!
+    var publishedProjectsList: ProjectsListView!
+    var notableProjectsList: ProjectsListView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: AuthorPresenter!
@@ -31,10 +32,32 @@ public class AuthorViewController: UIViewController {
 
         buildViews()
         bindViews()
+        mockData()
     }
 
-    private func bindViews() {
+    private func bindViews() {}
 
+    private func mockData() {
+        guard let mockImage = UIImage(named: BundleImage.author.rawValue, in: Bundle.module, with: nil) else { return }
+        publishedProjectsList.set(
+            viewModel:
+                ProjectListModel(
+                    title: "Published projects",
+                    description: "Some of the apps I've collaborated on, which got published to App Store",
+                    items: [
+                        ProjectModel(title: "antonio", description: "iOS developer", image: mockImage),
+                        ProjectModel(title: "antonio2", description: "iOS developer", image: mockImage),
+                        ProjectModel(title: "antonio3", description: "iOS developer", image: mockImage)]))
+
+        notableProjectsList.set(
+            viewModel:
+                ProjectListModel(
+                    title: "Notable projects",
+                    description: "Side projects used to learn a new skill",
+                    items: [
+                        ProjectModel(title: "antonio", description: "iOS developer", image: mockImage),
+                        ProjectModel(title: "antonio2", description: "iOS developer", image: mockImage),
+                        ProjectModel(title: "antonio3", description: "iOS developer", image: mockImage)]))
     }
 
 }

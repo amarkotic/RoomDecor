@@ -10,7 +10,7 @@ extension ProjectCell {
 
     public func createViews() {
         cardView = ProjectCardView()
-        addSubview(cardView)
+        contentView.addSubview(cardView)
     }
 
     public func styleViews() {}

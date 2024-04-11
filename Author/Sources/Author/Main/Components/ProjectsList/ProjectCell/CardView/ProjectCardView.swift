@@ -9,7 +9,7 @@ class ProjectCardView: UIView {
     var stackView: UIStackView!
     var imageView: UIImageView!
     var titleLabel: UILabel!
-    var roleLabel: UILabel!
+    var descriptionLabel: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +21,10 @@ class ProjectCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(viewModel: ProjectModel) { }
+    func set(viewModel: ProjectModel) {
+        imageView.image = viewModel.image
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+    }
 
 }

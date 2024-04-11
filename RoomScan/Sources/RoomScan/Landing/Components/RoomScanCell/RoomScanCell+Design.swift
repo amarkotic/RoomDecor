@@ -11,7 +11,7 @@ extension RoomScanCell {
 
     public func createViews() {
         cardView = RoomScanCardView()
-        addSubview(cardView)
+        contentView.addSubview(cardView)
     }
 
     public func styleViews() {}

@@ -8,10 +8,15 @@ class ProjectsListView: UIView {
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, ProjectModel>
     private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, ProjectModel>
 
+    var model: ProjectListModel!
+
     let defaultPadding: CGFloat = 8
-    let height: CGFloat = 260
     let defaultSectionInsets: UIEdgeInsets = .insets(vertical: 16, horizontal: 16)
 
+    var stackView: UIStackView!
+    var textStackView: UIStackView!
+    var titleLabel: UILabel!
+    var descriptionLabel: UILabel!
     var collectionView: UICollectionView!
 
     private var disposables = Set<AnyCancellable>()
@@ -30,12 +35,16 @@ class ProjectsListView: UIView {
         buildViews()
         makeDataSource()
         bindViews()
-
-        updateSnapshot(items: [ProjectModel(name: "antonio", role: "iOS developer"),ProjectModel(name: "antonio2", role: "iOS developer"),ProjectModel(name: "antonio3", role: "iOS developer")])
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func set(viewModel: ProjectListModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+        updateSnapshot(items: viewModel.items)
     }
 
     private func makeDataSource() {

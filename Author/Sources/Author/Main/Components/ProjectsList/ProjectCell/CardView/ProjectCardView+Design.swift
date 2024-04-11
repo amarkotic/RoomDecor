@@ -20,8 +20,8 @@ extension ProjectCardView {
         titleLabel = UILabel()
         stackView.addArrangedSubview(titleLabel)
 
-        roleLabel = UILabel()
-        stackView.addArrangedSubview(roleLabel)
+        descriptionLabel = UILabel()
+        stackView.addArrangedSubview(descriptionLabel)
     }
 
     func styleViews() {
@@ -30,7 +30,6 @@ extension ProjectCardView {
         addBorder(width: 2, color: .black)
 
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: BundleImage.author.rawValue, in: Bundle.module, with: nil)
 
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -38,8 +37,8 @@ extension ProjectCardView {
         titleLabel.textColor = .darkGray
         titleLabel.font = UIFont(with: .futura, size: 16)
 
-        roleLabel.textColor = .darkGray
-        roleLabel.font = UIFont(with: .futura, size: 16)
+        descriptionLabel.textColor = .darkGray
+        descriptionLabel.font = UIFont(with: .futura, size: 16)
     }
 
     func defineLayoutForViews() {

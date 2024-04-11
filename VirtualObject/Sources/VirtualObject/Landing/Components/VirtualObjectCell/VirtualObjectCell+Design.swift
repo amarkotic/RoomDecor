@@ -10,7 +10,7 @@ extension VirtualObjectCell {
 
     public func createViews() {
         cardView = VirtualObjectCardView()
-        addSubview(cardView)
+        contentView.addSubview(cardView)
     }
 
     public func styleViews() {}

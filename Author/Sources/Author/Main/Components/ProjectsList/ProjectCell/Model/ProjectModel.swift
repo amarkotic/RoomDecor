@@ -1,6 +1,9 @@
+import UIKit
+
 struct ProjectModel: Hashable {
 
-    var name: String
-    var role: String
+    var title: String
+    var description: String
+    var image: UIImage
 
 }
