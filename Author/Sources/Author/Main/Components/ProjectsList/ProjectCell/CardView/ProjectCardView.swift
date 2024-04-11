@@ -1,5 +1,4 @@
 import UIKit
-import SceneKit
 import Core
 
 class ProjectCardView: UIView {
@@ -22,8 +21,6 @@ class ProjectCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(viewModel: ProjectModel) {
-
-    }
+    func set(viewModel: ProjectModel) { }
 
 }
