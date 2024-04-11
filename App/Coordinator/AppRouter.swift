@@ -1,16 +1,22 @@
 import UIKit
 import Resolver
+import Author
 import CoreUi
 import RoomScan
 import VirtualObject
 
-class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, SwitchModuleRouterProtocol {
+class AppRouter:
+    NSObject,
+    VirtualObjectRouterProtocol,
+    RoomScanRouterProtocol,
+    SwitchModuleRouterProtocol,
+    AuthorRouterProtocol {
 
     private let navigationController = UINavigationController()
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
+        let initialViewController: AuthorViewController = container.resolve(args: false)
         return initialViewController
     }()
 
@@ -60,11 +66,13 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
         switchModuleViewController.onDismiss = {
             modalViewController.dismiss(animated: true)
         }
+
         navigationController.present(modalViewController, animated: true)
     }
 
     func authorViewTap() {
-        // Todo
+        let authorViewController: AuthorViewController = container.resolve()
+        navigationController.pushViewController(authorViewController, animated: true)
     }
 
     func switchModule() {
@@ -79,6 +87,10 @@ class AppRouter: NSObject, VirtualObjectRouterProtocol, RoomScanRouterProtocol, 
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = currentViewController?.view
         currentViewController?.present(activityViewController, animated: true, completion: nil)
+    }
+
+    func showWebView() {
+        // TODO
     }
 
 }

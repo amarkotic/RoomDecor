@@ -10,6 +10,7 @@
 		652D38572BC5AC2E001FCBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652D38562BC5AC2E001FCBC5 /* LaunchScreen.storyboard */; };
 		65429B332AF97C40000062BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65429B322AF97C40000062BB /* SnapKit */; };
 		6552C41A2BC5ADF400E6C1AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6552C4192BC5ADF400E6C1AD /* Assets.xcassets */; };
+		656314A32BC70B5700A3087B /* Author in Frameworks */ = {isa = PBXBuildFile; productRef = 656314A22BC70B5700A3087B /* Author */; };
 		659DE2EB2AF6C7B400608313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EA2AF6C7B400608313 /* AppDelegate.swift */; };
 		659DE2ED2AF6C7B400608313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */; };
 		659DE31C2AF6C92C00608313 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 659DE31B2AF6C92C00608313 /* Resolver */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		652D38562BC5AC2E001FCBC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6552C4192BC5ADF400E6C1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		656314A12BC7090E00A3087B /* Author */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Author; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F8B5B12BA5AB49006635F5 /* VirtualObject in Frameworks */,
+				656314A32BC70B5700A3087B /* Author in Frameworks */,
 				65429B332AF97C40000062BB /* SnapKit in Frameworks */,
 				659DE31E2AF6C92C00608313 /* Resolver-Static in Frameworks */,
 				65D900A62BA5BCFD008BE952 /* CoreUi in Frameworks */,
@@ -67,6 +70,7 @@
 		659DE2DE2AF6C7B400608313 = {
 			isa = PBXGroup;
 			children = (
+				656314A12BC7090E00A3087B /* Author */,
 				65F8B5B82BA5ACE6006635F5 /* Core */,
 				65F8B5BB2BA5B9A1006635F5 /* CoreUi */,
 				65F8B5AB2BA5A95B006635F5 /* RoomScan */,
@@ -138,6 +142,7 @@
 				65F8B5B02BA5AB49006635F5 /* VirtualObject */,
 				65F8B5BD2BA5BA17006635F5 /* Core */,
 				65D900A52BA5BCFD008BE952 /* CoreUi */,
+				656314A22BC70B5700A3087B /* Author */,
 			);
 			productName = RoomDecor;
 			productReference = 659DE2E72AF6C7B400608313 /* RoomDecor.app */;
@@ -455,6 +460,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65429B312AF97C40000062BB /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		656314A22BC70B5700A3087B /* Author */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Author;
 		};
 		659DE31B2AF6C92C00608313 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
