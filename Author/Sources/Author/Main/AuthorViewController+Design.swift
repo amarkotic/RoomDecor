@@ -26,8 +26,11 @@ extension AuthorViewController {
         dividerView = DividerView()
         stackView.addArrangedSubview(dividerView)
 
-        projectsList = ProjectsListView()
-        stackView.addArrangedSubview(projectsList)
+        publishedProjectsList = ProjectsListView()
+        stackView.addArrangedSubview(publishedProjectsList)
+
+        notableProjectsList = ProjectsListView()
+        stackView.addArrangedSubview(notableProjectsList)
     }
 
     public func styleViews() {

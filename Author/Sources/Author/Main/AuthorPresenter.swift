@@ -10,6 +10,8 @@ public class AuthorPresenter {
         self.appRouter = appRouter
     }
 
-    func showWebView() {}
+    func showWebView(url: URL?) {
+        appRouter.showWebView(url: url)
+    }
 
 }

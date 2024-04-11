@@ -1,3 +1,4 @@
+import Combine
 import UIKit
 
 class ProjectCell: UICollectionViewCell {
@@ -7,6 +8,8 @@ class ProjectCell: UICollectionViewCell {
 
     var cardView: ProjectCardView!
 
+    var disposables = Set<AnyCancellable>()
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -15,6 +18,12 @@ class ProjectCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+
+        disposables.removeAll()
     }
 
     func set(viewModel: ProjectModel) {

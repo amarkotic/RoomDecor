@@ -11,7 +11,8 @@ public class AuthorViewController: UIViewController {
     var stackView: UIStackView!
     var headerView: HeaderView!
     var dividerView: DividerView!
-    var projectsList: ProjectsListView!
+    var publishedProjectsList: ProjectsListView!
+    var notableProjectsList: ProjectsListView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: AuthorPresenter!
@@ -31,10 +32,21 @@ public class AuthorViewController: UIViewController {
 
         buildViews()
         bindViews()
+        populateCells()
     }
 
     private func bindViews() {
+        publishedProjectsList
+            .itemSelected
+            .sink { [weak self] model in
+                self?.presenter.showWebView(url: model.url)
+            }
+            .store(in: &disposables)
+    }
 
+    private func populateCells() {
+        publishedProjectsList.set(viewModel: ProjectListModel.publishedProjectsModel)
+        notableProjectsList.set(viewModel: ProjectListModel.notableProjectsModel)
     }
 
 }

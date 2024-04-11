@@ -4,7 +4,6 @@ public enum BundleImage: String {
     case slider
     case sofa
     case frame
-    case author
 
 }
 

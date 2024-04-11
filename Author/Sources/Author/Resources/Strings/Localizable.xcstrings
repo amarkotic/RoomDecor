@@ -1,0 +1,83 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "appStoreRating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store Rating: %@/5.0"
+          }
+        }
+      }
+    },
+    "notableProjectsDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Side projects used to learn a new skill"
+          }
+        }
+      }
+    },
+    "notableProjectsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notable projects"
+          }
+        }
+      }
+    },
+    "publishedProjectsDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some of the apps I've collaborated on, which got published to App Store"
+          }
+        }
+      }
+    },
+    "publishedProjectsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Published projects"
+          }
+        }
+      }
+    },
+    "role" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Role: %@"
+          }
+        }
+      }
+    },
+    "tech" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tech: %@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

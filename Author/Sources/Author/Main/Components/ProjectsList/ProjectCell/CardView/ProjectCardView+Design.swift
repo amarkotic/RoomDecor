@@ -11,17 +11,17 @@ extension ProjectCardView {
     }
 
     func createViews() {
-        stackView = UIStackView()
-        addSubview(stackView)
-
         imageView = UIImageView()
         addSubview(imageView)
+
+        stackView = UIStackView()
+        addSubview(stackView)
 
         titleLabel = UILabel()
         stackView.addArrangedSubview(titleLabel)
 
-        roleLabel = UILabel()
-        stackView.addArrangedSubview(roleLabel)
+        descriptionLabel = UILabel()
+        stackView.addArrangedSubview(descriptionLabel)
     }
 
     func styleViews() {
@@ -30,25 +30,29 @@ extension ProjectCardView {
         addBorder(width: 2, color: .black)
 
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: BundleImage.author.rawValue, in: Bundle.module, with: nil)
 
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.alignment = .leading
+        stackView.backgroundColor = .gray.withAlphaComponent(0.1)
+        stackView.roundAllCorners(withRadius: 8)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .insets(vertical: 4, horizontal: 4)
 
-        titleLabel.textColor = .darkGray
-        titleLabel.font = UIFont(with: .futura, size: 16)
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont(with: .futura, size: 12)
 
-        roleLabel.textColor = .darkGray
-        roleLabel.font = UIFont(with: .futura, size: 16)
+        descriptionLabel.textColor = .black
+        descriptionLabel.font = UIFont(with: .futura, size: 12)
     }
 
     func defineLayoutForViews() {
         imageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.center.equalToSuperview()
+            $0.size.equalTo(imageSize)
         }
 
         stackView.snp.makeConstraints {
-            $0.leading.bottom.equalToSuperview().offset(defaultPadding)
+            $0.leading.bottom.equalToSuperview().inset(defaultPadding)
         }
     }
 
