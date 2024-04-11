@@ -3,11 +3,11 @@ import Core
 
 class ProjectCardView: UIView {
 
-    let defaultPadding: CGFloat = 16
+    let defaultPadding: CGFloat = 8
     let cornerRadius: CGFloat = 16
 
-    var stackView: UIStackView!
     var imageView: UIImageView!
+    var stackView: UIStackView!
     var titleLabel: UILabel!
     var descriptionLabel: UILabel!
 

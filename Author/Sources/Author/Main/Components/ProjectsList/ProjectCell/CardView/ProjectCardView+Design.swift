@@ -11,11 +11,11 @@ extension ProjectCardView {
     }
 
     func createViews() {
-        stackView = UIStackView()
-        addSubview(stackView)
-
         imageView = UIImageView()
         addSubview(imageView)
+
+        stackView = UIStackView()
+        addSubview(stackView)
 
         titleLabel = UILabel()
         stackView.addArrangedSubview(titleLabel)
@@ -32,13 +32,17 @@ extension ProjectCardView {
         imageView.contentMode = .scaleAspectFill
 
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.alignment = .leading
+        stackView.backgroundColor = .black.withAlphaComponent(0.8)
+        stackView.roundAllCorners(withRadius: 4)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .insets(vertical: 4, horizontal: 4)
 
-        titleLabel.textColor = .darkGray
-        titleLabel.font = UIFont(with: .futura, size: 16)
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(with: .futura, size: 12)
 
-        descriptionLabel.textColor = .darkGray
-        descriptionLabel.font = UIFont(with: .futura, size: 16)
+        descriptionLabel.textColor = .white
+        descriptionLabel.font = UIFont(with: .futura, size: 12)
     }
 
     func defineLayoutForViews() {
@@ -47,7 +51,7 @@ extension ProjectCardView {
         }
 
         stackView.snp.makeConstraints {
-            $0.leading.bottom.equalToSuperview().offset(defaultPadding)
+            $0.leading.bottom.equalToSuperview().inset(defaultPadding)
         }
     }
 
