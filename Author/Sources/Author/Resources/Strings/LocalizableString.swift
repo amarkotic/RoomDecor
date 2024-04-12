@@ -2,6 +2,7 @@ import Core
 
 enum LocalizableStrings: String {
 
+    case meetTheAuthor
     case iosEngineer
     case name
 

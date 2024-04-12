@@ -8,6 +8,7 @@ class HeaderView: UIView {
     let socialImageSize = CGSize(width: 40, height: 40)
 
     var stackView: UIStackView!
+    var titleLabel: UILabel!
     var textStackView: UIStackView!
     var nameLabel: UILabel!
     var roleLabel: UILabel!
