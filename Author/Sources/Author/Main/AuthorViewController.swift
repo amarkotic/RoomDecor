@@ -38,6 +38,20 @@ public class AuthorViewController: UIViewController {
     }
 
     private func bindViews() {
+        headerView
+            .leadingButtonTap
+            .sink { [weak self] _ in
+                self?.presenter.showWebView(url: ExternalLinks.github.url)
+            }
+            .store(in: &disposables)
+
+        headerView
+            .trailingButtonTap
+            .sink { [weak self] _ in
+                self?.presenter.showWebView(url: ExternalLinks.linkedin.url)
+            }
+            .store(in: &disposables)
+
         publishedProjectsList
             .itemSelected
             .sink { [weak self] model in

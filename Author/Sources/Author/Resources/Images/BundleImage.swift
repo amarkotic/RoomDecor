@@ -10,4 +10,7 @@ public enum BundleImage: String {
     case movieApp
     case mOjo
 
+    case linkedin
+    case github
+
 }
