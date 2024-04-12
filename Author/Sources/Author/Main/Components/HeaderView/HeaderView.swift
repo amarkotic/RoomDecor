@@ -10,6 +10,7 @@ class HeaderView: UIView {
     var stackView: UIStackView!
     var titleLabel: UILabel!
     var textStackView: UIStackView!
+
     var nameLabel: UILabel!
     var roleLabel: UILabel!
     var imageStackView: UIStackView!

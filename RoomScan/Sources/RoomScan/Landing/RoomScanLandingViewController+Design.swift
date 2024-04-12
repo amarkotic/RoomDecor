@@ -23,6 +23,9 @@ extension RoomScanLandingViewController {
         collectionView.delegate = self
         view.addSubview(collectionView)
 
+        startScanView = UIImageView()
+        view.addSubview(startScanView)
+
         bottomDivider = DividerView()
         view.addSubview(bottomDivider)
 
@@ -47,6 +50,9 @@ extension RoomScanLandingViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isHidden = false
+
+        startScanView.image = UIImage(named: BundleImage.arrowDown.rawValue, in: .module, with: nil)
+        startScanView.contentMode = .scaleAspectFit
 
         startRoomScanButton.setTitle(CoreUi.LocalizableStrings.start.localized, for: .normal)
         startRoomScanButton.setTitleColor(.white, for: .normal)
@@ -73,6 +79,12 @@ extension RoomScanLandingViewController {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(topDivider.snp.bottom)
             $0.leading.trailing.equalToSuperview()
+        }
+
+        startScanView.snp.makeConstraints {
+            $0.size.equalTo(arrowImageSize)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(bottomDivider.snp.top)
         }
 
         bottomDivider.snp.makeConstraints {

@@ -47,29 +47,6 @@
         }
       }
     },
-    "carpet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teppich"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carpet"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tepih"
-          }
-        }
-      }
-    },
     "chair" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -93,25 +70,48 @@
         }
       }
     },
-    "pouf" : {
+    "lamp" : {
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Puff"
+            "value" : "Lampe"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pouf"
+            "value" : "Lamp"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tabure"
+            "value" : "Lampa"
+          }
+        }
+      }
+    },
+    "shelf" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regal"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shelf"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polica"
           }
         }
       }
@@ -139,25 +139,48 @@
         }
       }
     },
-    "sofa" : {
+    "smallShelf" : {
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sofa"
+            "value" : "Kleines Regal"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sofa"
+            "value" : "Small Shelf"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kauč"
+            "value" : "Mala polica"
+          }
+        }
+      }
+    },
+    "stool" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schemel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stool"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klupica"
           }
         }
       }

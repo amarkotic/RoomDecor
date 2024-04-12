@@ -72,6 +72,7 @@
 		652D38562BC5AC2E001FCBC5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6552C4192BC5ADF400E6C1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656314A12BC7090E00A3087B /* Author */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Author; sourceTree = "<group>"; };
+		6583200D2BC9C7A60088D1BC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		659DE2E72AF6C7B400608313 /* RoomDecor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomDecor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659DE2EA2AF6C7B400608313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
 				659DE31F2AF6C94B00608313 /* AppModule.swift */,
 				659DE2F82AF6C7B500608313 /* Info.plist */,
+				6583200D2BC9C7A60088D1BC /* PrivacyInfo.xcprivacy */,
 			);
 			path = App;
 			sourceTree = "<group>";

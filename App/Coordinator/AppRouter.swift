@@ -16,7 +16,7 @@ class AppRouter:
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: AuthorViewController = container.resolve(args: false)
+        let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
         return initialViewController
     }()
 
@@ -25,7 +25,7 @@ class AppRouter:
 
         super.init()
 
-        navigationController.delegate = self
+        configureNavigationBar()
     }
 
     private var currentViewController: UIViewController? {
@@ -93,6 +93,14 @@ class AppRouter:
         guard let url else { return }
 
         UIApplication.shared.open(url)
+    }
+
+    private func configureNavigationBar() {
+        navigationController.delegate = self
+        UINavigationBar.appearance().backIndicatorImage = UIImage(with: .back)
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(with: .back)
+        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().backItem?.title = ""
     }
 
 }

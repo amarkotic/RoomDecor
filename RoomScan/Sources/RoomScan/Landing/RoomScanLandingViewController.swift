@@ -12,10 +12,12 @@ public class RoomScanLandingViewController: UIViewController {
     let cornerRadius: CGFloat = 4
     let navBarHeight: CGFloat = 60
     let startButtonHeight: CGFloat = 60
+    let arrowImageSize = CGSize(width: 150, height: 150)
 
     var navBarView: NavBarView!
     var topDivider: DividerView!
     var collectionView: UICollectionView!
+    var startScanView: UIImageView!
     var bottomDivider: DividerView!
     var startRoomScanButton: UIButton!
     var loadingIndicator: UIActivityIndicatorView!
@@ -44,22 +46,16 @@ public class RoomScanLandingViewController: UIViewController {
 
         buildViews()
         makeDataSource()
-        set(items: presenter.roomScanModels)
+        populateView()
         bindViews()
-
-        guard !isModuleSwitch else { return }
-
-        splashView.isHidden = false
-        splashView.animate { [weak self] in
-            self?.splashView.isHidden = true
-        }
+        showSplash()
     }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         navigationController?.navigationBar.isHidden = true
-        set(items: presenter.roomScanModels)
+        populateView()
     }
 
     public override func viewDidDisappear(_ animated: Bool) {
@@ -96,8 +92,18 @@ public class RoomScanLandingViewController: UIViewController {
             .store(in: &disposables)
     }
 
-    private func set(items: [RoomScanViewModel]) {
-        updateSnapshot(items: items)
+    private func populateView() {
+        if presenter.roomScanModels.count == 0 {
+            collectionView.isHidden = true
+            startScanView.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat]) {
+                self.startScanView.transform = .identity.scaledBy(x: 1.3, y: 1.3)
+            }
+        } else {
+            collectionView.isHidden = false
+            startScanView.isHidden = true
+            updateSnapshot(items: presenter.roomScanModels)
+        }
     }
 
     private func updateSnapshot(items: [RoomScanViewModel]) {
@@ -128,6 +134,15 @@ public class RoomScanLandingViewController: UIViewController {
 
                 return cell
             })
+    }
+
+    private func showSplash() {
+        guard !isModuleSwitch else { return }
+
+        splashView.isHidden = false
+        splashView.animate { [weak self] in
+            self?.splashView.isHidden = true
+        }
     }
 
     private func showLoader() {
