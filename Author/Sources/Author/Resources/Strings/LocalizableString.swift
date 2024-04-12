@@ -2,9 +2,14 @@ import Core
 
 enum LocalizableStrings: String {
 
+    case iosEngineer
+    case name
+
+    case technicalSkills
+    case interpersonalSkills
+
     case publishedProjectsTitle
     case publishedProjectsDescription
-
     case notableProjectsTitle
     case notableProjectsDescription
 

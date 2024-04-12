@@ -36,11 +36,11 @@ extension HeaderView {
         textStackView.spacing = defaultPadding / 2
         textStackView.alignment = .leading
 
-        nameLabel.text = "Antonio Markotic"
+        nameLabel.text = LocalizableStrings.name.localized
         nameLabel.textColor = .black
         nameLabel.font = UIFont(with: .futura, size: 18)
 
-        roleLabel.text = "iOS Engineer"
+        roleLabel.text = LocalizableStrings.iosEngineer.localized
         roleLabel.textColor = .black
         roleLabel.font = UIFont(with: .futura, size: 16)
 

@@ -6,6 +6,7 @@ public enum LocalizableStrings: String {
     case share
     case moduleSwitchSlideToConfirm
     case start
+    case author
 
     public var localized: String {
         rawValue.localize(bundle: .module)

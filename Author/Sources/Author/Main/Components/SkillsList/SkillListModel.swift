@@ -9,7 +9,7 @@ extension SkillListModel {
 
     static var technicalSkills: SkillListModel {
         SkillListModel(
-            title: "Technical Skills",
+            title: LocalizableStrings.technicalSkills.localized,
             skills: [
                 SkillModel(name: "Mobile architectures"),
                 SkillModel(name: "iOS development"),
@@ -26,7 +26,7 @@ extension SkillListModel {
 
     static var interpersonalSkills: SkillListModel {
         SkillListModel(
-            title: "Interpersonal Skills",
+            title: LocalizableStrings.interpersonalSkills.localized,
             skills: [
                 SkillModel(name: "Leadership"),
                 SkillModel(name: "Communication"),
