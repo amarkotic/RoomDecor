@@ -10,7 +10,10 @@ public class AuthorViewController: UIViewController {
     var contentView: UIView!
     var stackView: UIStackView!
     var headerView: HeaderView!
-    var dividerView: DividerView!
+    var firstDividerView: DividerView!
+    var technicalSkillsList: SkillsListView!
+    var interpersonalSkillsList: SkillsListView!
+    var secondDividerView: DividerView!
     var publishedProjectsList: ProjectsListView!
     var notableProjectsList: ProjectsListView!
 
@@ -32,7 +35,6 @@ public class AuthorViewController: UIViewController {
 
         buildViews()
         bindViews()
-        populateCells()
     }
 
     private func bindViews() {
@@ -42,11 +44,6 @@ public class AuthorViewController: UIViewController {
                 self?.presenter.showWebView(url: model.url)
             }
             .store(in: &disposables)
-    }
-
-    private func populateCells() {
-        publishedProjectsList.set(viewModel: ProjectListModel.publishedProjectsModel)
-        notableProjectsList.set(viewModel: ProjectListModel.notableProjectsModel)
     }
 
 }

@@ -50,7 +50,7 @@ extension AuthorInfoView {
         imageView.addBorder(width: 3, color: .gray)
 
         titleLabel.textColor = .black
-        titleLabel.text = "Author"
+        titleLabel.text = LocalizableStrings.author.localized
     }
 
     func defineLayoutForViews() {

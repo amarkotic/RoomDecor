@@ -23,13 +23,22 @@ extension AuthorViewController {
         headerView = HeaderView()
         stackView.addArrangedSubview(headerView)
 
-        dividerView = DividerView()
-        stackView.addArrangedSubview(dividerView)
+        firstDividerView = DividerView()
+        stackView.addArrangedSubview(firstDividerView)
 
-        publishedProjectsList = ProjectsListView()
+        technicalSkillsList = SkillsListView(viewModel: .technicalSkills)
+        stackView.addArrangedSubview(technicalSkillsList)
+
+        interpersonalSkillsList = SkillsListView(viewModel: .interpersonalSkills)
+        stackView.addArrangedSubview(interpersonalSkillsList)
+
+        secondDividerView = DividerView()
+        stackView.addArrangedSubview(secondDividerView)
+
+        publishedProjectsList = ProjectsListView(viewModel: .publishedProjectsModel)
         stackView.addArrangedSubview(publishedProjectsList)
 
-        notableProjectsList = ProjectsListView()
+        notableProjectsList = ProjectsListView(viewModel: .notableProjectsModel)
         stackView.addArrangedSubview(notableProjectsList)
     }
 

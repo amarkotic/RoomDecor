@@ -13,7 +13,6 @@ class ProjectsListView: UIView {
     let defaultPadding: CGFloat = 8
     let defaultSectionInsets: UIEdgeInsets = .insets(vertical: 16, horizontal: 16)
 
-    var stackView: UIStackView!
     var textStackView: UIStackView!
     var titleLabel: UILabel!
     var descriptionLabel: UILabel!
@@ -29,22 +28,19 @@ class ProjectsListView: UIView {
             .eraseToAnyPublisher()
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: ProjectListModel) {
+        super.init(frame: .zero)
 
         buildViews()
         makeDataSource()
         bindViews()
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+        updateSnapshot(items: viewModel.items)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    func set(viewModel: ProjectListModel) {
-        titleLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.description
-        updateSnapshot(items: viewModel.items)
     }
 
     private func makeDataSource() {
