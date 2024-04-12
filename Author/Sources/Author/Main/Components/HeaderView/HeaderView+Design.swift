@@ -47,6 +47,7 @@ extension HeaderView {
         imageView.image = UIImage(named: BundleImage.author.rawValue, in: Bundle.module, with: nil)
         imageView.contentMode = .scaleAspectFill
         imageView.roundAllCorners(withRadius: 8)
+        imageView.addBorder()
     }
 
     func defineLayoutForViews() {
