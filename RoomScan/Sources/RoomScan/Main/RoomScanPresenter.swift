@@ -13,7 +13,7 @@ public class RoomScanPresenter {
     }
 
     func presentShareSheet(for items: [URL]) {
-        appRouter.presentShareSheet(for: [exportUrl])
+        appRouter.presentShareSheet(for: items)
     }
 
 }
@@ -27,6 +27,9 @@ extension RoomScanPresenter {
             .appending(dateString)
             .appending(FileType.usdz.fileExtension)
 
+
+        let url = documentsDirectory.appendingPathComponent(fileName)
+        print("logger \(url)")
         return documentsDirectory.appendingPathComponent(fileName)
     }
 

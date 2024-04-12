@@ -99,7 +99,7 @@ class AppRouter:
         navigationController.delegate = self
         UINavigationBar.appearance().backIndicatorImage = UIImage(with: .back)
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(with: .back)
-        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().backItem?.title = ""
     }
 

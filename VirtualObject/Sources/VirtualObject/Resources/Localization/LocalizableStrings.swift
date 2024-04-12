@@ -6,10 +6,11 @@ enum LocalizableStrings: String {
 
     case armchair
     case chair
-    case carpet
-    case pouf
+    case smallShelf
+    case lamp
     case sideTable
-    case sofa
+    case shelf
+    case stool
     case table
 
     var localized: String {

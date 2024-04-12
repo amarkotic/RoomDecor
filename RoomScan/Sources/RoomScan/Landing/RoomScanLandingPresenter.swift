@@ -5,15 +5,16 @@ import CoreUi
 
 public class RoomScanLandingPresenter {
 
-    var roomScanModels: [RoomScanViewModel] = []
+    var roomScanModels: [RoomScanViewModel] {
+        savedFilesUrls
+            .map { RoomScanViewModel(url: $0) }
+            .sorted { ($0.extractedDateTime ?? Date.distantPast) > ($1.extractedDateTime ?? Date.distantPast) }
+    }
 
     private let appRouter: RoomScanRouterProtocol
 
     public init(appRouter: RoomScanRouterProtocol) {
         self.appRouter = appRouter
-        self.roomScanModels = savedFilesUrls
-            .map { RoomScanViewModel(url: $0) }
-            .sorted { ($0.extractedDateTime ?? Date.distantPast) > ($1.extractedDateTime ?? Date.distantPast) }
     }
 
     func switchButtonInteracted(with interaction: SwitchModuleInteractionType) {
@@ -37,7 +38,7 @@ public class RoomScanLandingPresenter {
 
 extension RoomScanLandingPresenter {
 
-    var savedFilesUrls: [URL] {
+    private var savedFilesUrls: [URL] {
         guard
             let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         else { return [] }
