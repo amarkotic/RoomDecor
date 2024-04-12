@@ -5,10 +5,11 @@ public enum VirtualObjectType: String, CaseIterable {
 
     case armchair
     case chair
-    case carpet
-    case pouf
+    case smallShelf
+    case lamp
     case sideTable
-    case sofa
+    case shelf
+    case stool
     case table
 
     var title: String {
@@ -17,14 +18,16 @@ public enum VirtualObjectType: String, CaseIterable {
             LocalizableStrings.armchair.localized
         case .chair:
             LocalizableStrings.chair.localized
-        case .carpet:
-            LocalizableStrings.carpet.localized
-        case .pouf:
-            LocalizableStrings.pouf.localized
+        case .smallShelf:
+            LocalizableStrings.smallShelf.localized
+        case .lamp:
+            LocalizableStrings.lamp.localized
         case .sideTable:
             LocalizableStrings.sideTable.localized
-        case .sofa:
-            LocalizableStrings.sofa.localized
+        case .shelf:
+            LocalizableStrings.shelf.localized
+        case .stool:
+            LocalizableStrings.stool.localized
         case .table:
             LocalizableStrings.table.localized
         }

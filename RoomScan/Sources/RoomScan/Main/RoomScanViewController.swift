@@ -67,12 +67,12 @@ public class RoomScanViewController: UIViewController {
 
     private func exportRoomModel() {
         do {
-            try capturedRoom?.export(to: presenter.exportUrl)
-            presenter.presentShareSheet(for: [])
+            let url = presenter.exportUrl
+            try capturedRoom?.export(to: url)
+            presenter.presentShareSheet(for: [url])
         } catch {
             print(error.localizedDescription)
         }
-
     }
 
 }

@@ -37,6 +37,12 @@ public class AuthorViewController: UIViewController {
         bindViews()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.isHidden = false
+    }
+
     private func bindViews() {
         headerView
             .leadingButtonTap

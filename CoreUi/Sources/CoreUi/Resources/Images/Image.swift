@@ -1,9 +1,10 @@
 public enum BundleImage: String {
 
-    case checkmark = "ic_checkmark"
+    case checkmark
     case slider
     case sofa
     case frame
+    case back
 
 }
 
