@@ -25,6 +25,15 @@ extension HeaderView {
 
         imageView = UIImageView()
         stackView.addArrangedSubview(imageView)
+
+        imageStackView = UIStackView()
+        addSubview(imageStackView)
+
+        leadingButton = UIButton()
+        imageStackView.addArrangedSubview(leadingButton)
+
+        trailingButton = UIButton()
+        imageStackView.addArrangedSubview(trailingButton)
     }
 
     func styleViews() {
@@ -48,6 +57,16 @@ extension HeaderView {
         imageView.contentMode = .scaleAspectFill
         imageView.roundAllCorners(withRadius: 8)
         imageView.addBorder()
+
+        imageStackView.distribution = .fill
+        imageStackView.spacing = defaultPadding * 2
+        imageStackView.alignment = .center
+
+        leadingButton.setImage(UIImage(named: BundleImage.github.rawValue, in: Bundle.module, with: nil), for: .normal)
+        leadingButton.imageView?.contentMode = .scaleAspectFill
+
+        trailingButton.setImage(UIImage(named: BundleImage.linkedin.rawValue, in: Bundle.module, with: nil), for: .normal)
+        trailingButton.imageView?.contentMode = .scaleAspectFill
     }
 
     func defineLayoutForViews() {
@@ -57,6 +76,19 @@ extension HeaderView {
 
         imageView.snp.makeConstraints {
             $0.height.equalTo(200)
+        }
+
+        imageStackView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(defaultPadding * 2 + 4)
+            $0.trailing.equalToSuperview().inset(defaultPadding * 2)
+        }
+
+        leadingButton.snp.makeConstraints {
+            $0.size.equalTo(socialImageSize)
+        }
+
+        trailingButton.snp.makeConstraints {
+            $0.size.equalTo(socialImageSize)
         }
     }
 
