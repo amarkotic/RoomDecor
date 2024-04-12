@@ -14,6 +14,9 @@ extension HeaderView {
         stackView = UIStackView()
         addSubview(stackView)
 
+        titleLabel = UILabel()
+        stackView.addArrangedSubview(titleLabel)
+
         textStackView = UIStackView()
         stackView.addArrangedSubview(textStackView)
 
@@ -40,6 +43,10 @@ extension HeaderView {
         stackView.axis = .vertical
         stackView.spacing = defaultPadding * 2
         stackView.alignment = .leading
+
+        titleLabel.text = LocalizableStrings.meetTheAuthor.localized
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont(with: .futura, size: 24)
 
         textStackView.axis = .vertical
         textStackView.spacing = defaultPadding / 2
@@ -79,7 +86,7 @@ extension HeaderView {
         }
 
         imageStackView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(defaultPadding * 2 + 4)
+            $0.top.equalToSuperview().inset(defaultPadding * 9)
             $0.trailing.equalToSuperview().inset(defaultPadding * 2)
         }
 
