@@ -154,7 +154,6 @@
 		659DE2DE2AF6C7B400608313 = {
 			isa = PBXGroup;
 			children = (
-				653E5AE12BCA663A006DCB51 /* RoomDecor.entitlements */,
 				656314A12BC7090E00A3087B /* Author */,
 				65F8B5B82BA5ACE6006635F5 /* Core */,
 				65F8B5BB2BA5B9A1006635F5 /* CoreUi */,
@@ -223,13 +222,14 @@
 		65F8B5B22BA5ABAE006635F5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				652D38552BC5AB96001FCBC5 /* LaunchScreen */,
-				65D900A72BA5BE3D008BE952 /* Coordinator */,
-				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
-				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
-				659DE31F2AF6C94B00608313 /* AppModule.swift */,
+				653E5AE12BCA663A006DCB51 /* RoomDecor.entitlements */,
 				659DE2F82AF6C7B500608313 /* Info.plist */,
+				659DE2EA2AF6C7B400608313 /* AppDelegate.swift */,
+				659DE31F2AF6C94B00608313 /* AppModule.swift */,
+				659DE2EC2AF6C7B400608313 /* SceneDelegate.swift */,
 				6583200D2BC9C7A60088D1BC /* PrivacyInfo.xcprivacy */,
+				65D900A72BA5BE3D008BE952 /* Coordinator */,
+				652D38552BC5AB96001FCBC5 /* LaunchScreen */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -641,7 +641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RoomDecor.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/RoomDecor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C7L62PRT2R;
@@ -674,7 +674,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RoomDecor.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/RoomDecor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C7L62PRT2R;
