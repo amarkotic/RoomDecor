@@ -26,6 +26,9 @@ extension RoomScanLandingViewController {
         startScanView = UIImageView()
         view.addSubview(startScanView)
 
+        notificationView = NotificationView()
+        view.addSubview(notificationView)
+
         bottomDivider = DividerView()
         view.addSubview(bottomDivider)
 
@@ -53,11 +56,17 @@ extension RoomScanLandingViewController {
 
         startScanView.image = UIImage(named: BundleImage.arrowDown.rawValue, in: .module, with: nil)
         startScanView.contentMode = .scaleAspectFit
+        startScanView.isHidden = !supportsLidar
 
         startRoomScanButton.setTitle(CoreUi.LocalizableStrings.start.localized, for: .normal)
         startRoomScanButton.setTitleColor(.white, for: .normal)
         startRoomScanButton.backgroundColor = .black
         startRoomScanButton.roundAllCorners(withRadius: cornerRadius)
+        startRoomScanButton.isHidden = !supportsLidar
+
+        notificationView.isHidden = supportsLidar
+
+        bottomDivider.isHidden = !supportsLidar
 
         loadingIndicator.isHidden = true
 
@@ -85,6 +94,11 @@ extension RoomScanLandingViewController {
             $0.size.equalTo(arrowImageSize)
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(bottomDivider.snp.top)
+        }
+
+        notificationView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(defaultPadding * 4)
+            $0.top.equalTo(topDivider.snp.bottom).offset(defaultPadding * 4)
         }
 
         bottomDivider.snp.makeConstraints {

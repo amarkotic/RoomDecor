@@ -1,3 +1,4 @@
+import ARKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -12,6 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         window = UIWindow(windowScene: windowScene)
+
+        let supportLiDAR = ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
+        UserDefaults.standard.setValue(supportLiDAR, forKey: "supportLidar")
 
         if let window = window {
             let appModule = AppModule()

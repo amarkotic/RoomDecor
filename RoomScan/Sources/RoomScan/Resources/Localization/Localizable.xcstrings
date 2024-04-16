@@ -1,6 +1,75 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "noLidarSupportPartOne" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leider haben wir festgestellt, dass Ihr Gerät nicht über LiDAR-Sensoren verfügt, die für diese Funktion erforderlich sind."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unfortunatelly, we identified your device doesn't have LiDAR sensors which are required for this feature. "
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nažalost, utvrdili smo da vaš uređaj nema LiDAR senzore koji su potrebni za ovu značajku."
+          }
+        }
+      }
+    },
+    "noLidarSupportPartThree" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen Sie einfach auf das Symbol oben rechts und wechseln Sie das Modul"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simply tap on the top right icon and switch the module"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednostavno pritisnite gornju desnu ikonu i promijenite modul"
+          }
+        }
+      }
+    },
+    "noLidarSupportPartTwo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aber keine Sorge, Sie können das andere Modul der App weiterhin nutzen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "But don't worry, you can still use the other module of the app. "
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ali ne brinite, još uvijek možete koristiti drugi modul aplikacije."
+          }
+        }
+      }
+    },
     "scanTheRoom" : {
       "extractionState" : "manual",
       "localizations" : {
