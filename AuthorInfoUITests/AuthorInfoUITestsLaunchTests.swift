@@ -3,7 +3,9 @@ import XCTest
 final class AuthorInfoUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
+
         true
+
     }
 
     override func setUpWithError() throws {
@@ -22,4 +24,5 @@ final class AuthorInfoUITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+
 }

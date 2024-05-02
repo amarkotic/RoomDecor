@@ -10,7 +10,6 @@ class NotificationView: UIView {
     var labelTwo: UILabel!
     var labelThree: UILabel!
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 

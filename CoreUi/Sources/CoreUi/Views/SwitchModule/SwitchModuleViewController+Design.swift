@@ -14,7 +14,6 @@ extension SwitchModuleViewController {
         view.addSubview(stackView)
 
         authorInfoView = AuthorInfoView()
-        stackView.addArrangedSubview(authorInfoView)
 
         sliderView = SliderView()
         stackView.addArrangedSubview(sliderView)

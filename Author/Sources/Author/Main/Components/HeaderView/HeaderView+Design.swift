@@ -72,7 +72,8 @@ extension HeaderView {
         leadingButton.setImage(UIImage(named: BundleImage.github.rawValue, in: Bundle.module, with: nil), for: .normal)
         leadingButton.imageView?.contentMode = .scaleAspectFill
 
-        trailingButton.setImage(UIImage(named: BundleImage.linkedin.rawValue, in: Bundle.module, with: nil), for: .normal)
+        trailingButton.setImage(UIImage(
+            named: BundleImage.linkedin.rawValue, in: Bundle.module, with: nil), for: .normal)
         trailingButton.imageView?.contentMode = .scaleAspectFill
     }
 

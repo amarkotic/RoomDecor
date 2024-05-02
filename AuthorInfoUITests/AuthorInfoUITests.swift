@@ -31,4 +31,5 @@ final class AuthorInfoUITests: XCTestCase {
             }
         }
     }
+
 }
