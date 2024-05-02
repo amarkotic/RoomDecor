@@ -13,11 +13,13 @@ public class RoomScanLandingViewController: UIViewController {
     let navBarHeight: CGFloat = 60
     let startButtonHeight: CGFloat = 60
     let arrowImageSize = CGSize(width: 150, height: 150)
+    let supportsLidar: Bool = UserDefaults.standard.bool(forKey: "supportLidar")
 
     var navBarView: NavBarView!
     var topDivider: DividerView!
     var collectionView: UICollectionView!
     var startScanView: UIImageView!
+    var notificationView: NotificationView!
     var bottomDivider: DividerView!
     var startRoomScanButton: UIButton!
     var loadingIndicator: UIActivityIndicatorView!
@@ -93,6 +95,8 @@ public class RoomScanLandingViewController: UIViewController {
     }
 
     private func populateView() {
+        guard supportsLidar else { return }
+
         if presenter.roomScanModels.count == 0 {
             collectionView.isHidden = true
             startScanView.isHidden = false
