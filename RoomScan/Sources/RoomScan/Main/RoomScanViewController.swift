@@ -8,10 +8,14 @@ public class RoomScanViewController: UIViewController {
     let cornerRadius: CGFloat = 4
     let buttonSize = CGSize(width: 80, height: 60)
 
+    let sessionConfig: RoomCaptureSession.Configuration
+
     var roomCaptureView: RoomCaptureView!
     var stackView: UIStackView!
     var saveButton: UIButton!
+    var saveLoadingIndicator: UIActivityIndicatorView!
     var shareButton: UIButton!
+    var shareLoadingIndicator: UIActivityIndicatorView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: RoomScanPresenter!
@@ -19,6 +23,7 @@ public class RoomScanViewController: UIViewController {
 
     public init(presenter: RoomScanPresenter) {
         self.presenter = presenter
+        self.sessionConfig = RoomCaptureSession.Configuration()
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -50,46 +55,84 @@ public class RoomScanViewController: UIViewController {
         presenter
             .$canExport
             .sink { [weak self] canExport in
-                self?.shareButton.isHidden = !canExport
+                self?.stackView.isHidden = !canExport
             }
             .store(in: &disposables)
 
         saveButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.saveRoomModel()
+                guard let self else { return }
+
+                self.showLoader(for: .save)
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.saveRoomModel()
+                }
             }
             .store(in: &disposables)
 
         shareButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.exportRoomModel()
+                guard let self else { return }
+
+                self.showLoader(for: .share)
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.shareRoomModel()
+                }
             }
             .store(in: &disposables)
     }
 
     private func startSession() {
-        let sessionConfig = RoomCaptureSession.Configuration()
         roomCaptureView?.captureSession.run(configuration: sessionConfig)
+    }
+
+    private func stopSession() {
+        roomCaptureView.captureSession.stop()
     }
 
     private func saveRoomModel() {
         do {
             let url = presenter.exportUrl
+            stopSession()
             try capturedRoom?.export(to: url)
+        } catch {
+            print(error.localizedDescription)
+        }
+        //        hideLoader()
+    }
+
+    private func shareRoomModel() {
+        do {
+            let url = presenter.exportUrl
+            try capturedRoom?.export(to: url)
+            let backgroundQueue = DispatchQueue(label: "background_queue", qos: .background)
+
+            backgroundQueue.async {[weak self] in
+                self?.stopSession()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.presenter.presentShareSheet(for: [url])
+            }
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    private func exportRoomModel() {
-        do {
-            let url = presenter.exportUrl
-            try capturedRoom?.export(to: url)
-            presenter.presentShareSheet(for: [url])
-        } catch {
-            print(error.localizedDescription)
+    private func showLoader(for action: ActionType) {
+        switch action {
+        case .save:
+            self.saveLoadingIndicator.isHidden = false
+            self.saveLoadingIndicator.startAnimating()
+            self.saveButton.titleLabel?.isHidden = true
+        case .share:
+            self.shareLoadingIndicator.isHidden = false
+            self.shareLoadingIndicator.startAnimating()
+            self.shareButton.titleLabel?.isHidden = true
         }
     }
 
@@ -102,6 +145,12 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
         capturedRoom = room
         DispatchQueue.main.async {
             self.presenter.canExport = true
+        }
+    }
+
+    public func captureSession(_ session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: (any Error)?) {
+        DispatchQueue.main.async {
+            self.stackView.isHidden = true
         }
     }
 

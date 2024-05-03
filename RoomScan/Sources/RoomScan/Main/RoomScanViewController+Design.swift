@@ -21,13 +21,23 @@ extension RoomScanViewController {
 
         saveButton = UIButton()
         stackView.addArrangedSubview(saveButton)
+        
+        saveLoadingIndicator = UIActivityIndicatorView(style: .large)
+        saveButton.addSubview(saveLoadingIndicator)
 
         shareButton = UIButton()
         stackView.addArrangedSubview(shareButton)
+
+        shareLoadingIndicator = UIActivityIndicatorView(style: .large)
+        shareButton.addSubview(shareLoadingIndicator)
     }
 
     public func styleViews() {
         navigationController?.setNavigationBarHidden(false, animated: false)
+
+        stackView.spacing = 12
+        stackView.distribution = .fillEqually
+        stackView.isHidden = true
 
         saveButton.setTitle(CoreUi.LocalizableStrings.save.localized, for: .normal)
         saveButton.setTitleColor(.white, for: .normal)
@@ -54,8 +64,16 @@ extension RoomScanViewController {
             $0.size.equalTo(buttonSize)
         }
 
+        saveLoadingIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
         shareButton.snp.makeConstraints {
             $0.size.equalTo(buttonSize)
+        }
+
+        shareLoadingIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 
