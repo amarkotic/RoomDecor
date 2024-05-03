@@ -28,7 +28,6 @@ extension RoomScanPresenter {
             .appending(FileType.usdz.fileExtension)
 
         let url = documentsDirectory.appendingPathComponent(fileName)
-        print("logger \(url)")
         return documentsDirectory.appendingPathComponent(fileName)
     }
 

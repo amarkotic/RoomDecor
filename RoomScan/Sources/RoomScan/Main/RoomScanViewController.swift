@@ -6,9 +6,11 @@ public class RoomScanViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
     let cornerRadius: CGFloat = 4
-    let shareButtonSize = CGSize(width: 80, height: 60)
+    let buttonSize = CGSize(width: 80, height: 60)
 
     var roomCaptureView: RoomCaptureView!
+    var stackView: UIStackView!
+    var saveButton: UIButton!
     var shareButton: UIButton!
 
     private var disposables = Set<AnyCancellable>()
@@ -52,6 +54,13 @@ public class RoomScanViewController: UIViewController {
             }
             .store(in: &disposables)
 
+        saveButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                self?.saveRoomModel()
+            }
+            .store(in: &disposables)
+
         shareButton
             .throttledTap()
             .sink { [weak self] _ in
@@ -63,6 +72,15 @@ public class RoomScanViewController: UIViewController {
     private func startSession() {
         let sessionConfig = RoomCaptureSession.Configuration()
         roomCaptureView?.captureSession.run(configuration: sessionConfig)
+    }
+
+    private func saveRoomModel() {
+        do {
+            let url = presenter.exportUrl
+            try capturedRoom?.export(to: url)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     private func exportRoomModel() {
