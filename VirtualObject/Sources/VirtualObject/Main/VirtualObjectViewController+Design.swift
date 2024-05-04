@@ -33,7 +33,7 @@ extension VirtualObjectViewController {
         sightImageView.image = UIImage(named: BundleImage.sight.rawValue, in: .module, with: nil)
         sightImageView.contentMode = .scaleAspectFill
 
-        infoView.set(title: "Point at a horizontal plane")
+        infoView.set(title: LocalizableStrings.infoLabel.localized)
 
         virtualObjectButton.setTitle(LocalizableStrings.addVirtualObject.localized, for: .normal)
         virtualObjectButton.setTitleColor(.white, for: .normal)
@@ -57,7 +57,7 @@ extension VirtualObjectViewController {
         }
 
         virtualObjectButton.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(defaultPadding * 3)
             $0.leading.trailing.equalToSuperview().inset(defaultPadding * 2)
             $0.height.equalTo(buttonHeight)
         }
