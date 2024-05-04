@@ -49,7 +49,7 @@ extension RoomScanLandingPresenter {
 
             return urls
         } catch {
-            print(error)
+            appRouter.showErrorPopup(for: .load)
             return []
         }
     }

@@ -42,7 +42,13 @@ class AppModule {
     private func registerVirtualObjectViewController(in container: Resolver) {
         container.register { (_, args) -> VirtualObjectViewController in
             let type: VirtualObjectType = args()
-            return VirtualObjectViewController(type: type)
+            return VirtualObjectViewController(presenter: container.resolve(args: args))
+        }
+        .scope(.unique)
+
+        container.register { (_, args) -> VirtualObjectPresenter in
+            let type: VirtualObjectType = args()
+            return VirtualObjectPresenter(appRouter: container.resolve(), type: type)
         }
         .scope(.unique)
     }

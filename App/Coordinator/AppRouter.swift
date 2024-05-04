@@ -102,6 +102,42 @@ class AppRouter:
         UINavigationBar.appearance().backItem?.title = ""
     }
 
+    func showErrorPopup(for type: RoomScanErrorType) {
+        let errorType = ErrorType(from: type)
+        showError(for: errorType)
+    }
+
+    func showErrorPopup(for type: VirtualObjectErrorType) {
+        let errorType = ErrorType(from: type)
+        showError(for: errorType)
+    }
+
+    private func showError(for type: ErrorType) {
+        let errorView = ErrorView()
+        errorView.set(type: type)
+        errorView.frame = UIScreen.main.bounds
+        errorView.alpha = 0
+
+        currentViewController?.view.addSubview(errorView)
+        UIView.animate(withDuration: 0.3) {
+            errorView.alpha = 1
+        }
+
+        errorView
+            .buttonTapped
+            .sink { [weak errorView] _ in
+                guard let errorView else { return }
+
+                UIView.animate(withDuration: 0.3) {
+                    errorView.alpha = 0
+                } completion: { _ in
+                    errorView.removeFromSuperview()
+                    errorView.disposables.removeAll()
+                }
+            }
+            .store(in: &errorView.disposables)
+    }
+
 }
 
 // MARK: - Helpers functions
@@ -136,6 +172,30 @@ extension AppRouter: UINavigationControllerDelegate {
         else { return nil }
 
         return TransitionManager(duration: 1.5)
+    }
+
+}
+
+extension ErrorType {
+
+    init(from type: RoomScanErrorType) {
+        switch type {
+        case .load:
+            self = .roomScanLoad
+        case .save:
+            self = .roomScanSave
+        case .session:
+            self = .roomScanSession
+        }
+    }
+
+    init(from type: VirtualObjectErrorType) {
+        switch type {
+        case .session:
+            self = .virtualObjectSession
+        case .loadObject:
+            self = .virtualObjectLoadObject
+        }
     }
 
 }

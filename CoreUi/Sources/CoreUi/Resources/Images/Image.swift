@@ -14,5 +14,6 @@ public enum BundleSystemImage: String {
     case switchIcon = "arrow.left.arrow.right.circle"
     case share = "square.and.arrow.up"
     case info = "info.circle"
+    case error = "xmark.circle.fill"
 
 }
