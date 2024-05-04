@@ -6,17 +6,31 @@ public class RoomScanViewController: UIViewController {
 
     let defaultPadding: CGFloat = 16
     let cornerRadius: CGFloat = 4
-    let shareButtonSize = CGSize(width: 80, height: 60)
+    let buttonSize = CGSize(width: 80, height: 60)
+
+    let sessionConfig: RoomCaptureSession.Configuration
 
     var roomCaptureView: RoomCaptureView!
+    var saveButton: UIButton!
+    var saveLoadingIndicator: UIActivityIndicatorView!
     var shareButton: UIButton!
+    var shareLoadingIndicator: UIActivityIndicatorView!
 
     private var disposables = Set<AnyCancellable>()
     private let presenter: RoomScanPresenter!
     private var capturedRoom: CapturedRoom?
 
+    private var buttonTappedSubject = PassthroughSubject<ActionType, Never>()
+
+    var buttonTapped: AnyPublisher<ActionType, Never> {
+        buttonTappedSubject
+            .delay(for: .milliseconds(100), scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
     public init(presenter: RoomScanPresenter) {
         self.presenter = presenter
+        self.sessionConfig = RoomCaptureSession.Configuration()
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,32 +60,103 @@ public class RoomScanViewController: UIViewController {
 
     private func bindViews() {
         presenter
-            .$canExport
-            .sink { [weak self] canExport in
-                self?.shareButton.isHidden = !canExport
+            .$isReadyToSave
+            .sink { [weak self] isReadyToSave in
+                self?.saveButton.isHidden = !isReadyToSave
+            }
+            .store(in: &disposables)
+
+        saveButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                guard let self else { return }
+
+                self.showLoader(for: .save)
+                self.buttonTappedSubject.send(.save)
             }
             .store(in: &disposables)
 
         shareButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.exportRoomModel()
+                guard let self else { return }
+
+                self.showLoader(for: .share)
+                self.buttonTappedSubject.send(.share)
+            }
+            .store(in: &disposables)
+
+        buttonTapped
+            .sink { [weak self] type in
+                guard let self else { return }
+
+                switch type {
+                case .save:
+                    self.saveTapped()
+                case .share:
+                    self.shareTapped()
+                }
             }
             .store(in: &disposables)
     }
 
     private func startSession() {
-        let sessionConfig = RoomCaptureSession.Configuration()
-        roomCaptureView?.captureSession.run(configuration: sessionConfig)
+        roomCaptureView.captureSession.run(configuration: sessionConfig)
     }
 
-    private func exportRoomModel() {
+    private func stopSession() {
+        roomCaptureView.captureSession.stop()
+    }
+
+    private func saveTapped() {
+        do {
+            try saveRoomScan()
+        } catch {
+            print(error)
+        }
+
+        stopSession()
+        saveButton.isHidden = true
+        hideLoader(for: .save)
+    }
+
+    private func shareTapped() {
+        presenter.presentShareSheet()
+        hideLoader(for: .share)
+    }
+
+    private func saveRoomScan() throws {
         do {
             let url = presenter.exportUrl
             try capturedRoom?.export(to: url)
-            presenter.presentShareSheet(for: [url])
         } catch {
-            print(error.localizedDescription)
+            print("There was a problem with saving your room scan")
+        }
+    }
+
+    private func showLoader(for action: ActionType) {
+        switch action {
+        case .save:
+            self.saveLoadingIndicator.isHidden = false
+            self.saveLoadingIndicator.startAnimating()
+            self.saveButton.titleLabel?.isHidden = true
+        case .share:
+            self.shareLoadingIndicator.isHidden = false
+            self.shareLoadingIndicator.startAnimating()
+            self.shareButton.titleLabel?.isHidden = true
+        }
+    }
+
+    private func hideLoader(for action: ActionType) {
+        switch action {
+        case .save:
+            self.saveLoadingIndicator.isHidden = true
+            self.saveLoadingIndicator.stopAnimating()
+            self.saveButton.titleLabel?.isHidden = false
+        case .share:
+            self.shareLoadingIndicator.isHidden = true
+            self.shareLoadingIndicator.stopAnimating()
+            self.shareButton.titleLabel?.isHidden = false
         }
     }
 
@@ -83,7 +168,17 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
     public func captureSession(_ session: RoomCaptureSession, didUpdate room: CapturedRoom) {
         capturedRoom = room
         DispatchQueue.main.async {
-            self.presenter.canExport = true
+            self.presenter.isReadyToSave = true
+        }
+    }
+
+    public func captureSession(_ session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: (any Error)?) {
+        guard error == nil else { return }
+
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 1.5) {
+                self.shareButton.layer.opacity = 1
+            }
         }
     }
 

@@ -3,6 +3,7 @@ import Core
 public enum LocalizableStrings: String {
 
     case scanTheRoom
+    case save
     case share
     case moduleSwitchSlideToConfirm
     case start

@@ -4,7 +4,7 @@ import Core
 
 public class RoomScanPresenter {
 
-    @Published var canExport: Bool = false
+    @Published var isReadyToSave: Bool = false
 
     private let appRouter: RoomScanRouterProtocol
 
@@ -12,8 +12,8 @@ public class RoomScanPresenter {
         self.appRouter = appRouter
     }
 
-    func presentShareSheet(for items: [URL]) {
-        appRouter.presentShareSheet(for: items)
+    func presentShareSheet() {
+        appRouter.presentShareSheet(for: [exportUrl])
     }
 
 }
@@ -26,9 +26,6 @@ extension RoomScanPresenter {
         let fileName = "scan_"
             .appending(dateString)
             .appending(FileType.usdz.fileExtension)
-
-        let url = documentsDirectory.appendingPathComponent(fileName)
-        print("logger \(url)")
         return documentsDirectory.appendingPathComponent(fileName)
     }
 
