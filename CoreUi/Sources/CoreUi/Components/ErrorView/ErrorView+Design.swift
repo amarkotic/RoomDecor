@@ -45,6 +45,7 @@ extension ErrorView {
         iconView.tintColor = .black
         iconView.contentMode = .scaleAspectFill
 
+        titleLabelView.text = LocalizableStrings.errorTitle.localized
         titleLabelView.font = UIFont(with: .futura, size: 16)
         titleLabelView.textColor = .black
         titleLabelView.textAlignment = .center

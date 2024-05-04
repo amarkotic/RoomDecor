@@ -36,7 +36,6 @@ public class ErrorView: UIView {
     }
 
     public func set(type: ErrorType) {
-        titleLabelView.text = type.title
         descriptionLabelView.text = type.description
     }
 
