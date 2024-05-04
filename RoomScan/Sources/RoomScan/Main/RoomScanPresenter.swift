@@ -16,6 +16,10 @@ public class RoomScanPresenter {
         appRouter.presentShareSheet(for: [exportUrl])
     }
 
+    func showErrorPopup(for type: RoomScanErrorType) {
+        appRouter.showErrorPopup(for: type)
+    }
+
 }
 
 extension RoomScanPresenter {

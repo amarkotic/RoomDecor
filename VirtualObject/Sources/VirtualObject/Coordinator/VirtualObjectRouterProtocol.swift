@@ -6,4 +6,6 @@ public protocol VirtualObjectRouterProtocol {
 
     func switchModule()
 
+    func showErrorPopup(for type: VirtualObjectErrorType)
+
 }

@@ -1,4 +1,5 @@
 import Foundation
+import CoreUi
 
 public protocol RoomScanRouterProtocol {
 
@@ -9,5 +10,7 @@ public protocol RoomScanRouterProtocol {
     func switchModule()
 
     func presentShareSheet(for items: [URL])
+
+    func showErrorPopup(for type: RoomScanErrorType)
 
 }

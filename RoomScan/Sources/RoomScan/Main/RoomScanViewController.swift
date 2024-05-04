@@ -109,12 +109,7 @@ public class RoomScanViewController: UIViewController {
     }
 
     private func saveTapped() {
-        do {
-            try saveRoomScan()
-        } catch {
-            print(error)
-        }
-
+        saveRoomScan()
         stopSession()
         saveButton.isHidden = true
         hideLoader(for: .save)
@@ -125,12 +120,12 @@ public class RoomScanViewController: UIViewController {
         hideLoader(for: .share)
     }
 
-    private func saveRoomScan() throws {
+    private func saveRoomScan() {
         do {
             let url = presenter.exportUrl
             try capturedRoom?.export(to: url)
         } catch {
-            print("There was a problem with saving your room scan")
+            presenter.showErrorPopup(for: .save)
         }
     }
 
@@ -173,9 +168,12 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
     }
 
     public func captureSession(_ session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: (any Error)?) {
-        guard error == nil else { return }
-
         DispatchQueue.main.async {
+            guard error == nil else {
+                self.presenter.showErrorPopup(for: .session)
+                return
+            }
+
             UIView.animate(withDuration: 0.2, delay: 1.5) {
                 self.shareButton.layer.opacity = 1
             }

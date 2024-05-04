@@ -24,6 +24,52 @@
         }
       }
     },
+    "confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Ordnung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got It"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U redu"
+          }
+        }
+      }
+    },
+    "errorTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es ist ein Problem aufgetreten!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We've run into an issue!"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naišli smo na problem!"
+          }
+        }
+      }
+    },
     "moduleSwitchSlideToConfirm" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -43,6 +89,75 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Povuci za promjenu modula"
+          }
+        }
+      }
+    },
+    "roomScanLoad" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Raumscans, auf die Sie zugreifen möchten, scheinen nicht verfügbar zu sein. Bitte starten Sie die App neu und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Room scans you are trying to access don't seem to be available. Please restart the app and try again."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeniranja prostorije kojima pokušavate pristupiti čini se da nisu dostupna. Molimo ponovno pokrenite aplikaciju i pokušajte ponovno."
+          }
+        }
+      }
+    },
+    "roomScanSave" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Raumscan kann derzeit nicht gespeichert werden. Bitte versuchen Sie, den Raum erneut zu scannen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Room scan can't be saved at the moment. Please try to scan the room once again."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenirana prostorija trenutno se ne može spremiti. Molimo pokušajte ponovno skenirati prostoriju."
+          }
+        }
+      }
+    },
+    "roomScanSession" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Raumscan konnte Objekte nicht erkennen. Bitte versuchen Sie es erneut und bewegen Sie Ihr Telefon langsam."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Room scan didn't manage to recognize objects. Please try again and move your phone slowley."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skeniranje prostorije nije prepoznalo objekte. Molimo pokušajte ponovno i polako pomičite telefon."
           }
         }
       }
@@ -112,6 +227,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Započni"
+          }
+        }
+      }
+    },
+    "virtualObjectLoadObject" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das virtuelle Objekt, das Sie laden möchten, scheint nicht verfügbar zu sein. Bitte starten Sie die App neu und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virtual object you are trying to load doesn't seem to be available. Please restart the app and try again."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virtualni objekt koji pokušavate učitati čini se da nije dostupan. Molimo ponovno pokrenite aplikaciju i pokušajte ponovno."
+          }
+        }
+      }
+    },
+    "virtualObjectSession" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Sitzung für virtuelle Objekte kann derzeit nicht gestartet werden. Bitte starten Sie die App neu und versuchen Sie es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virtual object session can't be started at the moment. Please restart the app and try again."
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesija virtualnog objekta trenutno se ne može pokrenuti. Molimo ponovno pokrenite aplikaciju i pokušajte ponovno."
           }
         }
       }
