@@ -1,6 +1,7 @@
 import ARKit
 import Combine
 import UIKit
+import Core
 import CoreUi
 
 public class VirtualObjectViewController: UIViewController {
@@ -20,6 +21,7 @@ public class VirtualObjectViewController: UIViewController {
     private var screenCenter: CGPoint?
     private var disposables = Set<AnyCancellable>()
     private var sessionConfig: ARConfiguration = ARWorldTrackingConfiguration()
+    private var modelCache: [String: SCNNode] = [:]
 
     private var horizontalPlaneDetectedSubject = PassthroughSubject<Bool, Never>()
 
@@ -33,6 +35,8 @@ public class VirtualObjectViewController: UIViewController {
         self.type = type
 
         super.init(nibName: nil, bundle: nil)
+
+        configurePlaneDetection()
     }
 
     required init?(coder: NSCoder) {
@@ -62,7 +66,6 @@ public class VirtualObjectViewController: UIViewController {
         super.viewDidAppear(animated)
 
         UIApplication.shared.isIdleTimerDisabled = true
-        restartPlaneDetection()
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -71,18 +74,18 @@ public class VirtualObjectViewController: UIViewController {
         session.pause()
     }
 
-    private func restartPlaneDetection() {
-        if let worldSessionConfig = sessionConfig as? ARWorldTrackingConfiguration {
-            worldSessionConfig.planeDetection = .horizontal
-            session.run(worldSessionConfig, options: [.resetTracking, .removeExistingAnchors])
-        }
+    private func configurePlaneDetection() {
+        guard let worldSessionConfig = sessionConfig as? ARWorldTrackingConfiguration else { return }
+
+        worldSessionConfig.planeDetection = .horizontal
+        session.run(worldSessionConfig, options: [.resetTracking, .removeExistingAnchors])
     }
 
     private func bindViews() {
         virtualObjectButton
             .throttledTap()
             .sink { [weak self] _ in
-                self?.virtualObject()
+                self?.addVirtualObject()
             }
             .store(in: &disposables)
 
@@ -99,16 +102,33 @@ public class VirtualObjectViewController: UIViewController {
             .store(in: &disposables)
     }
 
-    private func virtualObject() {
+}
+
+extension VirtualObjectViewController: ARSCNViewDelegate {
+
+    public func renderer(_ renderer: any SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            guard
+                let center = self.screenCenter,
+                let query = self.sceneView.raycastQuery(from: center, allowing: .estimatedPlane, alignment: .horizontal)
+            else { return }
+
+            self.horizontalPlaneDetectedSubject.send(!self.sceneView.session.raycast(query).isEmpty)
+        }
+    }
+
+}
+
+// MARK: - Adding and caching virtual object
+extension VirtualObjectViewController {
+
+    private func addVirtualObject() {
         guard
             let center = screenCenter,
             let query = self.sceneView.raycastQuery(from: center, allowing: .estimatedPlane, alignment: .horizontal),
             let transform = sceneView.session.raycast(query).first?.worldTransform,
-            let objectNode = loadModel(named: type.rawValue, withExtension: "usdz")
-        else {
-            print("Hit test failed")
-            return
-        }
+            let objectNode = loadVirtualObject(named: type.rawValue)
+        else { return }
 
         let position = SCNVector3(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
         objectNode.position = position
@@ -125,16 +145,13 @@ public class VirtualObjectViewController: UIViewController {
         sceneView.scene.rootNode.addChildNode(objectNode)
     }
 
-    // Preload or cache the models if necessary to avoid reloading them multiple times
-    private var modelCache: [String: SCNNode] = [:]
-
-    private func loadModel(named modelName: String, withExtension fileExtension: String) -> SCNNode? {
+    private func loadVirtualObject(named modelName: String, type: FileType = .usdz) -> SCNNode? {
         if let cachedNode = modelCache[modelName] {
             return cachedNode.clone() // Use clone to duplicate the node if needed
         }
 
-        guard let url = Bundle.module.url(forResource: modelName, withExtension: fileExtension) else {
-            print("Failed to find URL for model \(modelName) with extension \(fileExtension)")
+        guard let url = Bundle.module.url(forResource: modelName, withExtension: type.fileExtension) else {
+            print("Failed to find URL for model \(modelName) with extension \(type.fileExtension)")
             return nil
         }
 
@@ -146,21 +163,6 @@ public class VirtualObjectViewController: UIViewController {
         let modelNode = scene.rootNode.childNodes.first
         modelCache[modelName] = modelNode // Cache the loaded model
         return modelNode?.clone() // Return a clone if you will add this to the scene multiple times
-    }
-
-}
-
-extension VirtualObjectViewController: ARSCNViewDelegate {
-
-    public func renderer(_ renderer: any SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        DispatchQueue.main.async {
-            guard
-                let center = self.screenCenter,
-                let query = self.sceneView.raycastQuery(from: center, allowing: .estimatedPlane, alignment: .horizontal)
-            else { return }
-
-            self.horizontalPlaneDetectedSubject.send(!self.sceneView.session.raycast(query).isEmpty)
-        }
     }
 
 }

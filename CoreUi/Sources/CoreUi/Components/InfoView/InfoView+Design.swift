@@ -23,7 +23,7 @@ extension InfoView {
     public func styleViews() {
         backgroundColor = .black.withAlphaComponent(0.2)
 
-        stackView.spacing = 4
+        stackView.spacing = 6
         stackView.alignment = .center
         stackView.roundAllCorners(withRadius: cornerRadius)
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8)
