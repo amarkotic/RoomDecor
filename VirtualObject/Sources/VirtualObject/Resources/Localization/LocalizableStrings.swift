@@ -2,6 +2,7 @@ import Core
 
 enum LocalizableStrings: String {
 
+    case infoLabel
     case addVirtualObject
 
     case armchair

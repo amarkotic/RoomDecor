@@ -70,6 +70,29 @@
         }
       }
     },
+    "infoLabel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Richte das Zentrum auf eine horizontale Fläche aus"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Point the center at a horizontal plane"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usmjeri center na horizontalnu površinu"
+          }
+        }
+      }
+    },
     "lamp" : {
       "extractionState" : "manual",
       "localizations" : {
