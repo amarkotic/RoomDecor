@@ -11,7 +11,6 @@ public class RoomScanViewController: UIViewController {
     let sessionConfig: RoomCaptureSession.Configuration
 
     var roomCaptureView: RoomCaptureView!
-    var stackView: UIStackView!
     var saveButton: UIButton!
     var saveLoadingIndicator: UIActivityIndicatorView!
     var shareButton: UIButton!
@@ -53,9 +52,9 @@ public class RoomScanViewController: UIViewController {
 
     private func bindViews() {
         presenter
-            .$canExport
-            .sink { [weak self] canExport in
-                self?.stackView.isHidden = !canExport
+            .$isReadyToSave
+            .sink { [weak self] isReadyToSave in
+                self?.saveButton.isHidden = !isReadyToSave
             }
             .store(in: &disposables)
 
@@ -67,7 +66,7 @@ public class RoomScanViewController: UIViewController {
                 self.showLoader(for: .save)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.saveRoomModel()
+                    self.saveTapped()
                 }
             }
             .store(in: &disposables)
@@ -80,46 +79,42 @@ public class RoomScanViewController: UIViewController {
                 self.showLoader(for: .share)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.shareRoomModel()
+                    self.shareTapped()
                 }
             }
             .store(in: &disposables)
     }
 
     private func startSession() {
-        roomCaptureView?.captureSession.run(configuration: sessionConfig)
+        roomCaptureView.captureSession.run(configuration: sessionConfig)
     }
 
     private func stopSession() {
         roomCaptureView.captureSession.stop()
     }
 
-    private func saveRoomModel() {
+    private func saveTapped() {
         do {
-            let url = presenter.exportUrl
-            stopSession()
-            try capturedRoom?.export(to: url)
+            try saveRoomScan()
         } catch {
-            print(error.localizedDescription)
+            print(error)
         }
-        //        hideLoader()
+        stopSession()
+        saveButton.isHidden = true
+        hideLoader(for: .save)
     }
 
-    private func shareRoomModel() {
+    private func shareTapped() {
+        presenter.presentShareSheet()
+        hideLoader(for: .share)
+    }
+
+    private func saveRoomScan() throws {
         do {
             let url = presenter.exportUrl
             try capturedRoom?.export(to: url)
-            let backgroundQueue = DispatchQueue(label: "background_queue", qos: .background)
-
-            backgroundQueue.async {[weak self] in
-                self?.stopSession()
-            }
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.presenter.presentShareSheet(for: [url])
-            }
         } catch {
-            print(error.localizedDescription)
+            print("There was a problem with saving your room scan")
         }
     }
 
@@ -136,6 +131,19 @@ public class RoomScanViewController: UIViewController {
         }
     }
 
+    private func hideLoader(for action: ActionType) {
+        switch action {
+        case .save:
+            self.saveLoadingIndicator.isHidden = true
+            self.saveLoadingIndicator.stopAnimating()
+            self.saveButton.titleLabel?.isHidden = false
+        case .share:
+            self.shareLoadingIndicator.isHidden = true
+            self.shareLoadingIndicator.stopAnimating()
+            self.shareButton.titleLabel?.isHidden = false
+        }
+    }
+
 }
 
 // MARK: - RoomCaptureSessionDelegate
@@ -144,13 +152,16 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
     public func captureSession(_ session: RoomCaptureSession, didUpdate room: CapturedRoom) {
         capturedRoom = room
         DispatchQueue.main.async {
-            self.presenter.canExport = true
+            self.presenter.isReadyToSave = true
         }
     }
 
     public func captureSession(_ session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: (any Error)?) {
+        guard error == nil else { return }
         DispatchQueue.main.async {
-            self.stackView.isHidden = true
+            UIView.animate(withDuration: 0.2, delay: 1.5) {
+                self.shareButton.layer.opacity = 1
+            }
         }
     }
 
