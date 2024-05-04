@@ -20,6 +20,14 @@ public class RoomScanViewController: UIViewController {
     private let presenter: RoomScanPresenter!
     private var capturedRoom: CapturedRoom?
 
+    private var buttonTappedSubject = PassthroughSubject<ActionType, Never>()
+
+    var buttonTapped: AnyPublisher<ActionType, Never> {
+        buttonTappedSubject
+            .delay(for: .milliseconds(100), scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
     public init(presenter: RoomScanPresenter) {
         self.presenter = presenter
         self.sessionConfig = RoomCaptureSession.Configuration()
@@ -64,10 +72,7 @@ public class RoomScanViewController: UIViewController {
                 guard let self else { return }
 
                 self.showLoader(for: .save)
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.saveTapped()
-                }
+                self.buttonTappedSubject.send(.save)
             }
             .store(in: &disposables)
 
@@ -77,8 +82,18 @@ public class RoomScanViewController: UIViewController {
                 guard let self else { return }
 
                 self.showLoader(for: .share)
+                self.buttonTappedSubject.send(.share)
+            }
+            .store(in: &disposables)
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        buttonTapped
+            .sink { [weak self] type in
+                guard let self else { return }
+
+                switch type {
+                case .save:
+                    self.saveTapped()
+                case .share:
                     self.shareTapped()
                 }
             }
@@ -99,6 +114,7 @@ public class RoomScanViewController: UIViewController {
         } catch {
             print(error)
         }
+
         stopSession()
         saveButton.isHidden = true
         hideLoader(for: .save)
@@ -158,6 +174,7 @@ extension RoomScanViewController: RoomCaptureSessionDelegate {
 
     public func captureSession(_ session: RoomCaptureSession, didEndWith data: CapturedRoomData, error: (any Error)?) {
         guard error == nil else { return }
+
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.2, delay: 1.5) {
                 self.shareButton.layer.opacity = 1
