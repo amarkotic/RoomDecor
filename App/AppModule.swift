@@ -42,7 +42,7 @@ class AppModule {
     private func registerVirtualObjectViewController(in container: Resolver) {
         container.register { (_, args) -> VirtualObjectViewController in
             let type: VirtualObjectType = args()
-            return VirtualObjectViewController(presenter: container.resolve(args: args))
+            return VirtualObjectViewController(presenter: container.resolve(args: type))
         }
         .scope(.unique)
 

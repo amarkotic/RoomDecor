@@ -70,6 +70,29 @@
         }
       }
     },
+    "missingLidar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihr Gerät verfügt nicht über LiDAR-Sensoren. Das bedeutet, dass Sie nur einen kleinen Teil unserer Funktionen nutzen können."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your device doesn't have LiDAR sensors. That means you can only use a small part of our features. "
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaš uređaj nema LiDAR senzore. To znači da možete koristiti samo mali dio naših funkcija."
+          }
+        }
+      }
+    },
     "moduleSwitchSlideToConfirm" : {
       "extractionState" : "manual",
       "localizations" : {

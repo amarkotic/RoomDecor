@@ -10,13 +10,14 @@ public enum LocalizableStrings: String {
     case author
     case confirm
 
-    //Errors
+    // Errors
     case errorTitle
     case roomScanSession
     case roomScanSave
     case roomScanLoad
     case virtualObjectSession
     case virtualObjectLoadObject
+    case missingLidar
 
     public var localized: String {
         rawValue.localize(bundle: .module)

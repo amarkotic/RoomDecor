@@ -5,6 +5,7 @@ public enum ErrorType {
     case roomScanLoad
     case virtualObjectSession
     case virtualObjectLoadObject
+    case missingLidar
 
     var description: String {
         switch self {
@@ -18,6 +19,8 @@ public enum ErrorType {
             LocalizableStrings.virtualObjectSession.localized
         case .virtualObjectLoadObject:
             LocalizableStrings.virtualObjectLoadObject.localized
+        case .missingLidar:
+            LocalizableStrings.missingLidar.localized
         }
     }
 
