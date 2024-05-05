@@ -16,8 +16,15 @@ class AppRouter:
     private let container: Resolver
 
     private lazy var initialViewController: UIViewController = {
-        let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
-        return initialViewController
+        let supportsLidar: Bool = UserDefaults.standard.bool(forKey: "supportLidar")
+
+        if false {
+            let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
+            return initialViewController
+        } else {
+            let initialViewController: VirtualObjectLandingViewController = container.resolve()
+            return initialViewController
+        }
     }()
 
     init(container: Resolver) {
@@ -37,6 +44,10 @@ class AppRouter:
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+
+        if initialViewController is VirtualObjectLandingViewController {
+            showError(for: .missingLidar)
+        }
     }
 
     func showVirtualObjectLandingViewController() {
