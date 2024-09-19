@@ -18,7 +18,7 @@ class AppRouter:
     private lazy var initialViewController: UIViewController = {
         let supportsLidar: Bool = UserDefaults.standard.bool(forKey: "supportLidar")
 
-        if false {
+        if supportsLidar {
             let initialViewController: RoomScanLandingViewController = container.resolve(args: false)
             return initialViewController
         } else {
